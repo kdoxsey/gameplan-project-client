@@ -1,6 +1,6 @@
 const signUpSuccess = function (response) {
-  $('#message').text('thanks for signing up ' + response.user.email)
   console.log('signed up')
+  $('#message').text('thanks for signing up ' + response.user.email)
 }
 
 const signUpFailure = function (response) {
@@ -9,9 +9,8 @@ const signUpFailure = function (response) {
 
 const signInSuccess = function (response) {
   $('#message').text('thanks for signing in ' + response.user.email)
-  $('#sign-up-form').trigger('reset')
-  $('#sign-in-form').trigger('reset')
 }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
