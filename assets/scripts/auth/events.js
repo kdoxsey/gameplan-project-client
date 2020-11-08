@@ -24,11 +24,10 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  console.log(form)
+  console.log('pw changed, sir lol')
+  // const form = event.target
+  const data = getFormFields(this)
   api.changePassword(data)
-  console.log(form)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
