@@ -12,4 +12,6 @@ $(() => {
   $('#message').text('sign up to sort out your life')
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#change-password-form').hide()
+  $('#sign-out-form').on('submit', authEvents.onSignOutForm)
 })
