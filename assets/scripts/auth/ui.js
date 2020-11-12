@@ -20,8 +20,8 @@ const signInSuccess = function (response) {
   $('#sign-in-form').hide()
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
-  $('#index-goals-form').show()
-  $('#show-goal-form').show()
+  $('#index-goals').show()
+  $('#show-goal').show()
   $('#create-goal-form').show()
   console.log(store.user)
 }

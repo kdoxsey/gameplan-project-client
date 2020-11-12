@@ -3,7 +3,7 @@
 
 const createGoalSuccess = function (response) {
   $('#message').text('good luck')
-  console.log(response)
+  console.log(response.goal._id)
 }
 
 const createGoalFailure = function (response) {

@@ -28,7 +28,7 @@ const onShowGoal = function (event) {
   console.log(form)
   const data = getFormFields(form)
   console.log(data)
-  api.showGoal(data)
+  api.showGoal()
     .then(ui.showGoalSuccess)
     .catch(ui.showGoalFailure)
 }
