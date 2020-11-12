@@ -13,13 +13,15 @@ const signUpFailure = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('thanks for signing in ' + response.user.email)
-  $('#change-password-form').show()
-  $('#sign-out-form').show()
+  $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
+  $('#show-signup-form-button').hide()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
+  $('#goal-stuff').show()
+  $('#signed-in-stuff').show()
+  $('#create-goal-form').show()
   console.log(store.user)
 }
 
@@ -42,8 +44,9 @@ const signOutSuccess = function () {
   $('#change-password-form').trigger('reset')
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
-  $('#sign-up-form').show()
+  $('#show-signup-form-button').show()
   $('#sign-in-form').show()
+  $('#signed-in-stuff').hide()
   console.log('signed out')
 }
 
