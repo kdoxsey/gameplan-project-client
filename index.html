@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>gameplan</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,55 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>gameplan</h1>
+      <p id="message"></p>
+      <section>
+        <!-- SIGN UP -->
+        <form id="sign-up-form">
+          <legend id="sign-up">sign up</legend>
+          <!-- email box -->
+            <input id="sign-up-email" type="text" name="credentials[email]" placeholder="email"></br>
+          <!-- password box -->
+            <input id="sign-up-password" type="password" name="credentials[password]" placeholder="password"></br>
+          <!-- confirm password box -->
+            <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="confirm password"></br>
+          <!-- sign up button -->
+            <input type="submit" value="sign up">
+        </form>
+      </section>
+
+      <section>
+        <!-- SIGN IN -->
+        <form id="sign-in-form">
+          <legend id="sign-in">sign in</legend>
+          <!-- email box -->
+            <input id="sign-in-email" type="text" name="credentials[email]" placeholder="email"></br>
+          <!-- password box -->
+            <input id="sign-in-password" type="password" name="credentials[password]" placeholder="password"></br>
+          <!-- sign in button -->
+            <input type="submit" value="sign in">
+        </form>
+      </section>
+
+      <section>
+        <!-- CHANGE PW -->
+        <form id="change-password-form">
+          <legend id="change-password">change password</legend>
+          <!-- old pw -->
+            <input type="password" name="passwords[old]" placeholder="old password"></br>
+          <!-- new pw -->
+            <input type="password" name="passwords[new]" placeholder="new password"></br>
+          <!-- sign in button -->
+            <input type="submit" value="change password">
+        </form>
+      </section>
+
+      <section>
+        <form id="sign-out-form" class="border">
+          <legend id="sign-out">sign out</legend>
+            <input type="submit" value="sign out">
+        </form>
+      </section>
+
     </body>
 </html>
