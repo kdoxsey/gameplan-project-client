@@ -15,7 +15,7 @@ const onCreateGoal = function (event) {
 
 const onIndexGoals = function (response) {
   event.preventDefault()
-  console.log(event)
+  // console.log(response)
   api.indexGoals()
     .then(ui.indexGoalsSuccess)
     .catch(ui.indexGoalsFailure)

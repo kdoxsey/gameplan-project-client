@@ -76,11 +76,22 @@
 
 
         <!-- SHOW GOAL -->
-      <section id="show-goal">
+      <section>
+        <form id="show-goal-form">
         <legend>show a goal</legend>
-        <button id="show-goal-button" type="submit">show goal</button>
+        <input name="goal[_id]" type="text" placeholder="search task">
+        <input type="submit" value="show goal">
+      </form>
+        <button id="show-goal-button" type="submit">show goal</button
       </section>
 
+      <!-- UPDATE GOAL -->>
+      <section>
+        <form id="update-goal-form">
+          <legend>update goal</legend>
+            <input type="text" name="goal[name]" placeholder="original goal name"></br>
+            <input type="text" name="goal[name]" placeholder="new goal name"></br>
+        </form>
     </section>
     </body>
 </html>
