@@ -13,7 +13,7 @@ const createGoalFailure = function (response) {
 
 const indexGoalsSuccess = function (response) {
   console.log(response)
-  $('#message').html('(goal name) : (goal id) : (owner id)')
+  $('#message').html('(goals.name) : (goals._id) : (goals.owner)')
 
   response.goals.forEach(goals => {
     const goalList = (`
