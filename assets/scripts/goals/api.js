@@ -34,8 +34,19 @@ const indexGoals = function () {
   })
 }
 
+const updateGoal = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/goals/' + data._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createNewGoal,
   showGoal,
-  indexGoals
+  indexGoals,
+  updateGoal
 }

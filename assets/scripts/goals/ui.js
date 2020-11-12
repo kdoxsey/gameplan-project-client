@@ -16,7 +16,7 @@ const indexGoalsSuccess = function (response) {
 
   response.goals.forEach(goals => {
     const goalList = (`
-      <p>Goal: ${goals.name}</p>
+      <p>${goals.name}</p>
   `)
     $('#message').append(goalList)
   })
@@ -36,11 +36,23 @@ const showGoalFailure = function (response) {
   $('#message').text(response)
 }
 
+const updateGoalSuccess = function (response) {
+  console.log('response is ' + response)
+  $('#message').text('goal has been updated')
+}
+
+const updateGoalFailure = function (response) {
+  console.log('response is ' + response)
+  $('#message').text('goal failed to update')
+}
+
 module.exports = {
   createGoalSuccess,
   createGoalFailure,
   indexGoalsSuccess,
   indexGoalsFailure,
   showGoalSuccess,
-  showGoalFailure
+  showGoalFailure,
+  updateGoalSuccess,
+  updateGoalFailure
 }

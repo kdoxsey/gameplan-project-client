@@ -39,25 +39,9 @@
           <!-- sign in button -->
             <input type="submit" value="sign in">
         </form>
+        </section>
 
-        <!-- CHANGE PW -->
-        <form id="change-password-form">
-          <legend id="change-password">change password</legend>
-          <!-- old pw -->
-            <input type="password" name="passwords[old]" placeholder="old password"></br>
-          <!-- new pw -->
-            <input type="password" name="passwords[new]" placeholder="new password"></br>
-          <!-- sign in button -->
-            <input type="submit" value="change password">
-        </form>
-
-        <form id="sign-out-form" class="border">
-          <legend id="sign-out">sign out</legend>
-            <input type="submit" value="sign out">
-        </form>
-      </section>
-
-      <section>
+      <div id="goal-stuff">
     <!-- GOALS -->
         <!--NEW GOAL-->
         <form id="create-goal-form" class="border">
@@ -69,29 +53,46 @@
         </form>
 
         <!-- INDEX GOALS -->
-        <section id="index-goals">
+        <div id="index-goals">
           <legend>index goals</legend>
           <button id="index-goals-button" type="submit">index goals</button>
-        </section>
+        </div>
+
+        <!-- INDEX ONLY MY GOALS -->
 
 
         <!-- SHOW GOAL -->
-      <section>
         <form id="show-goal-form">
-        <legend>show a goal</legend>
-        <input name="goal[_id]" type="text" placeholder="search task">
-        <input type="submit" value="show goal">
-      </form>
-        <button id="show-goal-button" type="submit">show goal</button
-      </section>
+          <legend>show a goal</legend>
+            <input name="goal[_id]" type="text" placeholder="search task">
+          <button id="show-goal-button" type="submit">show goal</button>
+        </form>
 
-      <!-- UPDATE GOAL -->>
-      <section>
+      <!-- UPDATE GOAL -->
         <form id="update-goal-form">
           <legend>update goal</legend>
             <input type="text" name="goal[name]" placeholder="original goal name"></br>
             <input type="text" name="goal[name]" placeholder="new goal name"></br>
         </form>
-    </section>
+      </div>
+
+      <div id="signed-in-stuff">
+      <!-- CHANGE PW -->
+      <form id="change-password-form">
+        <legend id="change-password">change password</legend>
+        <!-- old pw -->
+          <input type="password" name="passwords[old]" placeholder="old password"></br>
+        <!-- new pw -->
+          <input type="password" name="passwords[new]" placeholder="new password"></br>
+        <!-- sign in button -->
+          <input type="submit" value="change password">
+      </form>
+
+      <form id="sign-out-form" class="border">
+        <legend id="sign-out">sign out</legend>
+          <input type="submit" value="sign out">
+      </form>
+    </div>
+
     </body>
 </html>

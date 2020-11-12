@@ -14,15 +14,18 @@ const signUpFailure = function (response) {
 const signInSuccess = function (response) {
   store.user = response.user
   $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
-  $('#change-password-form').show()
-  $('#sign-out-form').show()
+  // $('#change-password-form').show()
+  // $('#sign-out-form').show()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
-  $('#index-goals').show()
-  $('#show-goal').show()
-  $('#create-goal-form').show()
+  // $('#index-goals').show()
+  // $('#show-goal-form').show()
+  // $('#create-goal-form').show()
+  // $('#update-goal-form').show()
+  $('#goal-stuff').show()
+  $('#signed-in-stuff').show()
   console.log(store.user)
 }
 

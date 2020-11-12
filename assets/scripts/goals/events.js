@@ -32,8 +32,17 @@ const onShowGoal = function (event) {
     .then(ui.showGoalSuccess)
     .catch(ui.showGoalFailure)
 }
+
+const onUpdateGoal = function (event) {
+  event.preventDefault(
+    api.updateGoal
+      .then(ui.updateGoalSuccess)
+      .catch(ui.updateGoalFailure)
+  )
+}
 module.exports = {
   onCreateGoal,
   onIndexGoals,
-  onShowGoal
+  onShowGoal,
+  onUpdateGoal
 }
