@@ -39,9 +39,16 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onShowSignUp = function (event) {
+  event.preventDefault()
+  $('#sign-up-form').show()
+  $('#show-signup-form-button').hide()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onShowSignUp
 }
