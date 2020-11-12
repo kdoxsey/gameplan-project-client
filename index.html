@@ -14,6 +14,7 @@
     <body>
       <h1>gameplan</h1>
       <p id="message"></p>
+
       <section>
         <!-- SIGN UP -->
         <form id="sign-up-form">
@@ -27,9 +28,7 @@
           <!-- sign up button -->
             <input type="submit" value="sign up">
         </form>
-      </section>
 
-      <section>
         <!-- SIGN IN -->
         <form id="sign-in-form">
           <legend id="sign-in">sign in</legend>
@@ -40,9 +39,7 @@
           <!-- sign in button -->
             <input type="submit" value="sign in">
         </form>
-      </section>
 
-      <section>
         <!-- CHANGE PW -->
         <form id="change-password-form">
           <legend id="change-password">change password</legend>
@@ -53,14 +50,37 @@
           <!-- sign in button -->
             <input type="submit" value="change password">
         </form>
-      </section>
 
-      <section>
         <form id="sign-out-form" class="border">
           <legend id="sign-out">sign out</legend>
             <input type="submit" value="sign out">
         </form>
       </section>
 
+      <section>
+    <!-- GOALS -->
+        <!--NEW GOAL-->
+        <form id="create-goal-form" class="border">
+          <!-- <fieldset> -->
+          <legend>create goal</legend>
+          <input type="text" name="goal[name]" placeholder="create goal">
+          <input type="submit" value="create goal">
+        <!-- </fieldset> -->
+        </form>
+
+        <!-- INDEX GOALS -->
+        <form id="index-goals-form">
+          <legend>index goals</legend>
+          <button type="submit">index goals</button>
+        </form>
+
+        <!-- SHOW GOAL -->
+
+      <form id="show-goal-form">
+        <legend>show a goal</legend>
+        <button type="submit">show goal</button>
+      </form>
+
+    </section>
     </body>
 </html>
