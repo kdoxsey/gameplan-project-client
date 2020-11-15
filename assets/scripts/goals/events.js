@@ -21,6 +21,14 @@ const onIndexGoals = function (response) {
     .catch(ui.indexGoalsFailure)
 }
 
+const onIndexAllGoals = function (response) {
+  event.preventDefault()
+  // console.log(response)
+  api.indexAllGoals()
+    .then(ui.indexAllGoalsSuccess)
+    .catch(ui.indexAllGoalsFailure)
+}
+
 const onHideGoals = function () {
   event.preventDefault()
   // console.log(response)
@@ -61,6 +69,7 @@ const onDeleteGoal = function (event) {
 module.exports = {
   onCreateGoal,
   onIndexGoals,
+  onIndexAllGoals,
   onShowGoal,
   onUpdateGoal,
   onHideGoals,

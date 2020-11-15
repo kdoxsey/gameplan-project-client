@@ -23,6 +23,7 @@ $(() => {
   $('#create-goal-form').on('submit', goalsEvents.onCreateGoal)
   $('#hide-goals-button').hide()
   $('#index-goals').on('click', goalsEvents.onIndexGoals)
+  $('#index-all-goals').on('click', goalsEvents.onIndexAllGoals)
   $('#hide-goals-button').on('click', goalsEvents.onHideGoals)
   $('#show-goal-form').on('click', goalsEvents.onShowGoal)
   $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)

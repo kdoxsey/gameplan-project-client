@@ -13,11 +13,11 @@ const createGoalFailure = function (response) {
 
 const indexGoalsSuccess = function (response) {
   console.log(response)
-  $('#message').html('(goals.name) : (goals._id) : (goals.owner)')
+  $('#message').html('goal : goal id')
 
   response.goals.forEach(goals => {
     const goalList = (`
-      <p> ${goals.name} : ${goals._id} : ${goals.owner} </p>
+      <p> ${goals.name} : ${goals._id} </p>
   `)
     $('#message').append(goalList)
     $('#hide-goals-button').show()
@@ -26,6 +26,24 @@ const indexGoalsSuccess = function (response) {
 }
 
 const indexGoalsFailure = function (response) {
+  $('#message').text('unable to index goals')
+}
+
+const indexAllGoalsSuccess = function (response) {
+  console.log(response)
+  $('#message').html('goal : owner')
+
+  response.goals.forEach(goals => {
+    const goalList = (`
+      <p> ${goals.name} : ${goals.owner} </p>
+  `)
+    $('#message').append(goalList)
+    $('#hide-goals-button').show()
+    $('#index-goals-button').hide()
+  })
+}
+
+const indexAllGoalsFailure = function (response) {
   $('#message').text('unable to index goals')
 }
 
@@ -69,6 +87,8 @@ module.exports = {
   createGoalFailure,
   indexGoalsSuccess,
   indexGoalsFailure,
+  indexAllGoalsSuccess,
+  indexAllGoalsFailure,
   showGoalSuccess,
   showGoalFailure,
   updateGoalSuccess,
