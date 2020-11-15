@@ -49,10 +49,20 @@ const onUpdateGoal = function (event) {
     .then(ui.updateGoalSuccess)
     .catch(ui.updateGoalFailure)
 }
+
+const onDeleteGoal = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.destroyGoal(data)
+    .then(ui.destroyGoalSuccess)
+    .catch(ui.destroyGoalFailure)
+}
 module.exports = {
   onCreateGoal,
   onIndexGoals,
   onShowGoal,
   onUpdateGoal,
-  onHideGoals
+  onHideGoals,
+  onDeleteGoal
 }

@@ -45,9 +45,21 @@ const updateGoal = function (data) {
   })
 }
 
+const destroyGoal = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/goals/' + data.goal.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createNewGoal,
   showGoal,
   indexGoals,
-  updateGoal
+  updateGoal,
+  destroyGoal
 }

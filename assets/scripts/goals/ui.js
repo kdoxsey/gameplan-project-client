@@ -56,6 +56,14 @@ const updateGoalFailure = function (response) {
   $('#message').text('goal failed to update')
 }
 
+const destroyGoalSuccess = function (response) {
+  $('#message').text('goal deleted')
+}
+
+const destroyGoalFailure = function (response) {
+  $('#message').text('goal failed to delete')
+}
+
 module.exports = {
   createGoalSuccess,
   createGoalFailure,
@@ -66,5 +74,7 @@ module.exports = {
   updateGoalSuccess,
   updateGoalFailure,
   hideGoalsSuccess,
-  hideGoalsFailure
+  hideGoalsFailure,
+  destroyGoalSuccess,
+  destroyGoalFailure
 }
