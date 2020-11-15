@@ -11,12 +11,14 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
       <h1>gameplan</h1>
       <p id="message"></p>
       <div id="hide-goals">
         <button id="hide-goals-button" type="submit">hide goals</button>
       </div>
+
       <div id="authorization">
         <!-- SIGN IN -->
         <form id="sign-in-form"  class="border">
@@ -29,8 +31,8 @@
             <input type="submit" value="sign in">
         </form>
         <br>
-        <!-- SIGN UP -->
 
+        <!-- SIGN UP -->
         <form id="sign-up-form" class="border">
           <p>don't have an account?</p>
           <legend id="sign-up">sign up</legend>
@@ -52,14 +54,11 @@
       </div>
 
       <div id="signed-in-stuff">
-      <!-- GOALS -->
           <!--NEW GOAL-->
           <form id="create-goal-form" class="border">
-            <!-- <fieldset> -->
             <legend>create goal</legend>
             <input type="text" name="goal[name]" placeholder="create goal">
             <input type="submit" value="create goal">
-          <!-- </fieldset> -->
           </form>
 
           <!-- INDEX GOALS -->
@@ -74,22 +73,17 @@
           <!-- SHOW GOAL -->
           <form id="show-goal-form" class="border">
             <legend>show a goal</legend>
-              <input name="goal[_id]" type="text" placeholder="search goal">
+              <input name="goal[id]" type="text" id="goal-search" placeholder="search goal">
             <button id="show-goal-button" type="submit">show goal</button>
           </form>
 
         <!-- UPDATE GOAL -->
-          <form id="update-goal-form" class="border">
+          <form id="update-goal-form">
             <legend>update goal</legend>
-              <input type="text" name="goal[_id]" placeholder="original goal id"></br>
-              <input type="text" name="goal[name]" placeholder="new goal name"></br>
+              <input required type="text" name="goal[id]" id="goal-id-update" placeholder="goal ID here">
+              <input required type="text" name="goal[name]" placeholder="goal name here">
               <button type="submit">update goal</button>
           </form>
-
-          <!-- show change pw form -->
-      <div id="show-change-password-form-button" class="border">
-        <button type="submit">i hate my password</button>
-      </div>
 
       <!-- CHANGE PW -->
       <form id="change-password-form" class="border">
@@ -102,6 +96,12 @@
           <input type="submit" value="change password">
       </form>
 
+<!-- DELETE GOAL -->
+<form id="delete-goal-form">
+  <input required type="text" name="goal[id]" placeholder="goal id here">
+  <button type="submit">delete goal</button>
+</form>
+<!-- SIgn OUT -->
       <form id="sign-out-form" class="border">
         <legend id="sign-out">sign out</legend>
           <input type="submit" value="sign out">

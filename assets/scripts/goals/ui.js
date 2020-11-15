@@ -45,17 +45,14 @@ const showGoalSuccess = function (response) {
 }
 
 const showGoalFailure = function (response) {
-  console.log('response is ' + response)
-  $('#message').text(response)
+  $('#message').text(response.goals)
 }
 
 const updateGoalSuccess = function (response) {
-  console.log('response is ' + response)
   $('#message').text('goal has been updated')
 }
 
 const updateGoalFailure = function (response) {
-  console.log('response is ' + response)
   $('#message').text('goal failed to update')
 }
 

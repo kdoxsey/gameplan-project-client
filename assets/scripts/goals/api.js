@@ -15,7 +15,7 @@ const createNewGoal = function (data) {
 const showGoal = function (data) {
   console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/goals/' + data._id,
+    url: config.apiUrl + '/goals/' + data.goals._id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -36,11 +36,12 @@ const indexGoals = function () {
 
 const updateGoal = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/goals/' + data._id,
+    url: config.apiUrl + '/goals/' + data.goal.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data
   })
 }
 

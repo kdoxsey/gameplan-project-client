@@ -42,11 +42,12 @@ const onShowGoal = function (event) {
 }
 
 const onUpdateGoal = function (event) {
-  event.preventDefault(
-    api.updateGoal
-      .then(ui.updateGoalSuccess)
-      .catch(ui.updateGoalFailure)
-  )
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.updateGoal(data)
+    .then(ui.updateGoalSuccess)
+    .catch(ui.updateGoalFailure)
 }
 module.exports = {
   onCreateGoal,
