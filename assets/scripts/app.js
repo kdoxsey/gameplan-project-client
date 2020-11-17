@@ -10,7 +10,7 @@ const goalsEvents = require('./goals/events')
 
 $(() => {
   // your JS code goes here
-  $('#message').text('sign up to sort out your life')
+  $('#message').text('sort out your life')
   $('#sign-up-form').hide()
   $('#signed-in-stuff').hide()
   $('#goal-stuff').hide()
@@ -25,7 +25,7 @@ $(() => {
   $('#index-goals').on('click', goalsEvents.onIndexGoals)
   $('#index-all-goals').on('click', goalsEvents.onIndexAllGoals)
   $('#hide-goals-button').on('click', goalsEvents.onHideGoals)
-  $('#show-goal-form').on('click', goalsEvents.onShowGoal)
+  $('#show-goal-form').on('submit', goalsEvents.onShowGoal)
   $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)
   $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
 })

@@ -13,14 +13,12 @@ const createNewGoal = function (data) {
 }
 
 const showGoal = function (data) {
-  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/goals/' + data.goals._id,
+    url: config.apiUrl + '/goals/' + data.goal.id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    },
-    data
+    }
   })
 }
 

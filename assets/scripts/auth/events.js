@@ -43,6 +43,7 @@ const onShowSignUp = function (event) {
   event.preventDefault()
   $('#sign-up-form').show()
   $('#show-signup-form-button').hide()
+  $('#account-message').hide()
 }
 
 module.exports = {

@@ -21,14 +21,6 @@ const onIndexGoals = function (response) {
     .catch(ui.indexGoalsFailure)
 }
 
-const onIndexAllGoals = function (response) {
-  event.preventDefault()
-  // console.log(response)
-  api.indexAllGoals()
-    .then(ui.indexAllGoalsSuccess)
-    .catch(ui.indexAllGoalsFailure)
-}
-
 const onHideGoals = function () {
   event.preventDefault()
   // console.log(response)
@@ -39,12 +31,17 @@ const onHideGoals = function () {
 
 const onShowGoal = function (event) {
   event.preventDefault()
-  // console.log(event)
   const form = event.target
-  console.log(form)
   const data = getFormFields(form)
-  console.log(data)
-  api.showGoal()
+  // console.log('---before api request---')
+  // console.log(data)
+  // console.log(data.goal)
+  // console.log(data.goals)
+  api.showGoal(data)
+  // console.log('---After api request---')
+  // console.log(data)
+  // console.log(data.goal)
+  // console.log(data.goals)
     .then(ui.showGoalSuccess)
     .catch(ui.showGoalFailure)
 }
@@ -69,7 +66,6 @@ const onDeleteGoal = function (event) {
 module.exports = {
   onCreateGoal,
   onIndexGoals,
-  onIndexAllGoals,
   onShowGoal,
   onUpdateGoal,
   onHideGoals,
