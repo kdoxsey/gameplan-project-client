@@ -6,13 +6,13 @@ const createGoalSuccess = function (response) {
   $('form').trigger('reset')
 }
 
-const showGoalSuccess = function (response) {
-  $('#goals').text(response.goal._id + ": '" + response.goal.name + "' created at " + response.goal.createdAt)
+const createGoalFailure = function (response) {
+  $('#message').text('unable to create goal. take a nap and come back to it')
   $('form').trigger('reset')
 }
 
-const createGoalFailure = function (response) {
-  $('#message').text('idk nows not the time just take a nap and come back to it')
+const showGoalSuccess = function (response) {
+  $('#goals').text(response.goal._id + ": '" + response.goal.name + "' created at " + response.goal.createdAt)
   $('form').trigger('reset')
 }
 
@@ -49,7 +49,7 @@ const hideGoalsFailure = function (response) {
 }
 
 const showGoalFailure = function (response) {
-  $('#message').text(response.goals)
+  $('#message').text('goal could not be found')
   $('form').trigger('reset')
 }
 
@@ -73,14 +73,6 @@ const destroyGoalFailure = function (response) {
   $('form').trigger('reset')
 }
 
-// const showCreateGoalFormSuccess = function (response) {
-//   $('#create-goal-form').show()
-// }
-//
-// const showCreateGoalFormFailure = function (response) {
-//   $('#message').text('could not load the create goal form')
-// }
-
 module.exports = {
   createGoalSuccess,
   createGoalFailure,
@@ -94,6 +86,4 @@ module.exports = {
   hideGoalsFailure,
   destroyGoalSuccess,
   destroyGoalFailure
-  // showCreateGoalFormSuccess,
-  // showCreateGoalFormFailure
 }

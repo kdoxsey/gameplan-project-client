@@ -24,7 +24,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (response) {
-  $('#message').text('something went wrong w signing in brah')
+  $('#message').text('unable to sign in')
   $('form').trigger('reset')
 }
 
@@ -34,7 +34,7 @@ const changePasswordSuccess = function (response) {
 }
 
 const changePasswordFailure = function (response) {
-  $('#message').text('something went wrong w changin that password dude')
+  $('#message').text('unable to change password')
   $('form').trigger('reset')
 }
 
