@@ -12,8 +12,10 @@ $(() => {
   // your JS code goes here
   $('#message').text('sort out your life')
   $('#sign-up-form').hide()
-  $('#signed-in-stuff').hide()
   $('#goal-stuff').hide()
+  $('#goal-stuff').hide()
+  $('#buttons').hide()
+  $('#signed-in-auth-stuff').hide()
   $('#show-signup-form-button').on('click', authEvents.onShowSignUp)
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
@@ -28,4 +30,5 @@ $(() => {
   $('#show-goal-form').on('submit', goalsEvents.onShowGoal)
   $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)
   $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
+  $('#create-goal-button').on('submit', goalsEvents.onShowCreateGoalForm)
 })

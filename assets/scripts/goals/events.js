@@ -4,6 +4,10 @@ const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
 // const store = require('./../store')
 
+const onShowCreateGoalForm = function (event) {
+  event.preventDefault()
+  $('#create-goal-form').show()
+}
 const onCreateGoal = function (event) {
   event.preventDefault()
   const form = event.target
@@ -69,5 +73,6 @@ module.exports = {
   onShowGoal,
   onUpdateGoal,
   onHideGoals,
-  onDeleteGoal
+  onDeleteGoal,
+  onShowCreateGoalForm
 }

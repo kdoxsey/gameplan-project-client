@@ -18,9 +18,9 @@ const signInSuccess = function (response) {
   $('#show-signup-form-button').hide()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
-  $('#goal-stuff').show()
-  $('#signed-in-stuff').show()
   $('#create-goal-form').show()
+  $('#buttons').show()
+  $('#signed-in-auth-stuff').show()
   console.log(store.user)
 }
 
@@ -47,7 +47,7 @@ const signOutSuccess = function () {
   $('#sign-out-form').hide()
   $('#show-signup-form-button').show()
   $('#sign-in-form').show()
-  $('#signed-in-stuff').hide()
+  $('#goal-stuff').hide()
   console.log('signed out')
 }
 
