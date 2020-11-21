@@ -24,7 +24,6 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('pw changed, sir lol')
   const form = event.target
   const data = getFormFields(form)
   api.changePassword(data)
@@ -46,10 +45,17 @@ const onShowSignUp = function (event) {
   $('#account-message').hide()
 }
 
+const onShowChangePasswordForm = function (event) {
+  event.preventDefault(
+    $('#change-password-form').show()
+  )
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onShowSignUp
+  onShowSignUp,
+  onShowChangePasswordForm
 }

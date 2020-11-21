@@ -7,7 +7,24 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const onShowCreateGoalForm = function (event) {
   event.preventDefault()
   $('#create-goal-form').show()
+  $('#delete-goal-form').hide()
+  $('#show-goal-form').hide()
 }
+
+const onShowDeleteGoalForm = function (event) {
+  event.preventDefault()
+  $('#delete-goal-form').show()
+  $('#create-goal-form').hide()
+  $('#show-goal-form').hide()
+}
+
+const onShowShowGoalForm = function (event) {
+  event.preventDefault()
+  $('#show-goal-form').show()
+  $('#delete-goal-form').hide()
+  $('#create-goal-form').hide()
+}
+
 const onCreateGoal = function (event) {
   event.preventDefault()
   const form = event.target
@@ -19,7 +36,6 @@ const onCreateGoal = function (event) {
 
 const onIndexGoals = function (response) {
   event.preventDefault()
-  // console.log(response)
   api.indexGoals()
     .then(ui.indexGoalsSuccess)
     .catch(ui.indexGoalsFailure)
@@ -27,7 +43,6 @@ const onIndexGoals = function (response) {
 
 const onHideGoals = function () {
   event.preventDefault()
-  // console.log(response)
   api.indexGoals()
     .then(ui.hideGoalsSuccess)
     .catch(ui.hideGoalsFailure)
@@ -37,15 +52,7 @@ const onShowGoal = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  // console.log('---before api request---')
-  // console.log(data)
-  // console.log(data.goal)
-  // console.log(data.goals)
   api.showGoal(data)
-  // console.log('---After api request---')
-  // console.log(data)
-  // console.log(data.goal)
-  // console.log(data.goals)
     .then(ui.showGoalSuccess)
     .catch(ui.showGoalFailure)
 }
@@ -74,5 +81,7 @@ module.exports = {
   onUpdateGoal,
   onHideGoals,
   onDeleteGoal,
-  onShowCreateGoalForm
+  onShowCreateGoalForm,
+  onShowDeleteGoalForm,
+  onShowShowGoalForm
 }

@@ -49,26 +49,27 @@
       </section>
 
       <div id="buttons">
-        <button id="create-goal-button" type="submit">create goal</button>
-        <button id="index-goals-button" type="submit">my goals</button>
-        <button id="hide-goals-button" type="submit">hide goals</button>
-        <button id="show-goal-button" type="submit">show goal</button>
-        <button id ="delete-goal-button" type="submit">delete goal</button>
+        <button id="create-goal-button">create a goal</button>
+        <button id="index-goals-button">show all goals</button>
+        <button id="hide-goals-button">hide goal(s)</button>
+        <button id="show-goal-button">search goal by id</button>
+        <button id="delete-goal-button">delete a goal</button>
       </div>
 
 
       <div id="goal-stuff">
         <!--NEW GOAL-->
         <form id="create-goal-form">
-          <legend>create goal</legend>
+          <legend>new goal</legend>
           <input type="text" name="goal[name]" placeholder="create goal">
+          <button type="submit">create</button>
         </form>
-    <section id="goals" class="container"></section>
 
           <!-- SHOW GOAL -->
           <form id="show-goal-form">
-            <legend>show a goal</legend>
-              <input name="goal[id]" type="text" placeholder="search goal">
+            <legend>search a goal</legend>
+            <input name="goal[id]" type="text" placeholder="search goal">
+            <button type="submit">show</button>
           </form>
 
           <!-- UPDATE GOAL -->
@@ -76,15 +77,18 @@
               <legend>update goal</legend>
                 <input required type="text" name="goal[id]" placeholder="goal ID here">
                 <input required type="text" name="goal[name]" placeholder="goal name here">
-                <button type="submit">update goal</button>
+                <button type="submit">update</button>
             </form>
 
             <!-- DELETE GOAL -->
             <form id="delete-goal-form">
+              <legend>delete goal</legend>
               <input required type="text" name="goal[id]" placeholder="goal id here">
+              <button type="submit">delete</button>
             </form>
+            <br>
+            <section id="goals" class="container"></section>
           </div>
-        <section id="signed-in-auth-stuff">
           <!-- CHANGE PW -->
           <form id="change-password-form">
             <legend id="change-password">change password</legend>
@@ -101,6 +105,5 @@
             <legend id="sign-out">sign out</legend>
               <input type="submit" value="sign out">
           </form>
-        </section>
     </body>
   </html>

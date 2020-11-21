@@ -3,12 +3,10 @@
 
 const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
-  console.log(response.goal.name)
   $('form').trigger('reset')
 }
 
 const showGoalSuccess = function (response) {
-  console.log('response is ' + response.goal.name)
   $('#goals').text(response.goal._id + ": '" + response.goal.name + "' created at " + response.goal.createdAt)
   $('form').trigger('reset')
 }
@@ -19,7 +17,7 @@ const createGoalFailure = function (response) {
 }
 
 const indexGoalsSuccess = function (response) {
-  console.log(response)
+  $('#goals').show()
   $('#goals').html('')
 
   response.goals.forEach(goals => {
@@ -37,26 +35,6 @@ const indexGoalsFailure = function (response) {
   $('#message').text('unable to index goals')
   $('form').trigger('reset')
 }
-
-// const indexAllGoalsSuccess = function (response) {
-//   console.log(response)
-//   $('#goals').html('goal : owner')
-//   $('form').trigger('reset')
-//
-//   response.goals.forEach(goals => {
-//     const goalList = (`
-//       <p> ${goals.name} : ${goals.owner} </p>
-//   `)
-//     $('#message').append(goalList)
-//     $('#hide-goals-button').show()
-//     $('#index-goals-button').hide()
-//   })
-// }
-//
-// const indexAllGoalsFailure = function (response) {
-//   $('#message').text('unable to index goals')
-//   $('form').trigger('reset')
-// }
 
 const hideGoalsSuccess = function (response) {
   $('#goals').text('')
@@ -95,6 +73,14 @@ const destroyGoalFailure = function (response) {
   $('form').trigger('reset')
 }
 
+// const showCreateGoalFormSuccess = function (response) {
+//   $('#create-goal-form').show()
+// }
+//
+// const showCreateGoalFormFailure = function (response) {
+//   $('#message').text('could not load the create goal form')
+// }
+
 module.exports = {
   createGoalSuccess,
   createGoalFailure,
@@ -108,4 +94,6 @@ module.exports = {
   hideGoalsFailure,
   destroyGoalSuccess,
   destroyGoalFailure
+  // showCreateGoalFormSuccess,
+  // showCreateGoalFormFailure
 }

@@ -1,7 +1,6 @@
 const store = require('./../store')
 
 const signUpSuccess = function (response) {
-  console.log('signed up')
   $('#message').text('thanks for signing up ' + response.user.email)
   $('form').trigger('reset')
 }
@@ -18,10 +17,10 @@ const signInSuccess = function (response) {
   $('#show-signup-form-button').hide()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
-  $('#create-goal-form').show()
   $('#buttons').show()
-  $('#signed-in-auth-stuff').show()
-  console.log(store.user)
+  $('#index-goals-button').show()
+  $('#sign-out-form').show()
+  $('#change-password-form').show()
 }
 
 const signInFailure = function (response) {
@@ -47,8 +46,16 @@ const signOutSuccess = function () {
   $('#sign-out-form').hide()
   $('#show-signup-form-button').show()
   $('#sign-in-form').show()
-  $('#goal-stuff').hide()
-  console.log('signed out')
+  $('#create-goal-form').hide()
+  $('#show-goal-form').hide()
+  $('#update-goal-form').hide()
+  $('#change-password-form').hide()
+  $('#buttons').hide()
+  $('#sign-out-form').hide()
+  $('#delete-goal-form').hide()
+  $('#goals').text('')
+  $('#hide-goals-button').hide()
+  $('#change-password-form').hide()
 }
 
 module.exports = {
