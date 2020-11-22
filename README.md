@@ -16,7 +16,7 @@ Future Updates:
 -I want to do more styling with CSS and Bootstrap
 
 Planning and Developement:
-The client begins with the user stories and wireframes (see below). After I built the API, I was able to start creating the authorization and CRUD forms based on the user stories wireframes. I wanted to create a smooth user experience using jQuery's show and hide features. Rather than having all CRUD forms visible at the same time, the user must click on one of the buttons to load its respective form. The client communicates with the server using an API. All API requests use AJAX to create a smooth single-page-application experience.
+The client begins with the user stories and wireframes (see below). After I built the API, I was able to start creating the authorization and CRUD forms based on the user stories and wireframes. I wanted to create a smooth user experience using jQuery's show and hide features. Rather than having all CRUD forms visible at the same time, the user must click on one of the buttons to load its respective form. The client communicates with the server using an API. All API requests use AJAX to create a smooth single-page-application experience.
 
 User Stories:
 -As a user I want to be able to sign up.
