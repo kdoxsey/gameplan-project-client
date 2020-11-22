@@ -9,6 +9,7 @@ const onShowCreateGoalForm = function (event) {
   $('#create-goal-form').show()
   $('#delete-goal-form').hide()
   $('#show-goal-form').hide()
+  $('#update-goal-form').hide()
 }
 
 const onShowDeleteGoalForm = function (event) {
@@ -16,11 +17,21 @@ const onShowDeleteGoalForm = function (event) {
   $('#delete-goal-form').show()
   $('#create-goal-form').hide()
   $('#show-goal-form').hide()
+  $('#update-goal-form').hide()
 }
 
 const onShowShowGoalForm = function (event) {
   event.preventDefault()
   $('#show-goal-form').show()
+  $('#delete-goal-form').hide()
+  $('#create-goal-form').hide()
+  $('#update-goal-form').hide()
+}
+
+const onShowUpdateGoalForm = function (event) {
+  event.preventDefault()
+  $('#update-goal-form').show()
+  $('#show-goal-form').hide()
   $('#delete-goal-form').hide()
   $('#create-goal-form').hide()
 }
@@ -83,5 +94,6 @@ module.exports = {
   onDeleteGoal,
   onShowCreateGoalForm,
   onShowDeleteGoalForm,
-  onShowShowGoalForm
+  onShowShowGoalForm,
+  onShowUpdateGoalForm
 }

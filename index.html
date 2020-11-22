@@ -50,10 +50,11 @@
 
       <div id="buttons">
         <button id="create-goal-button">create a goal</button>
+        <button id="show-goal-button">search goal by id</button>
+        <button id="update-goal-button">update a goal</button>
+        <button id="delete-goal-button">delete a goal</button>
         <button id="index-goals-button">show all goals</button>
         <button id="hide-goals-button">hide goal(s)</button>
-        <button id="show-goal-button">search goal by id</button>
-        <button id="delete-goal-button">delete a goal</button>
       </div>
 
 
@@ -75,8 +76,8 @@
           <!-- UPDATE GOAL -->
             <form id="update-goal-form">
               <legend>update goal</legend>
-                <input required type="text" name="goal[id]" placeholder="goal ID here">
-                <input required type="text" name="goal[name]" placeholder="goal name here">
+                <input required type="text" name="goal[id]" placeholder="goal id"></br>
+                <input required type="text" name="goal[name]" placeholder="new name"></br>
                 <button type="submit">update</button>
             </form>
 

@@ -41,4 +41,5 @@ $(() => {
   $('#create-goal-button').on('click', goalsEvents.onShowCreateGoalForm)
   $('#delete-goal-button').on('click', goalsEvents.onShowDeleteGoalForm)
   $('#show-goal-button').on('click', goalsEvents.onShowShowGoalForm)
+  $('#update-goal-button').on('click', goalsEvents.onShowUpdateGoalForm)
 })

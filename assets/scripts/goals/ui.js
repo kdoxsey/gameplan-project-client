@@ -4,6 +4,7 @@
 const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
+  $('#create-goal-form').hide()
 }
 
 const createGoalFailure = function (response) {
@@ -56,6 +57,7 @@ const showGoalFailure = function (response) {
 const updateGoalSuccess = function (response) {
   $('#message').text('goal has been updated')
   $('form').trigger('reset')
+  $('update-goal-form').hide()
 }
 
 const updateGoalFailure = function (response) {
@@ -66,6 +68,7 @@ const updateGoalFailure = function (response) {
 const destroyGoalSuccess = function (response) {
   $('#message').text('goal deleted')
   $('form').trigger('reset')
+  $('#delete-goal-form').hide()
 }
 
 const destroyGoalFailure = function (response) {
