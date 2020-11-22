@@ -23,7 +23,7 @@ const indexGoalsSuccess = function (response) {
 
   response.goals.forEach(goals => {
     const goalList = (`
-      <p> ${goals._id}: '${goals.name}' created at ${goals.createdAt}</p>
+      <p> [id]: ${goals._id} [name]: ${goals.name} [date created]: ${goals.createdAt}</p>
   `)
     $('#goals').append(goalList)
     $('#hide-goals-button').show()
