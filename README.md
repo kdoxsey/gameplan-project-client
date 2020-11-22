@@ -13,10 +13,10 @@ Future Updates:
 -I want users to be able to nest goals inside of goals, creating 'sub-goals' inside of 'goal' folders.
 -I want to use bootstrap to put individual goals inside their own boxes.
 -I want to utilize a checkbox feature that allows users to mark a goal as "complete" or "incomplete"
+-I want to do more styling with CSS and Bootstrap
 
 Planning and Developement:
--I wanted to create a smooth user experience using jQuery's show and hide features. Rather than having all CRUD forms visible at the same time, the user must click on one of the buttons to load its respective form.
--The client-side application communicates with the server-side component using an API. The API handles authorization requests as well as CRUD requests.
+The client begins with the user stories and wireframes (see below). After I built the API, I was able to start creating the authorization and CRUD forms based on the user stories wireframes. I wanted to create a smooth user experience using jQuery's show and hide features. Rather than having all CRUD forms visible at the same time, the user must click on one of the buttons to load its respective form. The client communicates with the server using an API. All API requests use AJAX to create a smooth single-page-application experience.
 
 User Stories:
 -As a user I want to be able to sign up.
@@ -32,3 +32,9 @@ User Stories:
 Wireframes:
 Main homepage: https://imgur.com/NtsNyAX
 Signed in user homepage: https://imgur.com/tJTwpjc
+
+Important links:
+Client Repo: https://github.com/kdoxsey/gameplan-project-client
+Server Repo: https://github.com/kdoxsey/gameplan-project-api
+Deployed Client: https://kdoxsey.github.io/gameplan-project-client/
+Deployed Repo: https://powerful-chamber-37250.herokuapp.com/
