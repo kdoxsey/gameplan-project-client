@@ -13,7 +13,7 @@
     </head>
 
     <body>
-      <h1>gameplan</h1>
+      <h1 id="banner">gameplan</h1>
       <p id="message"></p>
       <section id="authorization">
         <!-- SIGN IN -->
@@ -56,16 +56,6 @@
                 </div>
       </section>
 
-      <div id="buttons">
-        <button id="create-goal-button">create a goal</button>
-        <button id="show-goal-button">search goal by id</button>
-        <button id="update-goal-button">update a goal</button>
-        <button id="delete-goal-button">delete a goal</button>
-        <button id="index-goals-button">show all goals</button>
-        <button id="hide-goals-button">hide goal(s)</button>
-      </div>
-
-
       <div id="goal-stuff">
         <!--NEW GOAL-->
         <form id="create-goal-form">
@@ -96,7 +86,17 @@
               <button type="submit">delete</button>
             </form>
             <br>
-            <section id="goals" class="border"></section>
+            <!-- buttons -->
+            <div id="buttons">
+              <button class = "button" id="create-goal-button">create a goal</button>
+              <button class = "button" id="show-goal-button">search goal by id</button>
+              <button class = "button" id="update-goal-button">update a goal</button>
+              <button class = "button" id="delete-goal-button">delete a goal</button>
+              <button class = "button" id="index-goals-button">show all goals</button>
+              <button class = "button" id="hide-goals-button">hide goal(s)</button>
+            </div>
+            <section id="goals" class="border">
+            </section>
           </div>
           <!-- CHANGE PW -->
           <div id="show-change-password-form-button">
