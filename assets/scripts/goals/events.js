@@ -42,9 +42,9 @@ const onCreateGoal = function (event) {
   const data = getFormFields(form)
   api.createNewGoal(data)
     .then(ui.createGoalSuccess)
-    .catch(ui.createGoalFailure)
-  api.indexGoals()
+    .then(api.indexGoals)
     .then(ui.indexGoalsSuccess)
+    .catch(ui.createGoalFailure)
     .catch(ui.indexGoalsFailure)
 }
 
@@ -77,6 +77,8 @@ const onUpdateGoal = function (event) {
   const data = getFormFields(form)
   api.updateGoal(data)
     .then(ui.updateGoalSuccess)
+    .then(api.indexGoals)
+    .then(ui.indexGoalsSuccess)
     .catch(ui.updateGoalFailure)
 }
 
@@ -86,6 +88,8 @@ const onDeleteGoal = function (event) {
   const data = getFormFields(form)
   api.destroyGoal(data)
     .then(ui.destroyGoalSuccess)
+    .then(api.indexGoals)
+    .then(ui.indexGoalsSuccess)
     .catch(ui.destroyGoalFailure)
 }
 module.exports = {
