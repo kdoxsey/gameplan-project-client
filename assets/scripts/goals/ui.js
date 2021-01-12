@@ -1,5 +1,5 @@
 'use strict'
-// const store = require('./..store')
+const api = require('./api')
 
 const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
@@ -29,6 +29,7 @@ const indexGoalsSuccess = function (response) {
     $('#hide-goals-button').show()
     $('#index-goals-button').hide()
     $('form').trigger('reset')
+    console.log('index request sent')
   })
 }
 
@@ -69,6 +70,10 @@ const destroyGoalSuccess = function () {
   $('#message').text('goal deleted')
   $('form').trigger('reset')
   $('#delete-goal-form').hide()
+  console.log('delete request sent')
+  api.indexGoals()
+  $('#goals').show()
+
 }
 
 const destroyGoalFailure = function (response) {

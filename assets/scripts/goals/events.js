@@ -48,7 +48,7 @@ const onCreateGoal = function (event) {
     .catch(ui.indexGoalsFailure)
 }
 
-const onIndexGoals = function (response) {
+const onIndexGoals = function (event) {
   event.preventDefault()
   api.indexGoals()
     .then(ui.indexGoalsSuccess)
@@ -87,7 +87,6 @@ const onDeleteGoal = function (event) {
   api.destroyGoal(data)
     .then(ui.destroyGoalSuccess)
     .catch(ui.destroyGoalFailure)
-    
 }
 module.exports = {
   onCreateGoal,
