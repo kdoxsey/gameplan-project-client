@@ -38,6 +38,7 @@ const indexGoalsSuccess = function (response) {
     $('#index-goals-button').hide()
     $('form').trigger('reset')
   }
+
     response.goals.forEach(goals => {
       const goalList = (`
       <section class="border">
@@ -52,7 +53,6 @@ const indexGoalsSuccess = function (response) {
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
-      
     })
   }
 
