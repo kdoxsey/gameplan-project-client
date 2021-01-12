@@ -27,8 +27,15 @@ const indexGoalsSuccess = function (response) {
     $('form').trigger('reset')
   }
     response.goals.forEach(goals => {
+      // const goalList = (`
+      // <p> [id]: ${goals._id} [name]: ${goals.name} [date created]: ${goals.createdAt}</p>
+      // `)
+
       const goalList = (`
-      <p> [id]: ${goals._id} [name]: ${goals.name} [date created]: ${goals.createdAt}</p>
+      <section class="border">
+      <h1> ${goals.name} </h1>
+      <p> ${goals._id} </p>
+      </section>
       `)
 
       $('#goals').append(goalList)
