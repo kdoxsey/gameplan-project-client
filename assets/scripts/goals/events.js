@@ -43,6 +43,9 @@ const onCreateGoal = function (event) {
   api.createNewGoal(data)
     .then(ui.createGoalSuccess)
     .catch(ui.createGoalFailure)
+  api.indexGoals()
+    .then(ui.indexGoalsSuccess)
+    .catch(ui.indexGoalsFailure)
 }
 
 const onIndexGoals = function (response) {
