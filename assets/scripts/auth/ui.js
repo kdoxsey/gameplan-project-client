@@ -58,6 +58,7 @@ const signOutSuccess = function () {
   $('#goals').text('')
   $('#hide-goals-button').hide()
   $('#change-password-form').hide()
+  $('#show-change-password-form-button').hide()
 }
 
 module.exports = {

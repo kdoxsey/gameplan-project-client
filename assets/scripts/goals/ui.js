@@ -74,6 +74,7 @@ const destroyGoalSuccess = function (response) {
 const destroyGoalFailure = function (response) {
   $('#message').text('goal failed to delete')
   $('form').trigger('reset')
+  $('#goals').hide()
 }
 
 module.exports = {
