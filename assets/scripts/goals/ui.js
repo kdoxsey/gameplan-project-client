@@ -11,16 +11,20 @@ const createGoalFailure = function (response) {
   $('form').trigger('reset')
 }
 
+
 const showGoalSuccess = function (response) {
   $('#goals').html('')
   $('form').trigger('reset')
   console.log(response)
+  const deleteGoal = function () {
+    console.log('delete button clicked')
+  }
   const goalShow = (`
       <section class="border">
       <h1> ${response.goal.name} </h1>
       <p> ${response.goal._id} </p>
-      <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
-      
+      <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
+      <button onClick="{console.log('delete button clicked')}">delete</button>
       </section>
       `)
 
