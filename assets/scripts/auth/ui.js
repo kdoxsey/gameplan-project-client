@@ -31,6 +31,8 @@ const signInFailure = function (response) {
 const changePasswordSuccess = function (response) {
   $('#message').text('password has been changed')
   $('form').trigger('reset')
+  $('#change-password-form').hide()
+  $('#show-change-password-form-button').show()
 }
 
 const changePasswordFailure = function (response) {

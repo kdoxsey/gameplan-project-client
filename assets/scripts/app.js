@@ -14,12 +14,14 @@ $(() => {
   $('#sign-up-form').hide()
   $('#buttons').hide()
   // hide the signed-in auth forms
+  //hide and show change password forms
   $('#change-password-form').hide()
+  $('#show-change-password-form-button').on('click', authEvents.onShowChangePasswordForm)
+  //
+  $('#cancel').on('click', authEvents.onCancelChangePassword)
   $('#show-change-password-form-button').hide()
   $('#sign-out-form').hide()
   // show the signed in auth forms
-  $('#show-change-password-form-button').on('click', authEvents.onShowChangePasswordForm)
-  //
   $('#show-signup-form-button').on('click', authEvents.onShowSignUp)
   $('#show-signin-form-button').hide()
   $('#show-signin-form-button').on('click', authEvents.onShowSignIn)

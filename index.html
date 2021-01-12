@@ -100,23 +100,22 @@
           </div>
           <!-- CHANGE PW -->
           <div id="show-change-password-form-button">
-            <p id="account-message">hate your password?</p>
             <button type="submit">change password</button>
           </div>
 
           <form id="change-password-form">
-            <legend id="change-password">change password</legend>
             <!-- old pw -->
               <input type="password" name="passwords[old]" placeholder="old password"></br>
             <!-- new pw -->
               <input type="password" name="passwords[new]" placeholder="new password"></br>
-            <!-- sign in button -->
+            <!-- submit button -->
               <input type="submit" value="change password">
+              <!-- cancel button -->
+              <input id="cancel" type="button" value="cancel">
           </form>
 
           <!-- SIgn OUT -->
           <form id="sign-out-form">
-            <legend id="sign-out">sign out</legend>
               <input type="submit" value="sign out">
           </form>
     </body>
