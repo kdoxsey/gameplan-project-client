@@ -12,9 +12,21 @@ const createGoalFailure = function (response) {
 }
 
 const showGoalSuccess = function (response) {
-  $('#goals').text(response.goal._id + ": '" + response.goal.name + "' created at " + response.goal.createdAt)
+  $('#goals').html('')
   $('form').trigger('reset')
+  console.log(response)
+  const goalShow = (`
+      <section class="border">
+      <h1> ${response.goal.name} </h1>
+      <p> ${response.goal._id} </p>
+      <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
+      
+      </section>
+      `)
+
+      $('#goals').append(goalShow)
 }
+
 
 const indexGoalsSuccess = function (response) {
   console.log(response.goals.length)
@@ -27,10 +39,6 @@ const indexGoalsSuccess = function (response) {
     $('form').trigger('reset')
   }
     response.goals.forEach(goals => {
-      // const goalList = (`
-      // <p> [id]: ${goals._id} [name]: ${goals.name} [date created]: ${goals.createdAt}</p>
-      // `)
-
       const goalList = (`
       <section class="border">
       <h1> ${goals.name} </h1>
