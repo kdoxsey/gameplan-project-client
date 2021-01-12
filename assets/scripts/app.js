@@ -10,7 +10,7 @@ const goalsEvents = require('./goals/events')
 
 $(() => {
   // your JS code goes here
-  $('#message').text('sort out your life')
+  $('#message').text('sign in to sort out your life')
   $('#sign-up-form').hide()
   $('#buttons').hide()
   // hide the signed-in auth forms
@@ -20,6 +20,8 @@ $(() => {
   $('#show-change-password-form-button').on('click', authEvents.onShowChangePasswordForm)
   //
   $('#show-signup-form-button').on('click', authEvents.onShowSignUp)
+  $('#show-signin-form-button').hide()
+  $('#show-signin-form-button').on('click', authEvents.onShowSignIn)
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)

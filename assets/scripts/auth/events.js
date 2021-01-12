@@ -41,8 +41,17 @@ const onSignOut = function (event) {
 const onShowSignUp = function (event) {
   event.preventDefault()
   $('#sign-up-form').show()
+  $('#sign-in-form').hide()
   $('#show-signup-form-button').hide()
-  $('#account-message').hide()
+  $('#show-signin-form-button').show()
+}
+
+const onShowSignIn = function (event) {
+  event.preventDefault()
+  $('#sign-in-form').show()
+  $('#sign-up-form').hide()
+  $('#show-signin-form-button').hide()
+  $('#show-signup-form-button').show()
 }
 
 const onShowChangePasswordForm = function (event) {
@@ -57,5 +66,6 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onShowSignUp,
+  onShowSignIn,
   onShowChangePasswordForm
 }
