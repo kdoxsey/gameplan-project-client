@@ -15,6 +15,7 @@ $(() => {
   $('#buttons').hide()
   // hide the signed-in auth forms
   $('#change-password-form').hide()
+  $('#show-change-password-form-button').hide()
   $('#sign-out-form').hide()
   // show the signed in auth forms
   $('#show-change-password-form-button').on('click', authEvents.onShowChangePasswordForm)

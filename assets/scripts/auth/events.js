@@ -55,9 +55,9 @@ const onShowSignIn = function (event) {
 }
 
 const onShowChangePasswordForm = function (event) {
-  event.preventDefault(
-    $('#change-password-form').show()
-  )
+  event.preventDefault()
+  $('#change-password-form').show()
+  $('#show-change-password-form-button').hide()
 }
 
 module.exports = {

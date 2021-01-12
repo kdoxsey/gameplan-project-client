@@ -20,7 +20,7 @@ const signInSuccess = function (response) {
   $('#buttons').show()
   $('#index-goals-button').show()
   $('#sign-out-form').show()
-  $('#change-password-form').show()
+  $('#show-change-password-form-button').show()
 }
 
 const signInFailure = function (response) {
