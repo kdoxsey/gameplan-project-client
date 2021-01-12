@@ -87,6 +87,7 @@ const onDeleteGoal = function (event) {
   api.destroyGoal(data)
     .then(ui.destroyGoalSuccess)
     .catch(ui.destroyGoalFailure)
+    
 }
 module.exports = {
   onCreateGoal,

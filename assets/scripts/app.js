@@ -31,7 +31,6 @@ $(() => {
   $('#sign-out-form').on('submit', authEvents.onSignOut)
   $('#create-goal-form').on('submit', goalsEvents.onCreateGoal)
   $('#hide-goals-button').hide()
-  $('#delete-goal-form').hide()
   $('#index-goals-button').on('click', goalsEvents.onIndexGoals)
   $('#index-all-goals').on('click', goalsEvents.onIndexAllGoals)
   $('#hide-goals-button').on('click', goalsEvents.onHideGoals)
@@ -42,6 +41,7 @@ $(() => {
   $('#create-goal-form').hide()
   $('#show-goal-form').hide()
   $('#update-goal-form').hide()
+  $('#delete-goal-form').hide()
   // show crud forms
   $('#create-goal-button').on('click', goalsEvents.onShowCreateGoalForm)
   $('#delete-goal-button').on('click', goalsEvents.onShowDeleteGoalForm)

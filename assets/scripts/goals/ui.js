@@ -65,7 +65,7 @@ const updateGoalFailure = function (response) {
   $('form').trigger('reset')
 }
 
-const destroyGoalSuccess = function (response) {
+const destroyGoalSuccess = function () {
   $('#message').text('goal deleted')
   $('form').trigger('reset')
   $('#delete-goal-form').hide()
