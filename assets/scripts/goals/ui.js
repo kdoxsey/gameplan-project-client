@@ -17,20 +17,28 @@ const showGoalSuccess = function (response) {
 }
 
 const indexGoalsSuccess = function (response) {
+  console.log(response.goals.length)
   $('#goals').show()
   $('#goals').html('')
-
-  response.goals.forEach(goals => {
-    const goalList = (`
-      <p> [id]: ${goals._id} [name]: ${goals.name} [date created]: ${goals.createdAt}</p>
-  `)
-    $('#goals').append(goalList)
+  if (response.goals.length === 0) {
+    $('#goals').text('goals list is empty')
     $('#hide-goals-button').show()
     $('#index-goals-button').hide()
     $('form').trigger('reset')
-    console.log(response.goals)
-  })
-}
+  }
+    response.goals.forEach(goals => {
+      const goalList = (`
+      <p> [id]: ${goals._id} [name]: ${goals.name} [date created]: ${goals.createdAt}</p>
+      `)
+
+      $('#goals').append(goalList)
+      $('#hide-goals-button').show()
+      $('#index-goals-button').hide()
+      $('form').trigger('reset')
+      
+    })
+  }
+
 
 const indexGoalsFailure = function (response) {
   $('#message').text('unable to index goals')
