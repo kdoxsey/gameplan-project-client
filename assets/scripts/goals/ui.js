@@ -1,9 +1,11 @@
 'use strict'
+import dateFormat from 'dateformat'
 
 const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
   $('#create-goal-form').hide()
+  console.log(response)
 }
 
 const createGoalFailure = function (response) {
@@ -16,15 +18,17 @@ const showGoalSuccess = function (response) {
   $('#goals').html('')
   $('form').trigger('reset')
   console.log(response)
-  const deleteGoal = function () {
-    console.log('delete button clicked')
-  }
+  
+//   const deleteGoal = function () {
+//   console.log('delete button clicked')
+// }
   const goalShow = (`
       <section class="border">
       <h1> ${response.goal.name} </h1>
       <p> ${response.goal._id} </p>
+      <p> created on ${dateFormat(response.goal.createdAt, 'dddd, mmmm dS, yyyy')} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
-      <button onClick="{console.log('delete button clicked')}">delete</button>
+      <button onClick="{console.log('help')}">delete</button>
       </section>
       `)
 
@@ -42,11 +46,16 @@ const indexGoalsSuccess = function (response) {
     $('#index-goals-button').hide()
     $('form').trigger('reset')
   }
-
-    response.goals.forEach(goals => {
+  let count = 1
+  response.goals.forEach(goals => {
       const goalList = (`
       <section class="border">
-      <h1> ${goals.name} </h1>
+      <h1> ${count} : ${goals.name} </h1>
+      <h3> steps: ${goals.step1} </h3>
+      <h3> steps: ${goals.step2} </h3>
+      <h3> steps: ${goals.step3} </h3>
+      <h3> steps: ${goals.step4} </h3>
+      <h3> steps: ${goals.step5} </h3>
       <p> ${goals._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
@@ -57,9 +66,10 @@ const indexGoalsSuccess = function (response) {
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
+      return count += 1
     })
   }
-
+  
 
 const indexGoalsFailure = function (response) {
   $('#message').text('unable to index goals')
