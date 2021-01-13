@@ -62,11 +62,7 @@
           <legend>new goal</legend>
           <input type="text" name="goal[name]" placeholder="create goal">
           <p>Add up to 5 steps</p>
-          <input type="text" name="goal[step1]" placeholder="add step">
-          <input type="text" name="goal[step2]" placeholder="add step">
-          <input type="text" name="goal[step3]" placeholder="add step">
-          <input type="text" name="goal[step4]" placeholder="add step">
-          <input type="text" name="goal[step5]" placeholder="add step">
+          <input type="text" name="goal[steps]" placeholder="add step">
           <button type="submit">create</button>
         </form>
 
@@ -81,8 +77,8 @@
             <form id="update-goal-form">
               <legend>update goal</legend>
                 <input required type="text" name="goal[id]" placeholder="goal id"></br>
-                <input required type="text" name="goal[name]" placeholder="new name"></br>
-                <input type="text" name="goal[step]"
+                <input type="text" name="goal[name]" placeholder="new name"></br>
+                <input id="add-step" type="text" name="goal[steps]"
                 placeholder="add step">
                 <button type="submit">update</button>
             </form>

@@ -51,11 +51,7 @@ const indexGoalsSuccess = function (response) {
       const goalList = (`
       <section class="border">
       <h1> ${count} : ${goals.name} </h1>
-      <h3> steps: ${goals.step1} </h3>
-      <h3> steps: ${goals.step2} </h3>
-      <h3> steps: ${goals.step3} </h3>
-      <h3> steps: ${goals.step4} </h3>
-      <h3> steps: ${goals.step5} </h3>
+      <h3> steps: ${goals.steps} </h3>
       <p> ${goals._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
