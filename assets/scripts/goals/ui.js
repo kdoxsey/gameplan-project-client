@@ -46,11 +46,10 @@ const indexGoalsSuccess = function (response) {
     $('#index-goals-button').hide()
     $('form').trigger('reset')
   }
-  let count = 1
   response.goals.forEach(goals => {
       const goalList = (`
       <section class="border">
-      <h1> ${count} : ${goals.name} </h1>
+      <h1> ${goals.name} </h1>
       <h3> ${goals.description} </h3>
       <h3> ${goals.steps} </h3>
       <p> id: ${goals._id} </p>
@@ -63,7 +62,6 @@ const indexGoalsSuccess = function (response) {
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
-      return count += 1
     })
   }
   
