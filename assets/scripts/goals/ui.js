@@ -51,8 +51,9 @@ const indexGoalsSuccess = function (response) {
       const goalList = (`
       <section class="border">
       <h1> ${count} : ${goals.name} </h1>
-      <h3> steps: ${goals.steps} </h3>
-      <p> ${goals._id} </p>
+      <h3> ${goals.description} </h3>
+      <h3> ${goals.steps} </h3>
+      <p> id: ${goals._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
       </section>
