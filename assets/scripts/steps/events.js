@@ -2,7 +2,7 @@
 const ui = require('./ui')
 const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
-const { Console } = require('console')
+// const { Console } = require('console')
 // const store = require('./../store')
 
 const onShowCreateStepForm = function (event) {
