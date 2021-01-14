@@ -4,6 +4,7 @@
 // const example = require('./example')
 const authEvents = require('./auth/events')
 const goalsEvents = require('./goals/events')
+const stepsEvents = require('./steps/events')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -29,6 +30,7 @@ $(() => {
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out-form').on('submit', authEvents.onSignOut)
+  // goals
   $('#create-goal-form').on('submit', goalsEvents.onCreateGoal)
   $('#hide-goals-button').hide()
   $('#index-goals-button').on('click', goalsEvents.onIndexGoals)
@@ -37,14 +39,33 @@ $(() => {
   $('#show-goal-form').on('submit', goalsEvents.onShowGoal)
   $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)
   $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
-  // hide the crud forms
+  //steps
+  $('#create-step-form').on('submit', stepsEvents.onCreateStep)
+  $('#hide-steps-button').hide()
+  $('#index-steps-button').on('click', stepsEvents.onIndexSteps)
+  $('#hide-steps-button').on('click', stepsEvents.onHideSteps)
+  $('#show-step-form').on('submit', stepsEvents.onShowStep)
+  $('#update-step-form').on('submit', stepsEvents.onUpdateStep)
+  $('#delete-step-form').on('submit', stepsEvents.onDeleteStep)
+  // hide the GOAL crud forms
   $('#create-goal-form').hide()
   $('#show-goal-form').hide()
   $('#update-goal-form').hide()
   $('#delete-goal-form').hide()
-  // show crud forms
+  // show GOAL crud forms
   $('#create-goal-button').on('click', goalsEvents.onShowCreateGoalForm)
   $('#delete-goal-button').on('click', goalsEvents.onShowDeleteGoalForm)
   $('#show-goal-button').on('click', goalsEvents.onShowShowGoalForm)
   $('#update-goal-button').on('click', goalsEvents.onShowUpdateGoalForm)
+
+    // hide the STEP crud forms
+  $('#create-step-form').hide()
+  $('#show-step-form').hide()
+  $('#update-step-form').hide()
+  $('#delete-step-form').hide()
+  // show STEP crud forms
+  $('#create-step-button').on('click', stepsEvents.onShowCreateStepForm)
+  $('#delete-step-button').on('click', stepsEvents.onShowDeleteStepForm)
+  $('#show-step-button').on('click', stepsEvents.onShowShowStepForm)
+  $('#update-step-button').on('click', stepsEvents.onShowUpdateStepForm)
 })

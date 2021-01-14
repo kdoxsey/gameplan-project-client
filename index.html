@@ -79,8 +79,6 @@
           <input required type="text" name="goal[id]" placeholder="goal id"></br>
           <input type="text" name="goal[name]" placeholder="new name"></br>
           <input type="text" name="goal[description]" placeholder="description">
-          <input id="add-step" type="text" name="goal[steps]"
-          placeholder="add step">
           <button type="submit">update</button>
         </form>
         
@@ -90,15 +88,23 @@
           <input type="text" name="goal[id]" placeholder="goal id here">
           <button type="submit">delete</button>
         </form>
+
         <!--STEP STUFF-->
+        <div id="step-stuff"></div>
         <!--NEW STEP-->
-        <!-- <form id="create-step-form">
-          <legend>add step to a goal</legend>
-          <input required type="text" name="goal[id]" placeholder="goal id"></br>
-          <input type="text" name="step[name]" placeholder="add step">
-          <button type="submit">add</button>
+        <form id="create-step-form">
+          <legend>new step</legend>
+          <input type="text" name="step[name]" placeholder="create step">
+          <input type="text" name="step[description]" placeholder="add step description">
+          <button type="submit">create</button>
         </form>
-        <br> -->
+
+
+        <section id="goals" class="border">
+        </section>
+        </div>
+      </div>
+        <br>
         <!-- buttons -->
         <div id="buttons">
           <button class = "button" id="create-goal-button">create a goal</button>
@@ -107,6 +113,13 @@
           <button class = "button" id="delete-goal-button">delete a goal</button>
           <button class = "button" id="index-goals-button">show all goals</button>
           <button class = "button" id="hide-goals-button">hide goal(s)</button>
+          <br />
+          <button class="button" id="create-step-button">create a step</button>
+          <button class="button" id="show-step-button">search step by id</button>
+          <button class="button" id="update-step-button">update a step</button>
+          <button class="button" id="delete-step-button">delete a step</button>
+          <button class="button" id="index-steps-button">show all steps</button>
+          <button class="button" id="hide-steps-button">hide step(s)</button>
             </div>
             <section id="goals" class="border">
             </section>

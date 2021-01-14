@@ -3,6 +3,7 @@ const store = require('./../store')
 const signUpSuccess = function (response) {
   $('#message').text('thanks for signing up ' + response.user.email)
   $('form').trigger('reset')
+
 }
 
 const signUpFailure = function (response) {
@@ -21,6 +22,8 @@ const signInSuccess = function (response) {
   $('#index-goals-button').show()
   $('#sign-out-form').show()
   $('#show-change-password-form-button').show()
+  console.log('token is ' + store.user.token)
+  console.log(response.user._id)
 }
 
 const signInFailure = function (response) {
