@@ -25,6 +25,7 @@ const showGoalSuccess = function (response) {
   const goalShow = (`
       <section class="border">
       <h1> ${response.goal.name} </h1>
+      <h6> ${response.goal.description} </h6>
       <p> ${response.goal._id} </p>
       <p> created on ${dateFormat(response.goal.createdAt, 'dddd, mmmm dS, yyyy')} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
@@ -50,12 +51,8 @@ const indexGoalsSuccess = function (response) {
       const goalList = (`
       <section class="border">
       <h1> ${goals.name} </h1>
-      <h3> ${goals.description} </h3>
-      <h3> ${goals.steps} </h3>
+      <h6> ${goals.description} </h6>
       <p> id: ${goals._id} </p>
-      <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
-      
-      </section>
       `)
 
       $('#goals').append(goalList)

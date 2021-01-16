@@ -31,7 +31,6 @@ const showStepSuccess = function (response) {
       <button onClick="{console.log('help')}">delete</button>
       </section>
       `)
-
       $('#steps').append(stepShow)
 }
 
@@ -51,11 +50,8 @@ const indexStepsSuccess = function (response) {
       const stepList = (`
       <section class="border">
       <h1> ${count} : ${steps.name} </h1>
-      <h3> ${steps.description} </h3>
-      <h3> ${steps.steps} </h3>
       <p> id: ${steps._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
-      
       </section>
       `)
 
