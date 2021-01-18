@@ -51,7 +51,7 @@ const indexStepsSuccess = function (response) {
   response.steps.forEach(steps => {
       const stepList = (`
       <section class="border">
-      <h1> ${count} : ${steps.text} </h1>
+      <h1> Step ${count}: ${steps.text} </h1>
       <p> id: ${steps._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
