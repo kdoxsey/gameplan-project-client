@@ -2,7 +2,7 @@
 import dateFormat from 'dateformat'
 
 const createStepSuccess = function (response) {
-  $('#message').text('new step is ' + response.step.name + ' and its id is ' + response.step._id + '. good luck')
+  $('#message').text('new step created')
   $('form').trigger('reset')
   $('#create-step-form').hide()
   console.log(response)
@@ -17,14 +17,14 @@ const createStepFailure = function (response) {
 const showStepSuccess = function (response) {
   $('#steps').html('')
   $('form').trigger('reset')
-  console.log(response)
+ 
   
 //   const deleteStep = function () {
 //   console.log('delete button clicked')
 // }
   const stepShow = (`
       <section class="border">
-      <h1> ${response.step.name} </h1>
+      <h1> ${response.step.text} </h1>
       <p> ${response.step._id} </p>
       <p> created on ${dateFormat(response.step.createdAt, 'dddd, mmmm dS, yyyy')} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
@@ -38,6 +38,7 @@ const showStepSuccess = function (response) {
 
 const indexStepsSuccess = function (response) {
   console.log(response.steps.length)
+  console.log(response)
   $('#steps').show()
   $('#steps').html('')
   if (response.steps.length === 0) {
@@ -50,9 +51,7 @@ const indexStepsSuccess = function (response) {
   response.steps.forEach(steps => {
       const stepList = (`
       <section class="border">
-      <h1> ${count} : ${steps.name} </h1>
-      <h3> ${steps.description} </h3>
-      <h3> ${steps.steps} </h3>
+      <h1> ${count} : ${steps.text} </h1>
       <p> id: ${steps._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       

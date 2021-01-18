@@ -5,7 +5,7 @@ const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
   $('#create-goal-form').hide()
-  console.log(response)
+   console.log(response)
 }
 
 const createGoalFailure = function (response) {
@@ -51,7 +51,7 @@ const indexGoalsSuccess = function (response) {
       <section class="border">
       <h1> ${goals.name} </h1>
       <h3> ${goals.description} </h3>
-      <h3> ${goals.steps} </h3>
+      <h3> steps: ${goals.steps} </h3>
       <p> id: ${goals._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
