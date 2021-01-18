@@ -5,7 +5,6 @@ const createStepSuccess = function (response) {
   $('#message').text('new step created')
   $('form').trigger('reset')
   $('#create-step-form').hide()
-  console.log(response)
 }
 
 const createStepFailure = function (response) {
