@@ -1,6 +1,6 @@
 # Game Plan
 
-This is the client-side component of GAMEPLAN, an easy-to-use application that allows users to create and keep track of goals. The server-side component repository can be found here: https://github.com/kdoxsey/gameplan-project-api
+This is the client-side component of GAMEPLAN, an easy-to-use application that allows users to create and keep track of goals. The server-side component repository can be found here: https://github.com/Doxsey-Suh/gameplan-project-client
 
 ## Technologies used
 
