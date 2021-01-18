@@ -53,6 +53,7 @@ const indexGoalsSuccess = function (response) {
       <h1> ${goals.name} </h1>
       <h6> ${goals.description} </h6>
       <p> id: ${goals._id} </p>
+      <p> ${goals.steps} </p>
       `)
 
       $('#goals').append(goalList)
