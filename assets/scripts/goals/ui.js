@@ -51,7 +51,6 @@ const indexGoalsSuccess = function (response) {
       <section class="border">
       <h1> ${goals.name} </h1>
       <h3> ${goals.description} </h3>
-      <h3> steps: ${goals.steps} </h3>
       <p> id: ${goals._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
