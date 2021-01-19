@@ -1,12 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 
+html {
+  background: url('public/blackboard-texture_1205-375.jpg' );
+  background-size: cover;
+}
+
 body {
   margin-left: auto;
   margin-right: auto;
   font-family: Tahoma;
   // text-align: center;
-  background: black;
-  color: white;
+  // background: black;
+  // color: white;
   max-width: 100vw;
 }
 
