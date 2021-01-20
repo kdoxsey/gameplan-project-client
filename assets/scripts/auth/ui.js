@@ -1,4 +1,5 @@
 const store = require('./../store')
+const goalsEvents = require('./../goals/events')
 
 const signUpSuccess = function (response) {
   $('#message').text('thanks for signing up ' + response.user.email)
@@ -24,6 +25,7 @@ const signInSuccess = function (response) {
   $('#show-change-password-form-button').show()
   console.log('token is ' + store.user.token)
   console.log(response.user._id)
+  goalsEvents.onIndexGoals()
 }
 
 const signInFailure = function (response) {

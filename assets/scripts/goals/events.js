@@ -49,7 +49,7 @@ const onCreateGoal = function (event) {
 }
 
 const onIndexGoals = function (event) {
-  event.preventDefault()
+  // event.preventDefault()
   api.indexGoals()
     .then(ui.indexGoalsSuccess)
     .catch(ui.indexGoalsFailure)
