@@ -48,7 +48,7 @@ const indexGoalsSuccess = function (response) {
   }
   response.goals.forEach(goals => {
       const goalList = (`
-      <section class="border">
+      <section class="container border">
       <h1> ${goals.name} </h1>
       <h3> ${goals.description} </h3>
       <h3> steps: ${goals.steps} </h3>
