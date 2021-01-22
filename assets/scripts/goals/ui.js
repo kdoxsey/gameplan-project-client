@@ -18,6 +18,7 @@ const showGoalSuccess = function (response) {
   $('#goals').html('')
   $('form').trigger('reset')
   console.log(response)
+  console.log(response.goal._id)
   
 //   const deleteGoal = function () {
 //   console.log('delete button clicked')
@@ -49,9 +50,8 @@ const indexGoalsSuccess = function (response) {
   response.goals.forEach(goals => {
       const goalList = (`
       <section class="container border">
-      <h1> ${goals.name} </h1>
+      <h1> <a href="https://www.google.com"> ${goals.name} </a> </h1>
       <h3> ${goals.description} </h3>
-      <h3> steps: ${goals.steps} </h3>
       <p> id: ${goals._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       

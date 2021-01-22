@@ -67,10 +67,10 @@ $(() => {
   $('#update-goal-button').on('click', goalsEvents.onShowUpdateGoalForm)
   $('#update-goal-button').hide()
     // hide the STEP crud forms
-  $('#create-step-form').hide()
-  $('#show-step-form').hide()
-  $('#update-step-form').hide()
-  $('#delete-step-form').hide()
+  // $('#create-step-form').hide()
+  // $('#show-step-form').hide()
+  // $('#update-step-form').hide()
+  // $('#delete-step-form').hide()
   // show STEP crud forms
   $('#create-step-button').on('click', stepsEvents.onShowCreateStepForm)
   $('#create-step-button').hide()
