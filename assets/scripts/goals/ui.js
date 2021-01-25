@@ -5,7 +5,7 @@ const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
   $('#create-goal-form').hide()
-   console.log(response)
+  console.log(response)
 }
 
 const createGoalFailure = function (response) {
@@ -20,9 +20,9 @@ const showGoalSuccess = function (response) {
   console.log(response)
   console.log(response.goal._id)
   
-//   const deleteGoal = function () {
-//   console.log('delete button clicked')
-// }
+  //   const deleteGoal = function () {
+  //   console.log('delete button clicked')
+  // }
   const goalShow = (`
       <section class="border">
       <h1> ${response.goal.name} </h1>
@@ -33,24 +33,31 @@ const showGoalSuccess = function (response) {
       </section>
       `)
 
-      $('#goals').append(goalShow)
+  $('#goals').append(goalShow)
 }
 
 
 const indexGoalsSuccess = function (response) {
   console.log(response.goals.length)
   $('#goals').show()
-  $('#goals').html('')
+  // $('#goals').html('')
   if (response.goals.length === 0) {
     $('#goals').text('goals list is empty')
     $('#hide-goals-button').show()
     $('#index-goals-button').hide()
-    $('form').trigger('reset')
+    // $('form').trigger('reset')
   }
+  
+  // <button id="test-button" type="submit"> hey </button> 
+  //  const handleclick =() => console.log('hello')  onclick= ${handleclick}
   response.goals.forEach(goals => {
-      const goalList = (`
+    const goalList = (`
+
       <section class="container border">
-      <h1> <a href="https://www.google.com"> ${goals.name} </a> </h1>
+      <h1 id="show-goal"> <a href=""> ${goals.name} </a> </h1>
+        <div id="test-button">
+        <button type="button"> hey </button> 
+      </div>
       <h3> ${goals.description} </h3>
       <p> id: ${goals._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
@@ -58,12 +65,12 @@ const indexGoalsSuccess = function (response) {
       </section>
       `)
 
-      $('#goals').append(goalList)
-      $('#hide-goals-button').show()
-      $('#index-goals-button').hide()
-      $('form').trigger('reset')
-    })
-  }
+    $('#goals').append(goalList)
+    $('#hide-goals-button').show()
+    $('#index-goals-button').hide()
+    $('form').trigger('reset')
+  })
+}
   
 
 const indexGoalsFailure = function (response) {

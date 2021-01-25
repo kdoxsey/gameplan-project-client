@@ -8,9 +8,11 @@ const stepsEvents = require('./steps/events')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+// console.log('hello from app.js')
 
 $(() => {
   // your JS code goes here
+  $('#test-button').on('click', goalsEvents.testButton)
 
   $('#message').text('sign in to sort out your life')
   $('#sign-up-form').hide()
@@ -38,6 +40,7 @@ $(() => {
   // $('#index-all-goals').on('click', goalsEvents.onIndexAllGoals)
   $('#hide-goals-button').on('click', goalsEvents.onHideGoals)
   $('#show-goal-form').on('submit', goalsEvents.onShowGoal)
+  $('#show-goal').on('click', goalsEvents.onShowGoal)
   $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)
   
   $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
