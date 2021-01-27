@@ -51,7 +51,6 @@ const onCreateGoal = function (event) {
     .then(api.indexGoals)
     .then(ui.indexGoalsSuccess)
     .catch(ui.createGoalFailure)
-    .catch(ui.indexGoalsFailure)
 }
 
 const onIndexGoals = function (event) {
@@ -72,8 +71,11 @@ const onShowGoal = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
+  // console.log('before the api request')
   api.showGoal(data)
+    // .then(console.log('after the api request'))
     .then(ui.showGoalSuccess)
+    // .then(console.log('after the ui response'))
     .catch(ui.showGoalFailure)
 }
 

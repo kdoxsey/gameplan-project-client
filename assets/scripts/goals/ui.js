@@ -1,5 +1,8 @@
 'use strict'
 import dateFormat from 'dateformat'
+import { apiUrl } from '../config'
+
+
 
 const testButtonSuccess = function (response) {
   console.log('test button from ui')
@@ -10,6 +13,9 @@ const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
   $('#create-goal-form').hide()
+  $('#goals').html('')
+  // $('#goals').html(response.goal.name)
+  console.log(response.goal)
   console.log(response)
 }
 
@@ -59,25 +65,23 @@ const showGoalSuccess = function (response) {
       const goalList = (`
       
       <section class="container border">
-      <h1 id="show-goal"> <a href=""> ${goals.name} </a> </h1>
-      <div id="test-button">
-      <button type="button"> hey </button> 
-      </div>
-      <h3> ${goals.description} </h3>
+      <h1 id="show-goal"> <a href="#"> ${goals.name} </a> </h1>
+      <p> description: ${goals.description} </p>
       <p> id: ${goals._id} </p>
-      <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
       </section>
       `)
       
+      // $('#goals').html('')
       $('#goals').prepend(goalList)
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
-      document.getElementById("test-button").addEventListener("click", handleClick)
-      function handleClick (response) {
-      console.log('test button clicked')
-      alert(goals.name)
+      
+      document.getElementById("show-goal").addEventListener("click", handleClick)
+
+      function handleClick () {
+      alert('steps placeholder')
     }
     })
     
