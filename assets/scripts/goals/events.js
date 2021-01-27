@@ -5,8 +5,8 @@ const getFormFields = require('./../../../lib/get-form-fields')
 // const store = require('./../store')
 
 const testButton = function (event) {
-  // event.preventDefault()
-  console.log('hello from event.js')
+  event.preventDefault()
+  console.log('test button clicked')
 }
 
 
