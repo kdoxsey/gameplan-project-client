@@ -75,12 +75,13 @@ const showGoalSuccess = function (response) {
       $('#index-goals-button').hide()
       $('form').trigger('reset')
       document.getElementById("test-button").addEventListener("click", handleClick)
+      function handleClick (response) {
+      console.log('test button clicked')
+      alert(goals.name)
+    }
     })
     
   }
-  function handleClick () {
-  console.log('test button clicked')
-}
   
   
 const indexGoalsFailure = function (response) {
