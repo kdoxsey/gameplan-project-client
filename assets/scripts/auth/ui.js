@@ -1,4 +1,5 @@
 const store = require('./../store')
+const goalsEvents = require('./../goals/events')
 
 const signUpSuccess = function (response) {
   $('#message').text('thanks for signing up ' + response.user.email)
@@ -13,7 +14,11 @@ const signUpFailure = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
+  const str = response.user.email
+  const nameReplace = str.replace(/@.*$/,"")
+  const name = nameReplace !== str ? nameReplace : null
+  $('#message').text('thanks for signing in ' + name.toUpperCase() + '. what do you want to accomplish?')
+  // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
   $('#show-signup-form-button').hide()
   $('#sign-up-form').hide()
@@ -24,6 +29,7 @@ const signInSuccess = function (response) {
   $('#show-change-password-form-button').show()
   console.log('token is ' + store.user.token)
   console.log(response.user._id)
+  goalsEvents.onIndexGoals()
 }
 
 const signInFailure = function (response) {

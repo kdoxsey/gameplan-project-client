@@ -2,10 +2,10 @@
 import dateFormat from 'dateformat'
 
 const createStepSuccess = function (response) {
-  $('#message').text('new step created')
+  $('#message').text('new step is ' + response.step.text + ' and its id is ' + response.step._id)
   $('form').trigger('reset')
   $('#create-step-form').hide()
-  console.log(response)
+  console.log(response.step.text)
 }
 
 const createStepFailure = function (response) {
@@ -51,7 +51,7 @@ const indexStepsSuccess = function (response) {
   response.steps.forEach(steps => {
       const stepList = (`
       <section class="border">
-      <h1> ${count} : ${steps.text} </h1>
+      <h1> Step ${count}: ${steps.text} </h1>
       <p> id: ${steps._id} </p>
       <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
       
