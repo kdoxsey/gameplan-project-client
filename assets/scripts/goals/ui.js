@@ -55,7 +55,7 @@ const showGoalSuccess = function (response) {
     // <button id="test-button" type="submit"> hey </button> 
     //  const handleclick =() => console.log('hello')  onclick= ${handleclick}
     response.goals.forEach(goals => {
-
+      
       const goalList = (`
       
       <section class="container border">
@@ -70,17 +70,17 @@ const showGoalSuccess = function (response) {
       </section>
       `)
       
-      $('#goals').append(goalList)
+      $('#goals').prepend(goalList)
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
+      document.getElementById("test-button").addEventListener("click", handleClick)
     })
-document.getElementById("test-button").addEventListener("click", handleClick)
-
+    
+  }
   function handleClick () {
   console.log('test button clicked')
 }
-  }
   
   
 const indexGoalsFailure = function (response) {
