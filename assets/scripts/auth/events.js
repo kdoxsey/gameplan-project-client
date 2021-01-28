@@ -8,6 +8,10 @@ const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
+  $('#sign-in-form').show()
+  $('#sign-up-form').hide()
+  $('#show-signin-form-button').hide()
+  $('#show-signup-form-button').show()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)

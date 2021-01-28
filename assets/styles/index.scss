@@ -1,14 +1,12 @@
 $theme-colors: (
-  "primary": #13DCC8,
-  "secondary": #ABE798
+  "primary": #13dcc8,
+  "secondary": #abe798,
 );
 
 @import "~bootstrap/scss/bootstrap";
 
-
-
 body {
-  background: url('public/blackboard-texture_1205-375.jpg' );
+  background: url("public/blackboard-texture_1205-375.jpg");
   // background-repeat: no-repeat;
   background-size: cover;
   margin-top: 4rem;
@@ -19,10 +17,8 @@ body {
   // background: black;
   // color: white;
   max-width: 100vw;
-  color:white;
+  color: white;
 }
-
-
 
 p {
   margin: 0;
@@ -40,9 +36,9 @@ p {
   // color: red;
 }
 
-#steps {
+#steps-list {
   // color: blue;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 #checkbox {

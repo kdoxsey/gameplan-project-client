@@ -82,6 +82,7 @@ const showGoalSuccess = function (response) {
 
       function handleClick () {
       alert('steps placeholder')
+      // $('#steps-list').toggle()
     }
     })
     
