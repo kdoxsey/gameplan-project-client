@@ -43,7 +43,7 @@ $(() => {
   $('#show-goal-form').on('submit', goalsEvents.onShowGoal)
   $('#show-goal').on('click', goalsEvents.onShowGoal)
   $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)
-  $('#cancel-create-goal').on('click', goalsEvents.onCancelCreateGoal)
+  // $('#cancel-create-goal').on('click', goalsEvents.onCancelCreateGoal)
   
   $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
   //steps

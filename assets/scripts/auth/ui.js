@@ -24,6 +24,7 @@ const signInSuccess = function (response) {
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#buttons').show()
+  $('#create-goal-form').show()
   // $('#index-goals-button').show()
   $('#sign-out-button').show()
   $('#show-change-password-form-button').show()

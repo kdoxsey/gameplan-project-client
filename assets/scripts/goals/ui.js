@@ -12,7 +12,6 @@ const testButtonSuccess = function (response) {
 const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
-  $('#create-goal-form').hide()
   $('#goals').html('')
   // $('#goals').html(response.goal.name)
   console.log(response.goal)
@@ -79,18 +78,30 @@ const showGoalSuccess = function (response) {
       </section>
       `)
 
+      const seeMore = (`
+      
+      <section class="container">
+      <h1>${goals.name}</h1>
+      <h2>${goals.description}</h2>
+      <p> ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
+      
+      </section>
+      `)
+
       // $('#goals').html('')
       $('#goals').prepend(goalList)
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
-      $('#steps-list').html(stepList).fadeOut()
+      $('#steps-list').html(stepList).hide()
+      $('#see-more').html(seeMore).hide()
       
       document.getElementById("show-goal").addEventListener("click", handleClick)
   
       function handleClick () {
         // console.log('step 1 for ' + goals.name)
         $('#steps-list').toggle()
+        $('#see-more').toggle()
 
     }
     })

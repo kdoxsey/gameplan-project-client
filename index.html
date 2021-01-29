@@ -13,8 +13,8 @@
     </head>
 
     <body>
+      <!-- container start -->
       <div class="container">
-        <div class="header">
       
       <h1 id="banner">gameplan</h1>
       <!-- <button id="test-button" onclick= "console.log('hello')"> hey </button> -->
@@ -23,106 +23,100 @@
         <button type="submit"> hey </button> 
       </div>
     </section> -->
-      <p id="message"></p>
-        </div>
+    <p id="message"></p>
+    <!-- AUTHORIZATION STUFF ON THE LANDING PAGE START-->
+          <section id="authorization">
+            <!-- SIGN IN -->
+            <form class="mb-0 col-6" id="sign-in-form">
+              <legend class="form-label" id="sign-in">sign in</legend>
+              <!-- email box -->
+              <input id="sign-in-email"  class="mb-2 form-control" type="text" name="credentials[email]" placeholder="email">
+              <!-- password box -->
+              <input id="sign-in-password" class="mb-2 form-control" type="password" name="credentials[password]" placeholder="password">
+              <!-- sign in button -->
+              <input type="submit" class="mb-4 btn btn-primary" value="sign in">
+            </form>
+            
+            
+            <!-- SIGN UP -->
+            <form id="sign-up-form" class ="col-6">
+              <legend id="sign-up">sign up</legend>
+              <!-- email box -->
+              <input class="mb-2 form-control"  id="sign-up-email" type="text" name="credentials[email]" placeholder="email">
+              <!-- password box -->
+              <input id="sign-up-password" class="mb-2 form-control"  type="password" name="credentials[password]" placeholder="password">
+              <!-- confirm password box -->
+              <input id="sign-up-password_confirmation" class="mb-2 form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+              <!-- sign up button -->
+              <input type="submit" class= "btn btn-primary" value="sign up">
+            </form>
+            
+            <!-- show signin form -->
+            <div id="show-signin-form-button">
+              <p class="mb-0" id="account-message">already have an account?</p>
+              <button type="submit" class= "btn btn-primary" class="btn btn-primary">sign in</button>
+            </div>
+      
+            <!-- show signup form -->
+            <div id="show-signup-form-button">
+              <p id="account-message">don't have an account yet?</p>
+              <button type="submit" class="btn btn-primary">sign up</button>
+            </div>
+            
+          </section>
+          <!-- AUTHORIZATION STUFF ON THE LANDING PAGE END-->
+  </div>
+  <!-- container end -->
 
 
-<!-- AUTHORIZATION STUFF ON THE LANDING PAGE START-->
-      <section id="authorization">
-        <!-- SIGN IN -->
-        <form class="mb-0 col-6" id="sign-in-form">
-          <legend class="form-label" id="sign-in">sign in</legend>
-          <!-- email box -->
-          <input id="sign-in-email"  class="mb-2 form-control" type="text" name="credentials[email]" placeholder="email">
-          <!-- password box -->
-          <input id="sign-in-password" class="mb-2 form-control" type="password" name="credentials[password]" placeholder="password">
-          <!-- sign in button -->
-          <input type="submit" class="mb-4 btn btn-primary" value="sign in">
-        </form>
-        
-        
-        <!-- SIGN UP -->
-        <form id="sign-up-form" class ="col-6">
-          <legend id="sign-up">sign up</legend>
-          <!-- email box -->
-          <input class="mb-2 form-control"  id="sign-up-email" type="text" name="credentials[email]" placeholder="email">
-          <!-- password box -->
-          <input id="sign-up-password" class="mb-2 form-control"  type="password" name="credentials[password]" placeholder="password">
-          <!-- confirm password box -->
-          <input id="sign-up-password_confirmation" class="mb-2 form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-          <!-- sign up button -->
-          <input type="submit" class= "btn btn-primary" value="sign up">
-        </form>
-        
-        <!-- show signin form -->
-        <div id="show-signin-form-button">
-          <p class="mb-0" id="account-message">already have an account?</p>
-          <button type="submit" class= "btn btn-primary" class="btn btn-primary">sign in</button>
-        </div>
-  
-        <!-- show signup form -->
-        <div id="show-signup-form-button">
-          <p id="account-message">don't have an account yet?</p>
-          <button type="submit" class="btn btn-primary">sign up</button>
-        </div>
-        
-      </section>
-      <!-- AUTHORIZATION STUFF ON THE LANDING PAGE END-->
-    </div>
+      
       
       <!---GOAL BUTTONS START-->
-      <div id="button-and-form">
 
       <div id="buttons">
-        <button class="btn btn-secondary mb-1 " id="create-goal-button">create a goal</button>
-        <button class="btn btn-secondary mb-1" id="show-goal-button">search goal by id</button>
+        <!-- <button class="btn btn-secondary mb-1 " id="create-goal-button">create a goal</button> -->
+        <!-- <button class="btn btn-secondary mb-1" id="show-goal-button">search goal by id</button>
         <button class="btn btn-secondary mb-1" id="update-goal-button">update a goal</button>
         <button class="btn btn-secondary mb-1" id="delete-goal-button">delete a goal</button>
-        <button class="btn btn-secondary mb-1" id="index-goals-button">show all goals</button>
+        <button class="btn btn-secondary mb-1" id="index-goals-button">show all goals</button> -->
         <!-- <button class="btn btn-secondary mb-1" id="hide-goals-button">hide goal(s)</button> -->
+
         <!---GOAL BUTTONS END-->
 
         <!---STEP BUTTONS START-->
-        <button class="btn btn-secondary mb-1" id="show-step-button">search step by id</button>
+        <!-- <button class="btn btn-secondary mb-1" id="show-step-button">search step by id</button>
         <button class="btn btn-secondary mb-1" id="update-step-button">update a step</button>
         <button class="btn btn-secondary mb-1" id="delete-step-button">delete a step</button>
         <button class="btn btn-secondary mb-1" id="index-steps-button">show all steps</button>
-        <button class="btn btn-secondary mb-1" id="hide-steps-button">hide step(s)</button>
+        <button class="btn btn-secondary mb-1" id="hide-steps-button">hide step(s)</button> -->
+
+        <!-- STEP BUTTONS END -->
       </div>
 
-      <div id="forms">
-        <!--NEW GOAL-->
-          <form id="create-goal-form">
-                    <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
-                    <input type="text" name="goal[name]" placeholder="New goal">
-                    <input type="text" name="goal[description]" placeholder="description">
-                    <button type="submit" class="btn btn-primary ">create</button>
-                    <input id="cancel-create-goal" class="btn btn-secondary" type="button" value="cancel">
-                  </form>
+      <!-- <div id="forms"> -->
                   
-                  
-                  <!-- SHOW GOAL -->
+                  <!-- SHOW GOAL
                   <form id="show-goal-form">
                     <legend>search a goal</legend>
                     <input name="goal[6005f267213fcbaf0bf19743]" type="text" placeholder="6005f267213fcbaf0bf19743">
                     <button type="submit" class= "btn btn-secondary">show</button>
                   </form>
                   
-                  <!-- UPDATE GOAL -->
-                  <form id="update-goal-form">
+                  UPDATE GOAL -->
+                  <!-- <form id="update-goal-form">
                     <legend>update goal</legend>
                     <input required type="text" name="goal[id]" placeholder="goal id"></br>
                     <input type="text" name="goal[name]" placeholder="new name"></br>
                     <input type="text" name="goal[description]" placeholder="description">
                     <button class= "btn btn-secondary" type="submit">update</button>
-                  </form>
+                  </form> -->
                   
                   <!-- DELETE GOAL -->
-                  <form id="delete-goal-form">
+                  <!-- <form id="delete-goal-form">
                     <legend>delete goal</legend>
                     <input type="text" name="goal[id]" placeholder="goal id here">
                     <button class= "btn btn-secondary" type="submit">delete</button>
-                  </form>
+                  </form> -->
                   
                   <!-- GOAL STUFF END-->
                   
@@ -159,16 +153,25 @@
                       <button class= "btn btn-secondary" type="submit">delete</button>
                     </form> -->
                     
-                  </div>
-              </div>
+                  <!-- </div> -->
         <!--STEP BUTTONS END-->
       
       <!-- GOAL STUFF START-->
+      <div id=page-display>
       <div id="goal-stuff">
+        <!--NEW GOAL-->
+        <form id="create-goal-form">
+          <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
+          <input type="text" name="goal[name]" placeholder="New Goal">
+          <input type="text" name="goal[description]" placeholder="Description">
+          <button type="submit" class="btn btn-primary ">Submit</button>
+          <!-- <input id="cancel-create-goal" class="btn btn-secondary" type="button" value="cancel"> -->
+        </form>
         <section id="goals">
         </section>
       </div>
-      
+      <div id="see-more"></div>
+      </div>
 
 
 <!-- SIGNED IN AUTH STUFF START-->

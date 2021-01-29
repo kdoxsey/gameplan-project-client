@@ -12,7 +12,7 @@ const testButton = function (event) {
 
 const onShowCreateGoalForm = function (event) {
   event.preventDefault()
-  $('#create-goal-form').show()
+  $('#create-goal-form').fadeIn()
   $('#delete-goal-form').hide()
   $('#show-goal-form').hide()
   $('#update-goal-form').hide()
@@ -55,7 +55,7 @@ const onCreateGoal = function (event) {
 
 const onCancelCreateGoal = function (event) {
   event.preventDefault()
-  $('#create-goal-form').hide()
+  $('#create-goal-form').fadeOut()
 }
 
 const onIndexGoals = function (event) {
