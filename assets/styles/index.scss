@@ -40,7 +40,9 @@ form {
 }
 
 #see-more {
-  margin: 300px;
+  width: 1000px;
+  margin-left: auto;
+  margin-top: 50px;
 }
 
 section.container.border {
@@ -67,6 +69,11 @@ section.container.border {
 }
 
 #empty-goals {
+  display: flex;
+  justify-content: center;
+}
+
+#message {
   display: flex;
   justify-content: center;
 }
@@ -99,7 +106,7 @@ section.container.border {
 
 #steps-list {
   // color: blue;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 #checkbox {
