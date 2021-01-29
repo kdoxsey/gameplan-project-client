@@ -12,7 +12,7 @@ const testButtonSuccess = function (response) {
 const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
-  $('#create-goal-form').hide()
+  $('#create-goal-form').fadeOut()
   $('#goals').html('')
   // $('#goals').html(response.goal.name)
   console.log(response.goal)
@@ -54,7 +54,7 @@ const showGoalSuccess = function (response) {
     if (response.goals.length === 0) {
       $('#goals').text('goals list is empty')
       $('#hide-goals-button').show()
-      $('#index-goals-button').hide()
+      $('#index-goals-button').fadeOut()
       // $('form').trigger('reset')
     }
     
@@ -86,15 +86,15 @@ const showGoalSuccess = function (response) {
       // $('#goals').html('')
       $('#goals').prepend(goalList)
       $('#hide-goals-button').show()
-      $('#index-goals-button').hide()
+      $('#index-goals-button').fadeOut()
       $('form').trigger('reset')
-      $('#steps-list').html(stepList).hide()
+      $('#steps-list').html(stepList).fadeOut()
       
       document.getElementById("show-goal").addEventListener("click", handleClick)
   
       function handleClick () {
         // console.log('step 1 for ' + goals.name)
-        $('#steps-list').toggle()
+        $('#steps-list').fadeToggle()
 
     }
     })
@@ -110,7 +110,7 @@ const indexGoalsFailure = function (response) {
 const hideGoalsSuccess = function (response) {
   $('#goals').text('')
   $('#index-goals-button').show()
-  $('#hide-goals-button').hide()
+  $('#hide-goals-button').fadeOut()
   $('form').trigger('reset')
 }
 
@@ -127,7 +127,7 @@ const showGoalFailure = function (response) {
 const updateGoalSuccess = function (response) {
   $('#message').text('goal has been updated')
   $('form').trigger('reset')
-  $('update-goal-form').hide()
+  $('update-goal-form').fadeOut()
 }
 
 const updateGoalFailure = function (response) {
@@ -138,13 +138,13 @@ const updateGoalFailure = function (response) {
 const destroyGoalSuccess = function () {
   $('#message').text('goal deleted')
   $('form').trigger('reset')
-  $('#delete-goal-form').hide()
+  $('#delete-goal-form').fadeOut()
 }
 
 const destroyGoalFailure = function (response) {
   $('#message').text('goal failed to delete')
   $('form').trigger('reset')
-  $('#goals').hide()
+  $('#goals').fadeOut()
 }
 
 module.exports = {
