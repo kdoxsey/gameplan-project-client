@@ -65,24 +65,37 @@ const showGoalSuccess = function (response) {
       const goalList = (`
       
       <section class="container border">
-      <h1 id="show-goal"> <a href="#"> ${goals.name} </a> </h1>
-      <p> description: ${goals.description} </p>
-      <p> id: ${goals._id} </p>
+      <h4 id="show-goal"> <a href="#"> ${goals.name} </a> </h4>
+      <p id="steps-list"> </p>
       
       </section>
       `)
+
+      const stepList = (`
+      
+      <section class="container">
+      <h5 id="show-goal"> <a href="#"> ${goals.description} </a> </h5>
+      
+      </section>
+      `)
+
+      // const stepList = (`
+      // stepList placeholder text
+      // `)
       
       // $('#goals').html('')
       $('#goals').prepend(goalList)
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
+      $('#steps-list').html(stepList).hide()
       
       document.getElementById("show-goal").addEventListener("click", handleClick)
-
+  
       function handleClick () {
-      alert('steps placeholder')
-      // $('#steps-list').toggle()
+        // console.log('step 1 for ' + goals.name)
+        $('#steps-list').toggle()
+
     }
     })
     

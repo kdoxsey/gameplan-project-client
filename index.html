@@ -12,7 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 
-    <body class= "container">
+    <body>
+      <div class="container">
       
       <h1 id="banner">gameplan</h1>
       <!-- <button id="test-button" onclick= "console.log('hello')"> hey </button> -->
@@ -65,6 +66,7 @@
         
       </section>
       <!-- AUTHORIZATION STUFF ON THE LANDING PAGE END-->
+    </div>
       
       <!---GOAL BUTTONS START-->
       <div id="buttons">
@@ -77,19 +79,21 @@
         <!---GOAL BUTTONS END-->
 
         <!---STEP BUTTONS START-->
-                  <div id="buttons">
                   <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
                   <button class="btn btn-secondary mb-1" id="show-step-button">search step by id</button>
                   <button class="btn btn-secondary mb-1" id="update-step-button">update a step</button>
                   <button class="btn btn-secondary mb-1" id="delete-step-button">delete a step</button>
                   <button class="btn btn-secondary mb-1" id="index-steps-button">show all steps</button>
                   <button class="btn btn-secondary mb-1" id="hide-steps-button">hide step(s)</button>
-                  </div>
+      </div>
         <!--STEP BUTTONS END-->
       
       <!-- GOAL STUFF START-->
       <div id="goal-stuff">
+        <section id="goals">
+        </section>
         <!--NEW GOAL-->
+        <div id="forms">
         <form id="create-goal-form">
           <legend>new goal</legend>
           <input type="text" name="goal[name]" placeholder="create goal">
@@ -120,15 +124,11 @@
           <input type="text" name="goal[id]" placeholder="goal id here">
           <button class= "btn btn-secondary" type="submit">delete</button>
         </form>
-
-        <section id="goals">
-        </section>
-        <br />
-      </div>
-      <!-- GOAL STUFF END-->
-
-
-<!--STEP STUFF START-->
+        
+        <!-- GOAL STUFF END-->
+        
+        
+        <!--STEP STUFF START-->
         <div id="step-stuff">
           <!--NEW STEP-->
           <form id="create-step-form">
@@ -160,10 +160,11 @@
             <button class= "btn btn-secondary" type="submit">delete</button>
           </form>
           
-          <section id="steps">
-          </section>
-      
         </div>
+        </div>
+        <br />
+      </div>
+      
 
 
 <!-- SIGNED IN AUTH STUFF START-->
@@ -184,7 +185,7 @@
           </form>
 
           <!-- SIgn OUT -->
-          <form id="sign-out-form">
+          <form id="sign-out-button">
               <input type="submit" class= "btn btn-secondary" value="sign out">
           </form>
 <!-- SIGNED IN AUTH STUFF END-->

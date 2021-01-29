@@ -13,7 +13,8 @@ const stepsEvents = require('./steps/events')
 $(() => {
   // your JS code goes here
   $('#test-button').on('click', goalsEvents.testButton)
-
+  $('#steps-list').hide()
+  $('#show-goal-button').hide()
   $('#message').text('sign in to sort out your life')
   $('#sign-up-form').hide()
   $('#buttons').hide()
@@ -24,7 +25,7 @@ $(() => {
   //
   $('#cancel').on('click', authEvents.onCancelChangePassword)
   $('#show-change-password-form-button').hide()
-  $('#sign-out-form').hide()
+  $('#sign-out-button').hide()
   // show the signed in auth forms
   $('#show-signup-form-button').on('click', authEvents.onShowSignUp)
   $('#show-signin-form-button').hide()
@@ -32,7 +33,7 @@ $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#sign-out-form').on('submit', authEvents.onSignOut)
+  $('#sign-out-button').on('submit', authEvents.onSignOut)
   // goals
   $('#create-goal-form').on('submit', goalsEvents.onCreateGoal)
   $('#hide-goals-button').hide()

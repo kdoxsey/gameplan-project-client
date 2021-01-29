@@ -6,7 +6,7 @@ $theme-colors: (
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background: url("public/blackboard-texture_1205-375.jpg");
+  background: url("public/1390893.jpg");
   // background-repeat: no-repeat;
   background-size: cover;
   margin-top: 4rem;
@@ -20,9 +20,31 @@ body {
   color: white;
 }
 
-p {
-  margin: 0;
+#goal-stuff {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  max-width: 300px;
 }
+
+#forms {
+  position: absolute;
+  margin-left: 300px;
+}
+
+button {
+  width: 200px;
+}
+
+#buttons {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+// p {
+//   margin: 0;
+// }
 
 .form-control {
   margin: 0;
@@ -32,13 +54,13 @@ p {
   padding: 0;
 }
 
-#goals {
+.goals {
   // color: red;
 }
 
 #steps-list {
   // color: blue;
-  margin-left: 50px;
+  margin-left: 25px;
 }
 
 #checkbox {

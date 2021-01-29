@@ -25,7 +25,7 @@ const signInSuccess = function (response) {
   $('#sign-in-form').hide()
   $('#buttons').show()
   $('#index-goals-button').show()
-  $('#sign-out-form').show()
+  $('#sign-out-button').show()
   $('#show-change-password-form-button').show()
   console.log('token is ' + store.user.token)
   console.log(response.user._id)
@@ -54,7 +54,7 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
   store.user = null
   $('#change-password-form').hide()
-  $('#sign-out-form').hide()
+  $('#sign-out-button').hide()
   $('#show-signup-form-button').show()
   $('#sign-in-form').show()
   $('#create-goal-form').hide()
