@@ -79,10 +79,6 @@ const showGoalSuccess = function (response) {
       </section>
       `)
 
-      // const stepList = (`
-      // stepList placeholder text
-      // `)
-      
       // $('#goals').html('')
       $('#goals').prepend(goalList)
       $('#hide-goals-button').show()

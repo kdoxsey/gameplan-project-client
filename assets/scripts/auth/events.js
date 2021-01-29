@@ -8,10 +8,10 @@ const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  $('#sign-in-form').fadeIn()
-  $('#sign-up-form').fadeOut()
-  $('#show-signin-form-button').fadeOut()
-  $('#show-signup-form-button').fadeIn()
+  $('#sign-in-form').show()
+  $('#sign-up-form').hide()
+  $('#show-signin-form-button').hide()
+  $('#show-signup-form-button').show()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -44,30 +44,30 @@ const onSignOut = function (event) {
 
 const onShowSignUp = function (event) {
   event.preventDefault()
-  $('#sign-up-form').fadeIn()
-  $('#sign-in-form').fadeOut()
-  $('#show-signup-form-button').fadeOut()
-  $('#show-signin-form-button').fadeIn()
+  $('#sign-up-form').show()
+  $('#sign-in-form').hide()
+  $('#show-signup-form-button').hide()
+  $('#show-signin-form-button').show()
 }
 
 const onShowSignIn = function (event) {
   event.preventDefault()
-  $('#sign-in-form').fadeIn()
-  $('#sign-up-form').fadeOut()
-  $('#show-signin-form-button').fadeOut()
-  $('#show-signup-form-button').fadeIn()
+  $('#sign-in-form').show()
+  $('#sign-up-form').hide()
+  $('#show-signin-form-button').hide()
+  $('#show-signup-form-button').show()
 }
 
 const onShowChangePasswordForm = function (event) {
   event.preventDefault()
-  $('#change-password-form').fadeIn()
-  $('#show-change-password-form-button').fadeOut()
+  $('#change-password-form').show()
+  $('#show-change-password-form-button').hide()
 }
 
 const onCancelChangePassword = function (event) {
   event.preventDefault()
-  $('#change-password-form').fadeOut()
-  $('#show-change-password-form-button').fadeIn()
+  $('#change-password-form').hide()
+  $('#show-change-password-form-button').show()
 }
 
 module.exports = {
