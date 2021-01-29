@@ -14,6 +14,7 @@
 
     <body>
       <div class="container">
+        <div class="header">
       
       <h1 id="banner">gameplan</h1>
       <!-- <button id="test-button" onclick= "console.log('hello')"> hey </button> -->
@@ -23,6 +24,7 @@
       </div>
     </section> -->
       <p id="message"></p>
+        </div>
 
 
 <!-- AUTHORIZATION STUFF ON THE LANDING PAGE START-->
@@ -69,106 +71,109 @@
     </div>
       
       <!---GOAL BUTTONS START-->
+      <div id="button-and-form">
+
       <div id="buttons">
         <button class="btn btn-secondary mb-1 " id="create-goal-button">create a goal</button>
         <button class="btn btn-secondary mb-1" id="show-goal-button">search goal by id</button>
         <button class="btn btn-secondary mb-1" id="update-goal-button">update a goal</button>
         <button class="btn btn-secondary mb-1" id="delete-goal-button">delete a goal</button>
         <button class="btn btn-secondary mb-1" id="index-goals-button">show all goals</button>
-        <button class="btn btn-secondary mb-1" id="hide-goals-button">hide goal(s)</button>
+        <!-- <button class="btn btn-secondary mb-1" id="hide-goals-button">hide goal(s)</button> -->
         <!---GOAL BUTTONS END-->
 
         <!---STEP BUTTONS START-->
-                  <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
-                  <button class="btn btn-secondary mb-1" id="show-step-button">search step by id</button>
-                  <button class="btn btn-secondary mb-1" id="update-step-button">update a step</button>
-                  <button class="btn btn-secondary mb-1" id="delete-step-button">delete a step</button>
-                  <button class="btn btn-secondary mb-1" id="index-steps-button">show all steps</button>
-                  <button class="btn btn-secondary mb-1" id="hide-steps-button">hide step(s)</button>
+        <button class="btn btn-secondary mb-1" id="show-step-button">search step by id</button>
+        <button class="btn btn-secondary mb-1" id="update-step-button">update a step</button>
+        <button class="btn btn-secondary mb-1" id="delete-step-button">delete a step</button>
+        <button class="btn btn-secondary mb-1" id="index-steps-button">show all steps</button>
+        <button class="btn btn-secondary mb-1" id="hide-steps-button">hide step(s)</button>
       </div>
+
+      <div id="forms">
+        <!--NEW GOAL-->
+          <form id="create-goal-form">
+                    <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
+                    <input type="text" name="goal[name]" placeholder="New goal">
+                    <input type="text" name="goal[description]" placeholder="description">
+                    <button type="submit" class="btn btn-primary ">create</button>
+                    <input id="cancel-create-goal" class="btn btn-secondary" type="button" value="cancel">
+                  </form>
+                  
+                  
+                  <!-- SHOW GOAL -->
+                  <form id="show-goal-form">
+                    <legend>search a goal</legend>
+                    <input name="goal[6005f267213fcbaf0bf19743]" type="text" placeholder="6005f267213fcbaf0bf19743">
+                    <button type="submit" class= "btn btn-secondary">show</button>
+                  </form>
+                  
+                  <!-- UPDATE GOAL -->
+                  <form id="update-goal-form">
+                    <legend>update goal</legend>
+                    <input required type="text" name="goal[id]" placeholder="goal id"></br>
+                    <input type="text" name="goal[name]" placeholder="new name"></br>
+                    <input type="text" name="goal[description]" placeholder="description">
+                    <button class= "btn btn-secondary" type="submit">update</button>
+                  </form>
+                  
+                  <!-- DELETE GOAL -->
+                  <form id="delete-goal-form">
+                    <legend>delete goal</legend>
+                    <input type="text" name="goal[id]" placeholder="goal id here">
+                    <button class= "btn btn-secondary" type="submit">delete</button>
+                  </form>
+                  
+                  <!-- GOAL STUFF END-->
+                  
+                  
+                  <!--STEP STUFF START-->
+                  <!-- <div id="step-stuff"> -->
+                    <!--NEW STEP-->
+                    <!-- <form id="create-step-form">
+                      <legend>new step</legend>
+                      <input type="text" name="step[text]" placeholder="create step">
+                      <input type="text" name="goal[id]" placeholder="reference associated goal">
+                      <button class= "btn btn-secondary"type="submit">create</button>
+                    </form> 
+                    <br> -->
+                    <!-- SHOW STEP -->
+                    <!-- <form id="show-step-form">
+                      <legend>search a step</legend>
+                      <input name="step[id]" type="text" placeholder="search step">
+                      <button class= "btn btn-secondary" type="submit">show</button>
+                    </form> -->
+                    
+                    <!-- UPDATE STEP -->
+                    <!-- <form id="update-step-form">
+                      <legend>update step</legend>
+                      <input required type="text" name="step[id]" placeholder="step id"></br>
+                      <input type="text" name="step[text]" placeholder="new step"></br>
+                      <button class= "btn btn-secondary" type="submit">update</button>
+                    </form> -->
+                    
+                    <!-- DELETE STEP -->
+                    <!-- <form id="delete-step-form">
+                      <legend>delete step</legend>
+                      <input type="text" name="step[id]" placeholder="step id here">
+                      <button class= "btn btn-secondary" type="submit">delete</button>
+                    </form> -->
+                    
+                  </div>
+              </div>
         <!--STEP BUTTONS END-->
       
       <!-- GOAL STUFF START-->
       <div id="goal-stuff">
         <section id="goals">
         </section>
-        <!--NEW GOAL-->
-        <div id="forms">
-        <form id="create-goal-form">
-          <legend>new goal</legend>
-          <input type="text" name="goal[name]" placeholder="create goal">
-          <input type="text" name="goal[description]" placeholder="add goal description">
-          <button type="submit" class="btn btn-primary ">create</button>
-        </form>
-        
-        
-        <!-- SHOW GOAL -->
-        <form id="show-goal-form">
-          <legend>search a goal</legend>
-          <input name="goal[6005f267213fcbaf0bf19743]" type="text" placeholder="6005f267213fcbaf0bf19743">
-          <button type="submit" class= "btn btn-secondary">show</button>
-        </form>
-        
-        <!-- UPDATE GOAL -->
-        <form id="update-goal-form">
-          <legend>update goal</legend>
-          <input required type="text" name="goal[id]" placeholder="goal id"></br>
-          <input type="text" name="goal[name]" placeholder="new name"></br>
-          <input type="text" name="goal[description]" placeholder="description">
-          <button class= "btn btn-secondary" type="submit">update</button>
-        </form>
-        
-        <!-- DELETE GOAL -->
-        <form id="delete-goal-form">
-          <legend>delete goal</legend>
-          <input type="text" name="goal[id]" placeholder="goal id here">
-          <button class= "btn btn-secondary" type="submit">delete</button>
-        </form>
-        
-        <!-- GOAL STUFF END-->
-        
-        
-        <!--STEP STUFF START-->
-        <div id="step-stuff">
-          <!--NEW STEP-->
-          <form id="create-step-form">
-            <legend>new step</legend>
-            <input type="text" name="step[text]" placeholder="create step">
-            <input type="text" name="goal[id]" placeholder="reference associated goal">
-            <button class= "btn btn-secondary"type="submit">create</button>
-          </form> 
-          <br>
-          <!-- SHOW STEP -->
-          <form id="show-step-form">
-            <legend>search a step</legend>
-            <input name="step[id]" type="text" placeholder="search step">
-            <button class= "btn btn-secondary" type="submit">show</button>
-          </form>
-          
-          <!-- UPDATE STEP -->
-          <form id="update-step-form">
-            <legend>update step</legend>
-            <input required type="text" name="step[id]" placeholder="step id"></br>
-            <input type="text" name="step[text]" placeholder="new step"></br>
-            <button class= "btn btn-secondary" type="submit">update</button>
-          </form>
-          
-          <!-- DELETE STEP -->
-          <form id="delete-step-form">
-            <legend>delete step</legend>
-            <input type="text" name="step[id]" placeholder="step id here">
-            <button class= "btn btn-secondary" type="submit">delete</button>
-          </form>
-          
-        </div>
-        </div>
-        <br />
       </div>
       
 
 
 <!-- SIGNED IN AUTH STUFF START-->
           <!-- CHANGE PW -->
+          <div id="signed-in-auth">
           <div id="show-change-password-form-button">
             <button class= "btn btn-secondary mb-1" type="submit" >change password</button>
           </div>
@@ -181,13 +186,14 @@
             <!-- submit button -->
               <input type="submit" class="btn btn-primary mb-1" value="change password">
               <!-- cancel button -->
-              <input id="cancel" class="btn btn-primary mb-1" type="button" value="cancel">
+              <input id="cancel" class="btn btn-secondary" type="button" value="cancel">
           </form>
 
           <!-- SIgn OUT -->
           <form id="sign-out-button">
-              <input type="submit" class= "btn btn-secondary" value="sign out">
+              <button id="sign-out-button" type="submit" class= "btn btn-secondary" value="sign out">sign out</button>
           </form>
+          </div>
 <!-- SIGNED IN AUTH STUFF END-->
     </body>
   </html>

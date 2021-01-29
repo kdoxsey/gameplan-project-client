@@ -53,6 +53,11 @@ const onCreateGoal = function (event) {
     .catch(ui.createGoalFailure)
 }
 
+const onCancelCreateGoal = function (event) {
+  event.preventDefault()
+  $('#create-goal-form').hide()
+}
+
 const onIndexGoals = function (event) {
   // event.preventDefault()
   api.indexGoals()
@@ -103,6 +108,7 @@ const onDeleteGoal = function (event) {
 module.exports = {
   testButton,
   onCreateGoal,
+  onCancelCreateGoal,
   onIndexGoals,
   onShowGoal,
   onUpdateGoal,

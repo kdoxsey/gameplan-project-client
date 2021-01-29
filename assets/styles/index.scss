@@ -20,20 +20,34 @@ body {
   color: white;
 }
 
+.header {
+}
+
 #goal-stuff {
   padding-left: 20px;
   display: flex;
   flex-direction: row;
-  max-width: 300px;
+  width: 250px;
+  align-self: center;
 }
 
 #forms {
-  position: absolute;
-  margin-left: 300px;
+  margin-left: 20px;
+}
+
+#button-and-form {
+  display: flex;
+  flex-direction: row;
+}
+
+#signed-in-auth {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
-  width: 200px;
+  width: 250px;
 }
 
 #buttons {
@@ -54,9 +68,9 @@ button {
   padding: 0;
 }
 
-.goals {
-  // color: red;
-}
+// .goals {
+//   // color: red;
+// }
 
 #steps-list {
   // color: blue;
