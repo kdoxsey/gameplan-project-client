@@ -45,13 +45,20 @@ const showGoalSuccess = function (response) {
     
     $('#goals').append(goalShow)
   }
+
+  const emptyGoals = (`
+      
+      <section class="container border" id="empty-goals">
+      No goals to display
+      </section>
+      `)
   
   const indexGoalsSuccess = function (response) {
     console.log(response.goals.length)
     $('#goals').show()
     // $('#goals').html('')
     if (response.goals.length === 0) {
-      $('#goals').text('goals list is empty')
+      $('#goals').html(emptyGoals)
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       // $('form').trigger('reset')
