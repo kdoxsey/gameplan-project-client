@@ -64,7 +64,7 @@ const showGoalSuccess = function (response) {
       const goalList = (`
       
       <section class="container border">
-      <h4 id="show-goal"> <a href="#"> ${goals.name} </a> </h4>
+      <h4 id="show-goal"> <a href="#">${goals.name} </a> </h4>
       <p id="steps-list"> </p>
       
       </section>
@@ -81,9 +81,9 @@ const showGoalSuccess = function (response) {
       const seeMore = (`
       
       <section class="container">
-      <h1>${goals.name}</h1>
-      <h2>${goals.description}</h2>
-      <p> ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
+      <h1 id="goal-name">${goals.name}</h1>
+      <h2 id="goal-description">${goals.description}</h2>
+      <p id="date-created"> Created on ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
       
       </section>
       `)

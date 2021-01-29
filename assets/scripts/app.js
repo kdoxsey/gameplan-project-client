@@ -12,6 +12,7 @@ const stepsEvents = require('./steps/events')
 
 $(() => {
   // your JS code goes here
+  $('.nav-item dropdown').hide()
   $('#test-button').on('click', goalsEvents.testButton)
   $('#steps-list').hide()
   $('#show-goal-button').hide()

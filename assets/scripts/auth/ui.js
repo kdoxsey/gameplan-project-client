@@ -18,6 +18,7 @@ const signInSuccess = function (response) {
   const nameReplace = str.replace(/@.*$/,"")
   const name = nameReplace !== str ? nameReplace : null
   $('#message').text('thanks for signing in ' + name.toUpperCase() + '. what do you want to accomplish?')
+  $('.nav-item dropdown').show()
   // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
   $('#show-signup-form-button').hide()
