@@ -12,7 +12,7 @@ const stepsEvents = require('./steps/events')
 
 $(() => {
   // your JS code goes here
-  $('.nav-item dropdown').hide()
+  $('.nav-link').hide()
   $('#test-button').on('click', goalsEvents.testButton)
   $('#steps-list').hide()
   $('#show-goal-button').hide()
@@ -22,10 +22,10 @@ $(() => {
   // hide the signed-in auth forms
   //hide and show change password forms
   $('#change-password-form').hide()
-  $('#show-change-password-form-button').on('click', authEvents.onShowChangePasswordForm)
+  $('#change-password').on('click', authEvents.onShowChangePasswordForm)
   //
   $('#cancel').on('click', authEvents.onCancelChangePassword)
-  $('#show-change-password-form-button').hide()
+  $('#change-password').on("click", authEvents.onShowChangePasswordForm)
   $('#sign-out-button').hide()
   // show the signed in auth forms
   $('#show-signup-form-button').on('click', authEvents.onShowSignUp)
@@ -34,7 +34,7 @@ $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#sign-out-button').on('submit', authEvents.onSignOut)
+  $('#sign-out').on('click', authEvents.onSignOut)
   // goals
   $('#create-goal-form').on('submit', goalsEvents.onCreateGoal)
   $('#hide-goals-button').hide()

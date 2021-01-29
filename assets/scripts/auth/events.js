@@ -58,10 +58,11 @@ const onShowSignIn = function (event) {
   $('#show-signup-form-button').show()
 }
 
+
 const onShowChangePasswordForm = function (event) {
   event.preventDefault()
   $('#change-password-form').show()
-  $('#show-change-password-form-button').hide()
+  // $('#show-change-password-form-button').hide()
 }
 
 const onCancelChangePassword = function (event) {

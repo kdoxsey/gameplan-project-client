@@ -97,8 +97,8 @@ const showGoalSuccess = function (response) {
 
       // $('#goals').html('')
       $('#goals').prepend(goalList)
-      $('#hide-goals-button').show()
-      $('#index-goals-button').hide()
+      // $('#hide-goals-button').show()
+      // $('#index-goals-button').hide()
       $('form').trigger('reset')
       $('#steps-list').html(stepList).hide()
       $('#see-more').html(seeMore).hide()

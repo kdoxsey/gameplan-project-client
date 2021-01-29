@@ -28,22 +28,39 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li> -->
-            <li class="form-inline my-2 my-lg-0">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                My Acount
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Change Password</a>
-                <a class="dropdown-item" href="#">Sign Out</a>
-                <!-- <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div> -->
-            </li>
-
+            
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
             </li> -->
+            <li>
+              <p id="message"></p>
+            </li>
+          </ul>
+
+          <ul>
+          <li class="form-inline my-2 my-lg-0">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            My Acount
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" id="change-password" href="#">Change Password</a>
+            <a class="dropdown-item" id="sign-out" href="#">Sign Out</a>
+            
+            <!-- <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div> -->
+          </li>
+          <form id="change-password-form">
+            <!-- old pw -->
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <!-- new pw -->
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <!-- submit button -->
+            <input type="submit" class="btn btn-primary mb-1" value="change password">
+            <!-- cancel button -->
+            <input id="cancel" class="btn btn-secondary" type="button" value="cancel">
+          </form>
           </ul>
           <!-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -53,7 +70,6 @@
       </nav>
       <!-- container start -->
       <div class="container">
-        <p id="message"></p>
       
       <!-- <h1 id="banner">gameplan</h1> -->
       <!-- <button id="test-button" onclick= "console.log('hello')"> hey </button> -->
@@ -106,6 +122,8 @@
           <!-- AUTHORIZATION STUFF ON THE LANDING PAGE END-->
   </div>
   <!-- container end -->
+
+  
 
 
       
@@ -210,7 +228,8 @@
         <section id="goals">
         </section>
       </div>
-      <div id="see-more"></div>
+      
+      <div id="see-more"> </div>
       </div>
 
 
@@ -221,16 +240,7 @@
             <button class= "btn btn-secondary mb-1" type="submit" >change password</button>
           </div> -->
 
-          <!-- <form id="change-password-form"> -->
-            <!-- old pw -->
-              <!-- <input type="password" name="passwords[old]" placeholder="old password"></br> -->
-            <!-- new pw -->
-              <!-- <input type="password" name="passwords[new]" placeholder="new password"></br> -->
-            <!-- submit button -->
-              <!-- <input type="submit" class="btn btn-primary mb-1" value="change password"> -->
-              <!-- cancel button -->
-              <!-- <input id="cancel" class="btn btn-secondary" type="button" value="cancel">
-          </form> -->
+          
 
           <!-- SIgn OUT -->
           <!-- <form id="sign-out-button">

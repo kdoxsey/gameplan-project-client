@@ -24,11 +24,12 @@ const signInSuccess = function (response) {
   $('#show-signup-form-button').hide()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
-  $('#buttons').show()
+  // $('#buttons').show()
   $('#create-goal-form').show()
   // $('#index-goals-button').show()
-  $('#sign-out-button').show()
-  $('#show-change-password-form-button').show()
+  // $('#sign-out-button').show()
+  // $('#show-change-password-form-button').show()
+  $('.nav-link').show()
   console.log('token is ' + store.user.token)
   console.log(response.user._id)
   goalsEvents.onIndexGoals()
@@ -70,6 +71,7 @@ const signOutSuccess = function () {
   $('#hide-goals-button').hide()
   $('#change-password-form').hide()
   $('#show-change-password-form-button').hide()
+  $('.nav-link').hide()
 }
 
 module.exports = {
