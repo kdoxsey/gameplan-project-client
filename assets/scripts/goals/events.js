@@ -12,34 +12,34 @@ const testButton = function (event) {
 
 const onShowCreateGoalForm = function (event) {
   event.preventDefault()
-  $('#create-goal-form').fadeIn()
-  $('#delete-goal-form').fadeOut()
-  $('#show-goal-form').fadeOut()
-  $('#update-goal-form').fadeOut()
+  $('#create-goal-form').show()
+  $('#delete-goal-form').hide()
+  $('#show-goal-form').hide()
+  $('#update-goal-form').hide()
 }
 
 const onShowDeleteGoalForm = function (event) {
   event.preventDefault()
-  $('#delete-goal-form').fadeIn()
-  $('#create-goal-form').fadeOut()
-  $('#show-goal-form').fadeOut()
-  $('#update-goal-form').fadeOut()
+  $('#delete-goal-form').show()
+  $('#create-goal-form').hide()
+  $('#show-goal-form').hide()
+  $('#update-goal-form').hide()
 }
 
 const onShowShowGoalForm = function (event) {
   event.preventDefault()
-  $('#show-goal-form').fadeIn()
-  $('#delete-goal-form').fadeOut()
-  $('#create-goal-form').fadeOut()
-  $('#update-goal-form').fadeOut()
+  $('#show-goal-form').show()
+  $('#delete-goal-form').hide()
+  $('#create-goal-form').hide()
+  $('#update-goal-form').hide()
 }
 
 const onShowUpdateGoalForm = function (event) {
   event.preventDefault()
-  $('#update-goal-form').fadeIn()
-  $('#show-goal-form').fadeOut()
-  $('#delete-goal-form').fadeOut()
-  $('#create-goal-form').fadeOut()
+  $('#update-goal-form').show()
+  $('#show-goal-form').hide()
+  $('#delete-goal-form').hide()
+  $('#create-goal-form').hide()
 }
 
 const onCreateGoal = function (event) {
@@ -55,7 +55,7 @@ const onCreateGoal = function (event) {
 
 const onCancelCreateGoal = function (event) {
   event.preventDefault()
-  $('#create-goal-form').fadeOut()
+  $('#create-goal-form').hide()
 }
 
 const onIndexGoals = function (event) {
