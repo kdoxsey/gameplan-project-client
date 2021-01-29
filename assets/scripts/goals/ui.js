@@ -88,7 +88,7 @@ const showGoalSuccess = function (response) {
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
       $('form').trigger('reset')
-      $('#steps-list').html(stepList).hide()
+      $('#steps-list').html(stepList).fadeOut()
       
       document.getElementById("show-goal").addEventListener("click", handleClick)
   
