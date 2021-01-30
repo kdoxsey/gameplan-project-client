@@ -43,6 +43,8 @@ body {
 
 #goal-border {
   border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 250px;
+  overflow: hidden;
   // display: flex;
   // flex-direction: row;
 }
