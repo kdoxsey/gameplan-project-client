@@ -17,7 +17,7 @@ const signInSuccess = function (response) {
   const str = response.user.email
   const nameReplace = str.replace(/@.*$/,"")
   const name = nameReplace !== str ? nameReplace : null
-  $('#message').text('thanks for signing in, ' + name.toUpperCase() + '!').fadeIn().delay(2000).fadeOut()
+  $('#message').text('hello, ' + name.toLowerCase() + '!').fadeIn().delay(2000).fadeOut()
   $('.nav-item dropdown').show()
   // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
@@ -42,7 +42,7 @@ const signInFailure = function (response) {
 }
 
 const changePasswordSuccess = function (response) {
-  $('#message').text('password has been changed')
+  $('#message').text("your password's been changed!").fadeIn().delay(2000).fadeOut()
   $('form').trigger('reset')
   $('#change-password-form').hide()
   $('#show-change-password-form-button').show()
