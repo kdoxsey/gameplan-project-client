@@ -17,7 +17,7 @@ const signInSuccess = function (response) {
   const str = response.user.email
   const nameReplace = str.replace(/@.*$/,"")
   const name = nameReplace !== str ? nameReplace : null
-  $('#message').text('thanks for signing in, ' + name.toUpperCase() + '!').fadeIn().delay(1000).fadeOut()
+  $('#message').text('thanks for signing in, ' + name.toUpperCase() + '!').fadeIn().delay(2000).fadeOut()
   $('.nav-item dropdown').show()
   // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
@@ -74,6 +74,7 @@ const signOutSuccess = function () {
   $('#show-change-password-form-button').hide()
   $('.nav-link').hide()
   $('#see-more').hide()
+  $('#goals').hide()
 }
 
 module.exports = {

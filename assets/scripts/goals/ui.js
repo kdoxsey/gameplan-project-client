@@ -10,7 +10,7 @@ const testButtonSuccess = function (response) {
 }
 
 const createGoalSuccess = function (response) {
-  $("#message").show().delay(1000).fadeOut().html('added "' + response.goal.name +'" to list!')
+  $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
   $('#goals').html('')
   $('#change-password-form').hide()
@@ -49,8 +49,8 @@ const showGoalSuccess = function (response) {
 
   const emptyGoals = (`
       
-      <section class="container border" id="empty-goals">
-      No goals to display
+      <section class="container" id="empty-goals">
+      no goals to display
       </section>
       `)
   
@@ -71,7 +71,7 @@ const showGoalSuccess = function (response) {
       
       const goalList = (`
       
-      <section class="container border">
+      <section class="container" id="goal-border">
       <h5 id="show-goal"> <a href="#">${goals.name} </a> </h5>
       <p id="steps-list"> </p>
       
@@ -110,8 +110,9 @@ const showGoalSuccess = function (response) {
       function handleClick () {
         console.log(goals.name)
         $('#steps-list').toggle()
-        $('#see-more').fadeToggle()
+        $('#see-more').toggle()
         $('#change-password-form').hide()
+        $('#message').hide()
     }
     })
   

@@ -4,6 +4,25 @@ $theme-colors: (
 );
 
 @import "~bootstrap/scss/bootstrap";
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #13dcc8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #03ffe6;
+}
 
 body {
   background: url("public/1390893.jpg");
@@ -17,10 +36,19 @@ body {
   // background: black;
   // color: white;
   max-width: 100vw;
-  // max-height: 100vh;
-  // overflow: scroll;
+  max-height: 100vh;
+  overflow: hidden;
   color: white;
 }
+
+#goal-border {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  // display: flex;
+  // flex-direction: row;
+}
+
+// #page-display {
+// }
 
 #slogan {
   margin-left: 133px;
@@ -100,9 +128,12 @@ body {
 
 #goals {
   width: 250px;
+  height: 73vh;
+  overflow: scroll;
 }
 
 #goal-stuff {
+  margin-top: -35px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -156,6 +187,7 @@ section.container.border {
 #empty-goals {
   display: flex;
   justify-content: center;
+  margin-top: 15px;
 }
 
 #message {
@@ -166,11 +198,11 @@ section.container.border {
 //   max-width: 230px;
 // }
 
-#buttons {
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-}
+// #buttons {
+//   padding-left: 20px;
+//   display: flex;
+//   flex-direction: column;
+// }
 
 // p {
 //   margin: 0;
@@ -194,10 +226,11 @@ section.container.border {
   margin-bottom: -8px;
 }
 
-#checkbox {
-  position: relative;
-  margin-right: 0px;
-}
+// #checkbox {
+//   display: flex;
+//   margin-left: 200px;
+//   margin-bottom: 5px;
+// }
 
 // .border {
 //   border-radius: 50px;
