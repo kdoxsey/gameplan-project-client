@@ -14,7 +14,10 @@
 
     <body>
       <nav class="navbar navbar-expand-lg">
+        <div id="brand-and-slogan">
         <a class="navbar-brand" href="#">gameplan</a>
+        <p id="slogan">sort out your life</p>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,7 +36,6 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li> -->
             <li>
-              <p id="message"></p>
             </li>
           </ul>
 
@@ -68,6 +70,47 @@
           </form> -->
         </div>
       </nav>
+      <!-- AUTHORIZATION STUFF ON THE LANDING PAGE START-->
+            <section id="authorization">
+              <!-- SIGN IN -->
+              <form class="mb-0 col-6" id="sign-in-form">
+                <legend class="form-label" id="sign-in">sign in</legend>
+                <!-- email box -->
+                <input id="sign-in-email"  class="mb-2 form-control" type="text" name="credentials[email]" placeholder="email">
+                <!-- password box -->
+                <input id="sign-in-password" class="mb-2 form-control" type="password" name="credentials[password]" placeholder="password">
+                <!-- sign in button -->
+                <input type="submit" class="mb-4 btn btn-primary" value="sign in">
+              </form>
+              
+              
+              <!-- SIGN UP -->
+              <form id="sign-up-form" class ="col-6">
+                <legend id="sign-up">sign up</legend>
+                <!-- email box -->
+                <input class="mb-2 form-control"  id="sign-up-email" type="text" name="credentials[email]" placeholder="email">
+                <!-- password box -->
+                <input id="sign-up-password" class="mb-2 form-control"  type="password" name="credentials[password]" placeholder="password">
+                <!-- confirm password box -->
+                <input id="sign-up-password_confirmation" class="mb-2 form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                <!-- sign up button -->
+                <input type="submit" class= "btn btn-primary" value="sign up">
+              </form>
+              
+              <!-- show signin form -->
+            </section>
+            <div id="toggle-signup-signin">
+            <div id="show-signin-form-button">
+              <p class="mb-0" id="account-message">already have an account?</p>
+              <button type="submit" class= "btn btn-primary" class="btn btn-primary">sign in</button>
+            </div>
+      
+            <!-- show signup form -->
+            <div id="show-signup-form-button">
+              <p class="mb-0" id="account-message">don't have an account yet?</p>
+              <button type="submit" class="btn btn-primary">sign up</button>
+            </div>
+          </div>
       <!-- container start -->
       <div class="container">
       
@@ -79,46 +122,6 @@
       </div>
     </section> -->
     
-    <!-- AUTHORIZATION STUFF ON THE LANDING PAGE START-->
-          <section id="authorization">
-            <!-- SIGN IN -->
-            <form class="mb-0 col-6" id="sign-in-form">
-              <legend class="form-label" id="sign-in">sign in</legend>
-              <!-- email box -->
-              <input id="sign-in-email"  class="mb-2 form-control" type="text" name="credentials[email]" placeholder="email">
-              <!-- password box -->
-              <input id="sign-in-password" class="mb-2 form-control" type="password" name="credentials[password]" placeholder="password">
-              <!-- sign in button -->
-              <input type="submit" class="mb-4 btn btn-primary" value="sign in">
-            </form>
-            
-            
-            <!-- SIGN UP -->
-            <form id="sign-up-form" class ="col-6">
-              <legend id="sign-up">sign up</legend>
-              <!-- email box -->
-              <input class="mb-2 form-control"  id="sign-up-email" type="text" name="credentials[email]" placeholder="email">
-              <!-- password box -->
-              <input id="sign-up-password" class="mb-2 form-control"  type="password" name="credentials[password]" placeholder="password">
-              <!-- confirm password box -->
-              <input id="sign-up-password_confirmation" class="mb-2 form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-              <!-- sign up button -->
-              <input type="submit" class= "btn btn-primary" value="sign up">
-            </form>
-            
-            <!-- show signin form -->
-            <div id="show-signin-form-button">
-              <p class="mb-0" id="account-message">already have an account?</p>
-              <button type="submit" class= "btn btn-primary" class="btn btn-primary">sign in</button>
-            </div>
-      
-            <!-- show signup form -->
-            <div id="show-signup-form-button">
-              <p class="mb-0" id="account-message">don't have an account yet?</p>
-              <button type="submit" class="btn btn-primary">sign up</button>
-            </section>
-            
-          </section>
           <!-- AUTHORIZATION STUFF ON THE LANDING PAGE END-->
   </div>
   <!-- container end -->
@@ -217,19 +220,20 @@
       <div id=page-display>
         <div id="goal-stuff">
           
-        
-        <!--NEW GOAL-->
-        <form class="border" id="create-goal-form">
-          <!-- <p id="my-goals"> goals</p> -->
-          <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
-          <input type="text" name="goal[name]" placeholder="Add a new goal">
-          <input type="text" name="goal[description]" placeholder="Description">
-          <button type="submit" class="btn btn-primary ">Submit</button>
-          <!-- <input id="cancel-create-goal" class="btn btn-secondary" type="button" value="cancel"> -->
-        </form>
-        <section id="goals">
-        </section>
-      </div>
+          
+          <!--NEW GOAL-->
+          <form class="border" id="create-goal-form">
+            <!-- <p id="my-goals"> goals</p> -->
+            <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
+            <input type="text" name="goal[name]" placeholder="add a new goal">
+            <input type="text" name="goal[description]" placeholder="description">
+            <button type="submit" class="btn btn-primary ">add to list</button>
+            <!-- <input id="cancel-create-goal" class="btn btn-secondary" type="button" value="cancel"> -->
+          </form>
+          <section id="goals">
+          </section>
+        </div>
+        <p id="message"></p>
       
       <div id="see-more"> </div>
       </div>

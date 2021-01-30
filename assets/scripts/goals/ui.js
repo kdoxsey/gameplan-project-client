@@ -10,7 +10,7 @@ const testButtonSuccess = function (response) {
 }
 
 const createGoalSuccess = function (response) {
-  $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
+  $("#message").show().delay(1000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
   $('#goals').html('')
   $('#change-password-form').hide()
@@ -95,7 +95,7 @@ const showGoalSuccess = function (response) {
       
       </section>
       `)
-
+      
       // $('#goals').html('')
       $('#goals').prepend(goalList)
       // $('#hide-goals-button').show()
@@ -104,16 +104,17 @@ const showGoalSuccess = function (response) {
       $('#steps-list').html(stepList).hide()
       $('#see-more').html(seeMore).hide()
       
+      
       document.getElementById("show-goal").addEventListener("click", handleClick)
-  
-      function handleClick () {
-        // console.log('step 1 for ' + goals.name)
-        $('#steps-list').toggle()
-        $('#see-more').toggle()
-        $('#change-password-form').hide()
 
+      function handleClick () {
+        console.log(goals.name)
+        $('#steps-list').toggle()
+        $('#see-more').fadeToggle()
+        $('#change-password-form').hide()
     }
     })
+  
     
   }
   

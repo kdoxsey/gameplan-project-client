@@ -17,13 +17,13 @@ const signInSuccess = function (response) {
   const str = response.user.email
   const nameReplace = str.replace(/@.*$/,"")
   const name = nameReplace !== str ? nameReplace : null
-  $('#message').text('thanks for signing in ' + name.toUpperCase() + '. what do you want to accomplish?')
+  $('#message').text('thanks for signing in, ' + name.toUpperCase() + '!').fadeIn().delay(1000).fadeOut()
   $('.nav-item dropdown').show()
   // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
-  $('#show-signup-form-button').fadeOut()
-  $('#sign-up-form').fadeOut()
-  $('#sign-in-form').fadeOut()
+  $('#toggle-signup-signin').hide()
+  $('#sign-up-form').hide()
+  $('#sign-in-form').hide()
   // $('#buttons').show()
   $('#create-goal-form').fadeIn()
   // $('#index-goals-button').show()
@@ -59,7 +59,7 @@ const signOutSuccess = function () {
   store.user = null
   $('#change-password-form').hide()
   $('#sign-out-button').hide()
-  $('#show-signup-form-button').show()
+  $('#toggle-signup-signin').show()
   $('#sign-in-form').show()
   $('#create-goal-form').hide()
   $('#show-goal-form').hide()
@@ -73,6 +73,7 @@ const signOutSuccess = function () {
   $('#change-password-form').hide()
   $('#show-change-password-form-button').hide()
   $('.nav-link').hide()
+  $('#see-more').hide()
 }
 
 module.exports = {
