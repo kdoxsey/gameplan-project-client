@@ -12,8 +12,10 @@ const stepsEvents = require('./steps/events')
 
 $(() => {
   // your JS code goes here
+  $('#goal-stuff').hide()
   $('.nav-link').hide()
   $('#test-button').on('click', goalsEvents.testButton)
+  $('#navbarDropdown').on('click', authEvents.onClearChangePasswordForm)
   $('#steps-list').hide()
   $('#show-goal-button').hide()
   $('#message').text('sign in to sort out your life')

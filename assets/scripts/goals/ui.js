@@ -13,6 +13,7 @@ const createGoalSuccess = function (response) {
   $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
   $('form').trigger('reset')
   $('#goals').html('')
+  $('#change-password-form').hide()
   // $('#goals').html(response.goal.name)
   console.log(response.goal)
   console.log(response)
@@ -55,7 +56,7 @@ const showGoalSuccess = function (response) {
   
   const indexGoalsSuccess = function (response) {
     console.log(response.goals.length)
-    $('#goals').show()
+    $('#goals').fadeIn()
     // $('#goals').html('')
     if (response.goals.length === 0) {
       $('#goals').html(emptyGoals)
@@ -71,7 +72,7 @@ const showGoalSuccess = function (response) {
       const goalList = (`
       
       <section class="container border">
-      <h4 id="show-goal"> <a href="#">${goals.name} </a> </h4>
+      <h5 id="show-goal"> <a href="#">${goals.name} </a> </h5>
       <p id="steps-list"> </p>
       
       </section>
@@ -109,6 +110,7 @@ const showGoalSuccess = function (response) {
         // console.log('step 1 for ' + goals.name)
         $('#steps-list').toggle()
         $('#see-more').toggle()
+        $('#change-password-form').hide()
 
     }
     })

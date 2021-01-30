@@ -65,6 +65,11 @@ const onShowChangePasswordForm = function (event) {
   // $('#show-change-password-form-button').hide()
 }
 
+const onClearChangePasswordForm = function (event) {
+  event.preventDefault()
+  $('#change-password-form').hide()
+}
+
 const onCancelChangePassword = function (event) {
   event.preventDefault()
   $('#change-password-form').hide()
@@ -79,5 +84,6 @@ module.exports = {
   onShowSignUp,
   onShowSignIn,
   onShowChangePasswordForm,
+  onClearChangePasswordForm,
   onCancelChangePassword
 }
