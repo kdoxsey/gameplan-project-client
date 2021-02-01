@@ -37,7 +37,7 @@ body {
   // color: white;
   max-width: 100vw;
   max-height: 100vh;
-  overflow: hidden;
+  // overflow: scroll;
   color: white;
 }
 
@@ -130,8 +130,8 @@ body {
 
 #goals {
   width: 250px;
-  height: 73vh;
-  overflow: scroll;
+  // height: 73vh;
+  // overflow: scroll;
 }
 
 #goal-stuff {
@@ -161,11 +161,11 @@ form {
   margin-top: 50px;
 }
 
-#my-goals {
-  display: flex;
-  justify-content: center;
-  font-size: 15px;
-}
+// #my-goals {
+//   display: flex;
+//   justify-content: center;
+//   font-size: 15px;
+// }
 
 section.container.border {
   padding: 10px;

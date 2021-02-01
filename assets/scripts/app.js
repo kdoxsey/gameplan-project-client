@@ -17,7 +17,7 @@ $(() => {
   $('#message').hide()
   $('#test-button').on('click', goalsEvents.testButton)
   $('#navbarDropdown').on('click', authEvents.onClearChangePasswordForm)
-  $('#steps-list').hide()
+  // $('#steps-list').hide()
   $('#show-goal-button').hide()
   $('#message').text('sign in to sort out your life')
   $('#sign-up-form').hide()
