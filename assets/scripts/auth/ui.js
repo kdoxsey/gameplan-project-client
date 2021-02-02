@@ -2,7 +2,7 @@ const store = require('./../store')
 const goalsEvents = require('./../goals/events')
 
 const signUpSuccess = function (response) {
-  $('#message').text('thanks for signing up ' + response.user.email)
+  // $('#message').text('thanks for signing up ' + response.user.email)fadeIn().delay(2000).fadeOut()
   $('form').trigger('reset')
 
 }
@@ -17,7 +17,7 @@ const signInSuccess = function (response) {
   const str = response.user.email
   const nameReplace = str.replace(/@.*$/,"")
   const name = nameReplace !== str ? nameReplace : null
-  $('#message').text('hello, ' + name.toLowerCase() + '!').fadeIn().delay(2000).fadeOut()
+  $('#message').text('hello, ' + name.toLowerCase() + '!').fadeIn().delay(3000).fadeOut()
   $('.nav-item dropdown').show()
   // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
@@ -75,6 +75,7 @@ const signOutSuccess = function () {
   $('.nav-link').hide()
   $('#see-more').hide()
   $('#goals').hide()
+  $('#goal-stuff').hide()
 }
 
 module.exports = {

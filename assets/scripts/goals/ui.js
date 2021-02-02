@@ -14,9 +14,6 @@ const createGoalSuccess = function (response) {
   $('form').trigger('reset')
   $('#goals').html('')
   $('#change-password-form').hide()
-  // $('#goals').html(response.goal.name)
-  console.log(response.goal)
-  console.log(response)
 }
 
 const createGoalFailure = function (response) {
@@ -81,7 +78,7 @@ const showGoalSuccess = function (response) {
       const stepList = (`
       
       <section class="container">
-      <h5 id="show-goal"> <a href="#"> ${goals.description} </a> </h5>
+      <h5 id="show-steps"> <a href="#"> ${goals.description} </a> </h5>
       
       </section>
       `)
@@ -101,7 +98,7 @@ const showGoalSuccess = function (response) {
       // $('#hide-goals-button').show()
       // $('#index-goals-button').hide()
       $('form').trigger('reset')
-      $('#steps-list').html(stepList).hide()
+      // $('#steps-list').hide()
       $('#see-more').html(seeMore).hide()
       
       
@@ -109,7 +106,8 @@ const showGoalSuccess = function (response) {
 
       function handleClick () {
         console.log(goals.name)
-        $('#steps-list').toggle()
+        // $('#stepsList').html(stepList).toggle()
+        $('#steps-list').html(stepList)
         $('#see-more').toggle()
         $('#change-password-form').hide()
         $('#message').hide()
