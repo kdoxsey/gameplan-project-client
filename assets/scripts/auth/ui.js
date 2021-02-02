@@ -1,4 +1,5 @@
 const store = require('./../store')
+const goalsEvents = require('./../goals/events')
 
 const signUpSuccess = function (response) {
   $('#message').text('thanks for signing up ' + response.user.email)
@@ -13,17 +14,26 @@ const signUpFailure = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
+  const str = response.user.email
+  const nameReplace = str.replace(/@.*$/,"")
+  const name = nameReplace !== str ? nameReplace : null
+  $('#message').text('hello, ' + name.toLowerCase() + '!').fadeIn().delay(2000).fadeOut()
+  $('.nav-item dropdown').show()
+  // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
-  $('#show-signup-form-button').hide()
+  $('#toggle-signup-signin').hide()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
-  $('#buttons').show()
-  $('#index-goals-button').show()
-  $('#sign-out-form').show()
-  $('#show-change-password-form-button').show()
+  // $('#buttons').show()
+  $('#create-goal-form').fadeIn()
+  // $('#index-goals-button').show()
+  // $('#sign-out-button').show()
+  // $('#show-change-password-form-button').show()
+  $('.nav-link').fadeIn()
+  $('#goal-stuff').fadeIn()
   console.log('token is ' + store.user.token)
   console.log(response.user._id)
+  goalsEvents.onIndexGoals()
 }
 
 const signInFailure = function (response) {
@@ -32,7 +42,7 @@ const signInFailure = function (response) {
 }
 
 const changePasswordSuccess = function (response) {
-  $('#message').text('password has been changed')
+  $('#message').text("your password's been changed!").fadeIn().delay(2000).fadeOut()
   $('form').trigger('reset')
   $('#change-password-form').hide()
   $('#show-change-password-form-button').show()
@@ -48,8 +58,8 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
   store.user = null
   $('#change-password-form').hide()
-  $('#sign-out-form').hide()
-  $('#show-signup-form-button').show()
+  $('#sign-out-button').hide()
+  $('#toggle-signup-signin').show()
   $('#sign-in-form').show()
   $('#create-goal-form').hide()
   $('#show-goal-form').hide()
@@ -62,6 +72,9 @@ const signOutSuccess = function () {
   $('#hide-goals-button').hide()
   $('#change-password-form').hide()
   $('#show-change-password-form-button').hide()
+  $('.nav-link').hide()
+  $('#see-more').hide()
+  $('#goals').hide()
 }
 
 module.exports = {

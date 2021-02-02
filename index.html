@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -13,172 +13,246 @@
     </head>
 
     <body>
-      <h1 id="banner">gameplan</h1>
-      <p id="message"></p>
+      <nav class="navbar navbar-expand-lg">
+        <div id="brand-and-slogan">
+        <a class="navbar-brand" href="#">gameplan</a>
+        <p id="slogan">sort out your life</p>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+            
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li> -->
+            <li>
+            </li>
+          </ul>
 
-<!-- AUTHORIZATION STUFF ON THE LANDING PAGE START-->
-      <section id="authorization">
-        <!-- SIGN IN -->
-        <form id="sign-in-form">
-          <legend id="sign-in">sign in</legend>
-          <!-- email box -->
-          <input id="sign-in-email" type="text" name="credentials[email]" placeholder="email"></br>
-          <!-- password box -->
-          <input id="sign-in-password" type="password" name="credentials[password]" placeholder="password"></br>
-          <!-- sign in button -->
-          <input type="submit" value="sign in">
-        </form>
-        
-        
-        <!-- SIGN UP -->
-        <form id="sign-up-form">
-          <legend id="sign-up">sign up</legend>
-          <!-- email box -->
-          <input id="sign-up-email" type="text" name="credentials[email]" placeholder="email"></br>
-          <!-- password box -->
-          <input id="sign-up-password" type="password" name="credentials[password]" placeholder="password"></br>
-          <!-- confirm password box -->
-          <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="confirm password"></br>
-          <!-- sign up button -->
-          <input type="submit" value="sign up">
-        </form>
-        
-        <!-- show signin form -->
-        <div id="show-signin-form-button">
-          <p id="account-message">already have an account?</p>
-          <button type="submit">sign in</button>
+          <ul>
+          <li class="form-inline my-2 my-lg-0">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" id="change-password" href="#">Change Password</a>
+            <a class="dropdown-item" id="sign-out" href="#">Sign Out</a>
+            
+            <!-- <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div> -->
+          </li>
+          <form id="change-password-form">
+            <!-- old pw -->
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <!-- new pw -->
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <!-- submit button -->
+            <input type="submit" class="btn btn-primary mb-1" value="change password">
+            <!-- cancel button -->
+            <input id="cancel" class="btn btn-secondary" type="button" value="cancel">
+          </form>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
         </div>
+      </nav>
+      <!-- AUTHORIZATION STUFF ON THE LANDING PAGE START-->
+            <section id="authorization">
+              <!-- SIGN IN -->
+              <form class="mb-0 col-6" id="sign-in-form">
+                <legend class="form-label" id="sign-in">sign in</legend>
+                <!-- email box -->
+                <input id="sign-in-email"  class="mb-2 form-control" type="text" name="credentials[email]" placeholder="email">
+                <!-- password box -->
+                <input id="sign-in-password" class="mb-2 form-control" type="password" name="credentials[password]" placeholder="password">
+                <!-- sign in button -->
+                <input type="submit" class="mb-4 btn btn-primary" value="sign in">
+              </form>
+              
+              
+              <!-- SIGN UP -->
+              <form id="sign-up-form" class ="col-6">
+                <legend id="sign-up">sign up</legend>
+                <!-- email box -->
+                <input class="mb-2 form-control"  id="sign-up-email" type="text" name="credentials[email]" placeholder="email">
+                <!-- password box -->
+                <input id="sign-up-password" class="mb-2 form-control"  type="password" name="credentials[password]" placeholder="password">
+                <!-- confirm password box -->
+                <input id="sign-up-password_confirmation" class="mb-2 form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                <!-- sign up button -->
+                <input type="submit" class= "btn btn-primary" value="sign up">
+              </form>
+              
+              <!-- show signin form -->
+            </section>
+            <div id="toggle-signup-signin">
+            <div id="show-signin-form-button">
+              <p class="mb-0" id="account-message">already have an account?</p>
+              <button type="submit" class= "btn btn-primary" class="btn btn-primary">sign in</button>
+            </div>
+      
+            <!-- show signup form -->
+            <div id="show-signup-form-button">
+              <p class="mb-0" id="account-message">don't have an account yet?</p>
+              <button type="submit" class="btn btn-primary">sign up</button>
+            </div>
+          </div>
+      <!-- container start -->
+      <div class="container">
+      
+      <!-- <h1 id="banner">gameplan</h1> -->
+      <!-- <button id="test-button" onclick= "console.log('hello')"> hey </button> -->
+      <!-- <section >
+      <div id="test-button">
+        <button type="submit"> hey </button> 
+      </div>
+    </section> -->
+    
+          <!-- AUTHORIZATION STUFF ON THE LANDING PAGE END-->
+  </div>
+  <!-- container end -->
+
   
-        <!-- show signup form -->
-        <div id="show-signup-form-button">
-          <p id="account-message">don't have an account yet?</p>
-          <button type="submit">sign up</button>
-        </div>
-        
-      </section>
-      <!-- AUTHORIZATION STUFF ON THE LANDING PAGE END-->
+
+
+      
       
       <!---GOAL BUTTONS START-->
+
       <div id="buttons">
-        <button class="button" id="create-goal-button">create a goal</button>
-        <button class="button" id="show-goal-button">search goal by id</button>
-        <button class="button" id="update-goal-button">update a goal</button>
-        <button class="button" id="delete-goal-button">delete a goal</button>
-        <button class="button" id="index-goals-button">show all goals</button>
-        <button class="button" id="hide-goals-button">hide goal(s)</button>
+        <!-- <button class="btn btn-secondary mb-1 " id="create-goal-button">create a goal</button> -->
+        <!-- <button class="btn btn-secondary mb-1" id="show-goal-button">search goal by id</button>
+        <button class="btn btn-secondary mb-1" id="update-goal-button">update a goal</button>
+        <button class="btn btn-secondary mb-1" id="delete-goal-button">delete a goal</button>
+        <button class="btn btn-secondary mb-1" id="index-goals-button">show all goals</button> -->
+        <!-- <button class="btn btn-secondary mb-1" id="hide-goals-button">hide goal(s)</button> -->
+
         <!---GOAL BUTTONS END-->
 
         <!---STEP BUTTONS START-->
-                  <div id="buttons">
-                  <button class="button" id="create-step-button">create a step</button>
-                  <button class="button" id="show-step-button">search step by id</button>
-                  <button class="button" id="update-step-button">update a step</button>
-                  <button class="button" id="delete-step-button">delete a step</button>
-                  <button class="button" id="index-steps-button">show all steps</button>
-                  <button class="button" id="hide-steps-button">hide step(s)</button>
-                  </div>
+        <!-- <button class="btn btn-secondary mb-1" id="show-step-button">search step by id</button>
+        <button class="btn btn-secondary mb-1" id="update-step-button">update a step</button>
+        <button class="btn btn-secondary mb-1" id="delete-step-button">delete a step</button>
+        <button class="btn btn-secondary mb-1" id="index-steps-button">show all steps</button>
+        <button class="btn btn-secondary mb-1" id="hide-steps-button">hide step(s)</button> -->
+
+        <!-- STEP BUTTONS END -->
+      </div>
+
+      <!-- <div id="forms"> -->
+                  
+                  <!-- SHOW GOAL
+                  <form id="show-goal-form">
+                    <legend>search a goal</legend>
+                    <input name="goal[6005f267213fcbaf0bf19743]" type="text" placeholder="6005f267213fcbaf0bf19743">
+                    <button type="submit" class= "btn btn-secondary">show</button>
+                  </form>
+                  
+                  UPDATE GOAL -->
+                  <!-- <form id="update-goal-form">
+                    <legend>update goal</legend>
+                    <input required type="text" name="goal[id]" placeholder="goal id"></br>
+                    <input type="text" name="goal[name]" placeholder="new name"></br>
+                    <input type="text" name="goal[description]" placeholder="description">
+                    <button class= "btn btn-secondary" type="submit">update</button>
+                  </form> -->
+                  
+                  <!-- DELETE GOAL -->
+                  <!-- <form id="delete-goal-form">
+                    <legend>delete goal</legend>
+                    <input type="text" name="goal[id]" placeholder="goal id here">
+                    <button class= "btn btn-secondary" type="submit">delete</button>
+                  </form> -->
+                  
+                  <!-- GOAL STUFF END-->
+                  
+                  
+                  <!--STEP STUFF START-->
+                  <!-- <div id="step-stuff"> -->
+                    <!--NEW STEP-->
+                    <!-- <form id="create-step-form">
+                      <legend>new step</legend>
+                      <input type="text" name="step[text]" placeholder="create step">
+                      <input type="text" name="goal[id]" placeholder="reference associated goal">
+                      <button class= "btn btn-secondary"type="submit">create</button>
+                    </form> 
+                    <br> -->
+                    <!-- SHOW STEP -->
+                    <!-- <form id="show-step-form">
+                      <legend>search a step</legend>
+                      <input name="step[id]" type="text" placeholder="search step">
+                      <button class= "btn btn-secondary" type="submit">show</button>
+                    </form> -->
+                    
+                    <!-- UPDATE STEP -->
+                    <!-- <form id="update-step-form">
+                      <legend>update step</legend>
+                      <input required type="text" name="step[id]" placeholder="step id"></br>
+                      <input type="text" name="step[text]" placeholder="new step"></br>
+                      <button class= "btn btn-secondary" type="submit">update</button>
+                    </form> -->
+                    
+                    <!-- DELETE STEP -->
+                    <!-- <form id="delete-step-form">
+                      <legend>delete step</legend>
+                      <input type="text" name="step[id]" placeholder="step id here">
+                      <button class= "btn btn-secondary" type="submit">delete</button>
+                    </form> -->
+                    
+                  <!-- </div> -->
         <!--STEP BUTTONS END-->
       
       <!-- GOAL STUFF START-->
-      <div id="goal-stuff">
-        <!--NEW GOAL-->
-        <form id="create-goal-form">
-          <legend>new goal</legend>
-          <input type="text" name="goal[name]" placeholder="create goal">
-          <input type="text" name="goal[description]" placeholder="add goal description">
-          <button type="submit">create</button>
-        </form>
-        
-        
-        <!-- SHOW GOAL -->
-        <form id="show-goal-form">
-          <legend>search a goal</legend>
-          <input name="goal[id]" type="text" placeholder="search goal">
-          <button type="submit">show</button>
-        </form>
-        
-        <!-- UPDATE GOAL -->
-        <form id="update-goal-form">
-          <legend>update goal</legend>
-          <input required type="text" name="goal[id]" placeholder="goal id"></br>
-          <input type="text" name="goal[name]" placeholder="new name"></br>
-          <input type="text" name="goal[description]" placeholder="description">
-          <button type="submit">update</button>
-        </form>
-        
-        <!-- DELETE GOAL -->
-        <form id="delete-goal-form">
-          <legend>delete goal</legend>
-          <input type="text" name="goal[id]" placeholder="goal id here">
-          <button type="submit">delete</button>
-        </form>
-
-        <section id="goals">
-        </section>
-        <br />
-      </div>
-      <!-- GOAL STUFF END-->
-
-
-<!--STEP STUFF START-->
-        <div id="step-stuff">
-          <!--NEW STEP-->
-          <form id="create-step-form">
-            <legend>new step</legend>
-            <input type="text" name="step[text]" placeholder="create step">
-            <button type="submit">create</button>
-          </form> 
-          <br>
-          <!-- SHOW STEP -->
-          <form id="show-step-form">
-            <legend>search a step</legend>
-            <input name="step[id]" type="text" placeholder="search step">
-            <button type="submit">show</button>
-          </form>
+      <div id=page-display>
+        <div id="goal-stuff">
           
-          <!-- UPDATE STEP -->
-          <form id="update-step-form">
-            <legend>update step</legend>
-            <input required type="text" name="step[id]" placeholder="step id"></br>
-            <input type="text" name="step[text]" placeholder="new step"></br>
-            <button type="submit">update</button>
-          </form>
           
-          <!-- DELETE STEP -->
-          <form id="delete-step-form">
-            <legend>delete step</legend>
-            <input type="text" name="step[id]" placeholder="step id here">
-            <button type="submit">delete</button>
+          <!--NEW GOAL-->
+          <form class="border" id="create-goal-form">
+            <!-- <p id="my-goals"> goals</p> -->
+            <button class="btn btn-secondary mb-1" id="create-step-button">create a step</button>
+            <input type="text" name="goal[name]" placeholder="add a new goal">
+            <input type="text" name="goal[description]" placeholder="description">
+            <button type="submit" class="btn btn-primary ">add to list</button>
+            <!-- <input id="cancel-create-goal" class="btn btn-secondary" type="button" value="cancel"> -->
           </form>
-          
-          <section id="steps">
+          <section class="border" id="goals">
           </section>
-          <br />
         </div>
-          
-<br />
+        <p id="message"></p>
+      
+      <div id="see-more"> </div>
+      </div>
+
 
 <!-- SIGNED IN AUTH STUFF START-->
           <!-- CHANGE PW -->
+          <!-- <div id="signed-in-auth">
           <div id="show-change-password-form-button">
-            <button type="submit">change password</button>
-          </div>
+            <button class= "btn btn-secondary mb-1" type="submit" >change password</button>
+          </div> -->
 
-          <form id="change-password-form">
-            <!-- old pw -->
-              <input type="password" name="passwords[old]" placeholder="old password"></br>
-            <!-- new pw -->
-              <input type="password" name="passwords[new]" placeholder="new password"></br>
-            <!-- submit button -->
-              <input type="submit" value="change password">
-              <!-- cancel button -->
-              <input id="cancel" type="button" value="cancel">
-          </form>
+          
 
           <!-- SIgn OUT -->
-          <form id="sign-out-form">
-              <input type="submit" value="sign out">
+          <!-- <form id="sign-out-button">
+              <button id="sign-out-button" type="submit" class= "btn btn-secondary" value="sign out">sign out</button>
           </form>
+          </div> -->
 <!-- SIGNED IN AUTH STUFF END-->
     </body>
   </html>

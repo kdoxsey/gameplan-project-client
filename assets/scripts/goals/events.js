@@ -4,9 +4,15 @@ const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
 // const store = require('./../store')
 
+const testButton = function (event) {
+  event.preventDefault()
+  console.log('test button clicked')
+}
+
+
 const onShowCreateGoalForm = function (event) {
   event.preventDefault()
-  $('#create-goal-form').show()
+  $('#create-goal-form').fadeIn()
   $('#delete-goal-form').hide()
   $('#show-goal-form').hide()
   $('#update-goal-form').hide()
@@ -45,11 +51,15 @@ const onCreateGoal = function (event) {
     .then(api.indexGoals)
     .then(ui.indexGoalsSuccess)
     .catch(ui.createGoalFailure)
-    .catch(ui.indexGoalsFailure)
+}
+
+const onCancelCreateGoal = function (event) {
+  event.preventDefault()
+  $('#create-goal-form').fadeOut()
 }
 
 const onIndexGoals = function (event) {
-  event.preventDefault()
+  // event.preventDefault()
   api.indexGoals()
     .then(ui.indexGoalsSuccess)
     .catch(ui.indexGoalsFailure)
@@ -66,8 +76,11 @@ const onShowGoal = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
+  // console.log('before the api request')
   api.showGoal(data)
+    // .then(console.log('after the api request'))
     .then(ui.showGoalSuccess)
+    // .then(console.log('after the ui response'))
     .catch(ui.showGoalFailure)
 }
 
@@ -93,7 +106,9 @@ const onDeleteGoal = function (event) {
     .catch(ui.destroyGoalFailure)
 }
 module.exports = {
+  testButton,
   onCreateGoal,
+  onCancelCreateGoal,
   onIndexGoals,
   onShowGoal,
   onUpdateGoal,

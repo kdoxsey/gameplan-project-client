@@ -1,11 +1,22 @@
 'use strict'
 import dateFormat from 'dateformat'
+import { apiUrl } from '../config'
+
+
+
+const testButtonSuccess = function (response) {
+  console.log('test button from ui')
+  $('#test-button').on("submit", console.log('test button clicked'))
+}
 
 const createGoalSuccess = function (response) {
-  $('#message').text('new goal is ' + response.goal.name + ' and its id is ' + response.goal._id + '. good luck')
+  $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
-  $('#create-goal-form').hide()
-   console.log(response)
+  $('#goals').html('')
+  $('#change-password-form').hide()
+  // $('#goals').html(response.goal.name)
+  console.log(response.goal)
+  console.log(response)
 }
 
 const createGoalFailure = function (response) {
@@ -18,54 +29,97 @@ const showGoalSuccess = function (response) {
   $('#goals').html('')
   $('form').trigger('reset')
   console.log(response)
+  console.log(response.goal._id)
   
-//   const deleteGoal = function () {
-//   console.log('delete button clicked')
-// }
-  const goalShow = (`
-      <section class="border">
-      <h1> ${response.goal.name} </h1>
-      <p> ${response.goal._id} </p>
-      <p> created on ${dateFormat(response.goal.createdAt, 'dddd, mmmm dS, yyyy')} </p>
-      <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
-      <button onClick="{console.log('help')}">delete</button>
+  //   const deleteGoal = function () {
+    //   console.log('delete button clicked')
+    // }
+    const goalShow = (`
+    <section class="border">
+    <h1> ${response.goal.name} </h1>
+    <p> ${response.goal._id} </p>
+    <p> created on ${dateFormat(response.goal.createdAt, 'dddd, mmmm dS, yyyy')} </p>
+    <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
+    <button onClick="{console.log('help')}">delete</button>
+    </section>
+    `)
+    
+    $('#goals').append(goalShow)
+  }
+
+  const emptyGoals = (`
+      
+      <section class="container" id="empty-goals">
+      no goals to display
       </section>
       `)
-
-      $('#goals').append(goalShow)
-}
-
-
-const indexGoalsSuccess = function (response) {
-  console.log(response.goals.length)
-  $('#goals').show()
-  $('#goals').html('')
-  if (response.goals.length === 0) {
-    $('#goals').text('goals list is empty')
-    $('#hide-goals-button').show()
-    $('#index-goals-button').hide()
-    $('form').trigger('reset')
-  }
-  response.goals.forEach(goals => {
+  
+  const indexGoalsSuccess = function (response) {
+    console.log(response.goals.length)
+    $('#goals').fadeIn()
+    // $('#goals').html('')
+    if (response.goals.length === 0) {
+      $('#goals').html(emptyGoals)
+      $('#hide-goals-button').show()
+      $('#index-goals-button').hide()
+      // $('form').trigger('reset')
+    }
+    
+    // <button id="test-button" type="submit"> hey </button> 
+    //  const handleclick =() => console.log('hello')  onclick= ${handleclick}
+    response.goals.forEach(goals => {
+      
       const goalList = (`
-      <section class="border">
-      <h1> ${goals.name} </h1>
-      <h3> ${goals.description} </h3>
-      <h3> steps: ${goals.steps} </h3>
-      <p> id: ${goals._id} </p>
-      <input type="checkbox" id="checkbox" name="checkbox" value="isChecked">
+      
+      <section class="container" id="goal-border">
+      <h5 id="show-goal"> <a href="#">${goals.name} </a> </h5>
+      <p id="steps-list"> </p>
       
       </section>
       `)
 
-      $('#goals').append(goalList)
-      $('#hide-goals-button').show()
-      $('#index-goals-button').hide()
+      const stepList = (`
+      
+      <section class="container">
+      <h5 id="show-goal"> <a href="#"> ${goals.description} </a> </h5>
+      
+      </section>
+      `)
+
+      const seeMore = (`
+      
+      <section class="container">
+      <h1 id="goal-name">${goals.name}</h1>
+      <h2 id="goal-description">${goals.description}</h2>
+      <p id="date-created"> Created on ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
+      
+      </section>
+      `)
+      
+      // $('#goals').html('')
+      $('#goals').prepend(goalList)
+      // $('#hide-goals-button').show()
+      // $('#index-goals-button').hide()
       $('form').trigger('reset')
+      $('#steps-list').html(stepList).hide()
+      $('#see-more').html(seeMore).hide()
+      
+      
+      document.getElementById("show-goal").addEventListener("click", handleClick)
+
+      function handleClick () {
+        console.log(goals.name)
+        $('#steps-list').toggle()
+        $('#see-more').toggle()
+        $('#change-password-form').hide()
+        $('#message').hide()
+    }
     })
+  
+    
   }
   
-
+  
 const indexGoalsFailure = function (response) {
   $('#message').text('unable to index goals')
   $('form').trigger('reset')
@@ -112,6 +166,7 @@ const destroyGoalFailure = function (response) {
 }
 
 module.exports = {
+  testButtonSuccess,
   createGoalSuccess,
   createGoalFailure,
   indexGoalsSuccess,
