@@ -1,19 +1,11 @@
 // 'use strict'
 // import dateFormat from 'dateformat'
 
-<<<<<<< HEAD
 const createStepSuccess = function (response) {
   $('#message').text('new step created')
   $('form').trigger('reset')
   $('#create-step-form').hide()
 }
-=======
-// const createStepSuccess = function (response) {
-//   $('#message').text('new step is ' + response.step.text + ' and its id is ' + response.step._id)
-//   $('form').trigger('reset')
-//   $('#create-step-form').hide()
-// }
->>>>>>> stepList
 
 // const createStepFailure = function (response) {
 //   $('#message').text('unable to create step. take a nap and come back to it')
