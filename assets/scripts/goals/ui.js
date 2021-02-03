@@ -1,13 +1,5 @@
 'use strict'
 import dateFormat from 'dateformat'
-import { apiUrl } from '../config'
-
-
-
-const testButtonSuccess = function (response) {
-  console.log('test button from ui')
-  $('#test-button').on("submit", console.log('test button clicked'))
-}
 
 const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
@@ -25,100 +17,78 @@ const createGoalFailure = function (response) {
 }
 
 
-const showGoalSuccess = function (response) {
-  $('#goals').html('')
-  $('form').trigger('reset')
-  console.log(response)
-  console.log(response.goal._id)
+// const showGoalSuccess = function (response) {
+//   $('#goals').html('')
+//   $('form').trigger('reset')
+//   console.log(response)
+//   console.log(response.goal._id)
   
-  //   const deleteGoal = function () {
-    //   console.log('delete button clicked')
-    // }
-    const goalShow = (`
-    <section class="border">
-    <h1> ${response.goal.name} </h1>
-    <p> ${response.goal._id} </p>
-    <p> created on ${dateFormat(response.goal.createdAt, 'dddd, mmmm dS, yyyy')} </p>
-    <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
-    <button onClick="{console.log('help')}">delete</button>
-    </section>
-    `)
+//     const goalShow = (`
+//     <section class="border">
+//     <h1> ${response.goal.name} </h1>
+//     <p> ${response.goal._id} </p>
+//     <p> created on ${dateFormat(response.goal.createdAt, 'dddd, mmmm dS, yyyy')} </p>
+//     <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
+//     <button onClick="{console.log('help')}">delete</button>
+//     </section>
+//     `)
     
-    $('#goals').append(goalShow)
-  }
+//     $('#goals').append(goalShow)
+//   }
 
   const emptyGoals = (`
-      
       <section class="container" id="empty-goals">
       no goals to display
       </section>
       `)
+
+      //   const emptySteps = (`
+      // <section class="container" id="empty-steps">
+      // no steps listed
+      // </section>
+      // `)
   
   const indexGoalsSuccess = function (response) {
-    // console.log(response.goals.length)
     $('#goals').fadeIn()
-    // $('#goals').html('')
+
+    // display empty goals message if there are no goals
     if (response.goals.length === 0) {
       $('#goals').html(emptyGoals)
       $('#hide-goals-button').show()
       $('#index-goals-button').hide()
-      // $('form').trigger('reset')
-    }
-    
-    // <button id="test-button" type="submit"> hey </button> 
-    //  const handleclick =() => console.log('hello')  onclick= ${handleclick}
-
-    response.goals.forEach(goals => {
-      console.log(goals)
-      
-      const goalList = (`
-      
-      <section class="container" id="goal-border">
-      <h5 id="show-goal"> <a href="#">${goals.name} </a> </h5>
-      <p id="steps-list"> </p>
-      
-      </section>
-      `)
-
-        const stepList = (`
-      
-      <section class="container">
-      <h5 id="show-steps"> <a href="#"> ${goals.description} </a> </h5>
-      
-      </section>
-      `)
-
-      const seeMore = (`
-      
-      <section class="container">
-      <h1 id="goal-name">${goals.name}</h1>
-
-      <h2 id="goal-description">${goals.description}</h2>
-      
-      <p id="date-created"> Created on ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
-      
-      </section>
-      `)
-      
-      // $('#goals').html('')
-      $('#goals').prepend(goalList)
-      // $('#hide-goals-button').show()
-      // $('#index-goals-button').hide()
       $('form').trigger('reset')
-      $('#steps-list').html(stepList).hide()
-      $('#see-more').html(seeMore).hide()
-      
-      
-      document.getElementById("show-goal").addEventListener("click", handleClick)
-
-      function handleClick () {
-        console.log(goals.name)
-        $('#steps-list').toggle()
-        $('#see-more').toggle()
-        $('#change-password-form').hide()
-        $('#message').hide()
     }
-    })
+
+    // iterate through the goals
+    for (let i = 0; i < response.goals.length; i++) {
+      console.log(goals[i])
+
+    // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
+      const goalList= (`
+      <section class="container" id="goal-border">
+      <a href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
+       ${response.goals[i].name}
+      </a>
+      </section>
+     <div class="collapse out" id="show-steps">
+     <p>
+      ${response.goals[i].description}
+     </p>
+      </div>
+    `)
+
+      // const seeMore = (`
+      // <section class="container">
+      // <h1 id="goal-name">${goals.name}</h1>
+      // <h2 id="goal-description">${goals.description}</h2>
+      // <p id="date-created"> Created on ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
+      // </section>
+      // `)
+      
+      $('#goals').prepend(goalList)
+      $('form').trigger('reset')
+      // $('#see-more').html(seeMore).hide()
+    }
   
     
   }
@@ -170,12 +140,11 @@ const destroyGoalFailure = function (response) {
 }
 
 module.exports = {
-  testButtonSuccess,
   createGoalSuccess,
   createGoalFailure,
   indexGoalsSuccess,
   indexGoalsFailure,
-  showGoalSuccess,
+  // showGoalSuccess,
   showGoalFailure,
   updateGoalSuccess,
   updateGoalFailure,
