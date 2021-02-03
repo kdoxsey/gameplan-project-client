@@ -24,6 +24,10 @@ $theme-colors: (
   background: #03ffe6;
 }
 
+.dropdown-toggle {
+  margin-top: -15px;
+}
+
 body {
   background: url("public/1390893.jpg");
   // background-repeat: no-repeat;
@@ -91,8 +95,7 @@ body {
 // }
 
 // .navbar {
-//   margin-left: 10px;
-//   margin-right: 0px;
+//   position: fixed;
 // }
 
 .navbar-brand {
@@ -230,6 +233,8 @@ section.container.border {
   // color: blue;
   margin-left: 15px;
 }
+// #signed-in-as {
+// }
 
 // #checkbox {
 //   display: flex;

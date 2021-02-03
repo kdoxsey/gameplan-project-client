@@ -55,7 +55,7 @@ const showGoalSuccess = function (response) {
       `)
   
   const indexGoalsSuccess = function (response) {
-    console.log(response.goals.length)
+    // console.log(response.goals.length)
     $('#goals').fadeIn()
     // $('#goals').html('')
     if (response.goals.length === 0) {
@@ -80,11 +80,10 @@ const showGoalSuccess = function (response) {
       </section>
       `)
 
-        const stepList =
-        (`
+        const stepList = (`
       
       <section class="container">
-      <h5 id="show-steps"> <a href="#"> ${goals.step[0].text} </a> </h5>
+      <h5 id="show-steps"> <a href="#"> ${goals.description} </a> </h5>
       
       </section>
       `)
@@ -95,8 +94,6 @@ const showGoalSuccess = function (response) {
       <h1 id="goal-name">${goals.name}</h1>
 
       <h2 id="goal-description">${goals.description}</h2>
-
-      <h3>step 1: ${goals.step[0].text}</h3>
       
       <p id="date-created"> Created on ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
       

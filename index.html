@@ -41,6 +41,7 @@
 
           <ul>
           <li class="form-inline my-2 my-lg-0">
+            <p id="signed-in-as"></p>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             My Account
@@ -53,6 +54,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div> -->
           </li>
+          
           <form id="change-password-form">
             <!-- old pw -->
             <input type="password" name="passwords[old]" placeholder="old password">
@@ -181,7 +183,7 @@
           <form class="border" id="create-goal-form">
             <input type="text" name="goal[name]" placeholder="add a new goal">
             <input type="text" name="goal[description]" placeholder="description">
-            <input type="text" name="step[text]" placeholder="add a step">
+            <!-- <input type="text" name="step[text]" placeholder="add a step"> -->
             <button type="submit" class="btn btn-primary ">add to list</button>
             <!-- <input id="cancel-create-goal" class="btn btn-secondary" type="button" value="cancel"> -->
           </form>
