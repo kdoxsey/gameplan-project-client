@@ -68,6 +68,7 @@ const showGoalSuccess = function (response) {
     // <button id="test-button" type="submit"> hey </button> 
     //  const handleclick =() => console.log('hello')  onclick= ${handleclick}
     response.goals.forEach(goals => {
+      console.log(goals)
       
       const goalList = (`
       
@@ -78,10 +79,11 @@ const showGoalSuccess = function (response) {
       </section>
       `)
 
-      const stepList = (`
+        const stepList =
+        (`
       
       <section class="container">
-      <h5 id="show-goal"> <a href="#"> ${goals.description} </a> </h5>
+      <h5 id="show-steps"> <a href="#"> ${goals.step[0].text} </a> </h5>
       
       </section>
       `)
