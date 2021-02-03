@@ -67,6 +67,7 @@ const showGoalSuccess = function (response) {
     
     // <button id="test-button" type="submit"> hey </button> 
     //  const handleclick =() => console.log('hello')  onclick= ${handleclick}
+
     response.goals.forEach(goals => {
       console.log(goals)
       
@@ -92,7 +93,11 @@ const showGoalSuccess = function (response) {
       
       <section class="container">
       <h1 id="goal-name">${goals.name}</h1>
+
       <h2 id="goal-description">${goals.description}</h2>
+
+      <h3>step 1: ${goals.step[0].text}</h3>
+      
       <p id="date-created"> Created on ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
       
       </section>
