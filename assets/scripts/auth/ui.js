@@ -19,7 +19,7 @@ const signInSuccess = function (response) {
   const name = nameReplace !== str ? nameReplace : null
   $('#message').text('hello, ' + name.toLowerCase() + '!').fadeIn().delay(2000).fadeOut()
   $('.nav-item dropdown').show()
-  $('#signed-in-as').fadeIn().html('signed in as ' + store.user.email)
+  $('#signed-in-as').fadeIn().html(store.user.email)
   // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
   $('form').trigger('reset')
   $('#toggle-signup-signin').hide()
