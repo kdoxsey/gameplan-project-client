@@ -8,11 +8,22 @@ const createGoalSuccess = function (response) {
   const display = $('#goals')
   const list = document.createElement('a')
 
+  const display2 = $('#see-more')
+  const list2 = document.createElement('div')
+
+  // goals list
   $(list).addClass('list-group-item list-group-item-action')
   $(list).attr('data-toggle', 'list')
   $(list).attr('id', 'list-' + response.goal._id)
   $(list).html('<a>' + response.goal.name + '</a>')
+  //add the new goal to the beginning of the list
   $(display).prepend(list)
+
+  // see more
+  $(list2).addClass('tab-pane fade')
+  $(list2).attr('id', 'list-' + response.goal._id)
+  //add the 'see more' to the goal
+  $(list2).html(response.goal.description)
 }
 
 const createGoalFailure = function (response) {
@@ -22,21 +33,18 @@ const createGoalFailure = function (response) {
 
 const indexGoalsSuccess = function (response) {
   const display = $('#goals')
-  // const emptyGoals = (`
-  // <section class="container" id="empty-goals">
-  // no goals to display
-  // </section>
-  // `)
+  const emptyGoals = (`
+  <section class="container" id="empty-goals">
+  no goals to display
+  </section>
+  `)
   // display empty goals message if there are no goals
-  // console.log(response.goals.length)
-  // if (response.goals.length === 0) {
-  //   $('#goals').html(emptyGoals)
-  //   $('form').trigger('reset')
-  // }
+  console.log(response.goals.length)
+  if (response.goals.length === 0) {
+    $('#goals').html(emptyGoals)
+    $('form').trigger('reset')
+  }
   $(display).empty()
-
-    
-
     // iterate through the goals
     for (let i = 0; i < response.goals.length; i++) {
       // $(display).empty()
@@ -50,7 +58,7 @@ const indexGoalsSuccess = function (response) {
       $(list).attr('href', '#list-' + goalArr._id)
       $(list).attr('role', 'tab')
       $(list).html('<a>' + response.goals[i].name + '</a>')
-
+      // add the new goal to the top of the list
       $(display).prepend(list)
 
     // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
@@ -78,6 +86,9 @@ const indexGoalsSuccess = function (response) {
       // $('#goals').prepend(goalList)
       // $('form').trigger('reset')
       // $('#see-more').html(seeMore).hide()
+
+
+      // do another for loop for STEPS inside of the goals for loop
     }
   
     
