@@ -46,27 +46,28 @@ const indexGoalsSuccess = function (response) {
     for (let i = 0; i < response.goals.length; i++) {
 
       const list = document.createElement('a')
+      // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
+        const goalList= (`
+        <section class="container" id="goal-border">
+        <p href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
+         ${response.goals[i].name}
+        </p>
+        </section>
+       <div class="collapse out" id="show-steps">
+       <p>
+        ${response.goals[i].description}
+       </p>
+        </div>
+      `)
       $(list).addClass('list-group-item list-group-item-action')
       $(list).attr('data-toggle', 'list')
       $(list).attr('href', '#list-' + response.goals[i]._id)
       $(list).attr('role', 'tab')
-      $(list).html('<a>' + response.goals[i].name + '</a>')
+      // $(list).html('<a>' + response.goals[i].name + '</a>')
+      $(list).html(goalList)
       // add the new goal to the top of the list
       $('#goals').prepend(list)
 
-    // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
-    //   const goalList= (`
-    //   <section class="container" id="goal-border">
-    //   <a href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
-    //    ${response.goals[i].name}
-    //   </a>
-    //   </section>
-    //  <div class="collapse out" id="show-steps">
-    //  <p>
-    //   ${response.goals[i].description}
-    //  </p>
-    //   </div>
-    // `)
 
       // const seeMore = (`
       // <section class="container">

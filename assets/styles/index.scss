@@ -42,9 +42,8 @@ body {
 // background-color: red;
 
 #goal-border {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 250px;
-  overflow: hidden;
+  // border: 1px solid rgba(255, 255, 255, 0.2);
+  // width: 250px;
   // display: flex;
   // flex-direction: row;
 }
@@ -140,10 +139,16 @@ body {
 // }
 
 #goals {
-  width: 250px;
+  display: flex;
+  max-width: 250px;
   height: 70vh;
   overflow: scroll;
+  text-overflow: hidden;
 }
+
+// .list-group {
+//   overflow: hidden;
+// }
 
 .list-group-item {
   color: white;
@@ -151,15 +156,20 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+// .list-group-item-action {
+//   // color: white;
+//   // background: transparent;
+//   border-color: rgba(255, 255, 255, 0.2);
+// }
+
 #goal-stuff {
+  // max-width: 250px;
   margin-top: -35px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
 #show-steps {
-  color: white;
+  // color: white;
   margin-left: 50px;
 }
 
@@ -174,7 +184,7 @@ form {
 }
 
 #show-goal {
-  padding: 5px;
+  margin-left: -20px;
 }
 
 #see-more {
@@ -188,10 +198,6 @@ form {
 //   justify-content: center;
 //   font-size: 15px;
 // }
-
-section.container.border {
-  padding: 10px;
-}
 
 // #forms {
 //   position: absolute;
