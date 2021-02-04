@@ -5,10 +5,8 @@ const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
   $('#change-password-form').hide()
-  const display = $('#goals')
   const list = document.createElement('a')
 
-  const display2 = $('#see-more')
   const list2 = document.createElement('div')
 
   // goals list
@@ -17,7 +15,7 @@ const createGoalSuccess = function (response) {
   $(list).attr('id', 'list-' + response.goal._id)
   $(list).html('<a>' + response.goal.name + '</a>')
   //add the new goal to the beginning of the list
-  $(display).prepend(list)
+  $('#goals').prepend(list)
 
   // see more
   $(list2).addClass('tab-pane fade')
@@ -32,34 +30,29 @@ const createGoalFailure = function (response) {
 }
 
 const indexGoalsSuccess = function (response) {
-  const display = $('#goals')
-  const emptyGoals = (`
-  <section class="container" id="empty-goals">
-  no goals to display
-  </section>
-  `)
+  // const emptyGoals = (`
+  // <section class="container" id="empty-goals">
+  // no goals to display
+  // </section>
+  // `)
   // display empty goals message if there are no goals
-  console.log(response.goals.length)
-  if (response.goals.length === 0) {
-    $('#goals').html(emptyGoals)
-    $('form').trigger('reset')
-  }
-  $(display).empty()
+  // console.log(response.goals.length)
+  // if (response.goals.length === 0) {
+  //   $('#goals').html(emptyGoals)
+  //   $('form').trigger('reset')
+  // }
+  $('#goals').empty()
     // iterate through the goals
     for (let i = 0; i < response.goals.length; i++) {
-      // $(display).empty()
-      // console.log(response.goals[i])
-
-      const goalArr = response.goals[i]
 
       const list = document.createElement('a')
       $(list).addClass('list-group-item list-group-item-action')
       $(list).attr('data-toggle', 'list')
-      $(list).attr('href', '#list-' + goalArr._id)
+      $(list).attr('href', '#list-' + response.goals[i]._id)
       $(list).attr('role', 'tab')
       $(list).html('<a>' + response.goals[i].name + '</a>')
       // add the new goal to the top of the list
-      $(display).prepend(list)
+      $('#goals').prepend(list)
 
     // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
     //   const goalList= (`
