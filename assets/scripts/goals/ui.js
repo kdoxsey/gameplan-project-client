@@ -6,14 +6,26 @@ const createGoalSuccess = function (response) {
   $('form').trigger('reset')
   $('#change-password-form').hide()
   const list = document.createElement('a')
-
   const list2 = document.createElement('div')
+
+          const goalList= (`
+        <section class="container" id="goal-border">
+        <p href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
+         ${response.goal.name}
+        </p>
+        </section>
+       <div class="collapse out" id="show-steps">
+       <p>
+        ${response.goal.description}
+       </p>
+        </div>
+      `)
 
   // goals list
   $(list).addClass('list-group-item list-group-item-action')
   $(list).attr('data-toggle', 'list')
   $(list).attr('id', 'list-' + response.goal._id)
-  $(list).html('<a>' + response.goal.name + '</a>')
+  $(list).html(goalList)
   //add the new goal to the beginning of the list
   $('#goals').prepend(list)
 
