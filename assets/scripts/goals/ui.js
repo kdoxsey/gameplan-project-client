@@ -24,6 +24,7 @@ const createGoalSuccess = function (response) {
   // goals list
   $(list).addClass('list-group-item list-group-item-action')
   $(list).attr('data-toggle', 'list')
+  $(list).attr('href', 'list-' + response.goal._id)
   $(list).attr('id', 'list-' + response.goal._id)
   $(list).html(goalList)
   //add the new goal to the beginning of the list
@@ -74,6 +75,7 @@ const indexGoalsSuccess = function (response) {
       $(list).addClass('list-group-item list-group-item-action')
       $(list).attr('data-toggle', 'list')
       $(list).attr('href', '#list-' + response.goals[i]._id)
+      $(list).attr('id', '#list-' + response.goals[i]._id)
       $(list).attr('role', 'tab')
       // $(list).html('<a>' + response.goals[i].name + '</a>')
       $(list).html(goalList)
