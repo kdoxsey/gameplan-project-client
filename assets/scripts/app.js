@@ -1,55 +1,54 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
 const authEvents = require('./auth/events')
 const goalsEvents = require('./goals/events')
-const stepsEvents = require('./steps/events')
+// const stepsEvents = require('./steps/events')
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
-// console.log('hello from app.js')
 
 $(() => {
-  // your JS code goes here
+  // default hiddens
   $('#goal-stuff').hide()
   $('.nav-link').hide()
   $('#message').hide()
-  $('#test-button').on('click', goalsEvents.testButton)
-  $('#navbarDropdown').on('click', authEvents.onClearChangePasswordForm)
-  // $('#steps-list').hide()
   $('#show-goal-button').hide()
-  $('#message').text('sign in to sort out your life')
   $('#sign-up-form').hide()
   $('#buttons').hide()
-  // hide the signed-in auth forms
-  //hide and show change password forms
   $('#change-password-form').hide()
-  $('#change-password').on('click', authEvents.onShowChangePasswordForm)
-  //
-  $('#cancel').on('click', authEvents.onCancelChangePassword)
-  $('#change-password').on("click", authEvents.onShowChangePasswordForm)
   $('#sign-out-button').hide()
-  // show the signed in auth forms
-  $('#show-signup-form-button').on('click', authEvents.onShowSignUp)
+  $('#create-goal-form').hide()
+  $('#show-goal-form').hide()
+  $('#update-goal-form').hide()
+  $('#delete-goal-form').hide()
+  $('#delete-goal-button').hide()
+  $('#update-goal-button').hide()
   $('#show-signin-form-button').hide()
-  $('#show-signin-form-button').on('click', authEvents.onShowSignIn)
+
+  // auth events
+  $('#navbarDropdown').on('click', authEvents.onClearChangePasswordForm)
+  $('#change-password').on('click', authEvents.onShowChangePasswordForm)
+  $('#cancel').on('click', authEvents.onCancelChangePassword)
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
+
+  // toggle the sign-up/sign-in forms
+  $('#show-signup-form-button').on('click', authEvents.onShowSignUp)
+  $('#show-signin-form-button').on('click', authEvents.onShowSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+
   // goals
   $('#create-goal-form').on('submit', goalsEvents.onCreateGoal)
-  $('#hide-goals-button').hide()
-  // $('#index-goals-button').on('click', goalsEvents.onIndexGoals)
-  // $('#index-all-goals').on('click', goalsEvents.onIndexAllGoals)
-  // $('#hide-goals-button').on('click', goalsEvents.onHideGoals)
-  $('#show-goal-form').on('submit', goalsEvents.onShowGoal)
-  $('#show-goal').on('click', goalsEvents.onShowGoal)
-  $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)
+  // $('#delete-goal-button').on('click', goalsEvents.onShowDeleteGoalForm)
+  // $('#show-goal-button').on('click', goalsEvents.onShowShowGoalForm)
+  // $('#update-goal-button').on('click', goalsEvents.onShowUpdateGoalForm)
+
+
+  // $('#show-goal-form').on('submit', goalsEvents.onShowGoal)
+  // $('#show-goal').on('click', goalsEvents.onShowGoal)
+  // $('#update-goal-form').on('submit', goalsEvents.onUpdateGoal)
   // $('#cancel-create-goal').on('click', goalsEvents.onCancelCreateGoal)
-  
-  $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
+  // $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
+
   //steps
   // $('#create-step-form').hide()
   // $('#create-step-form').on('submit', stepsEvents.onCreateStep)
@@ -64,18 +63,7 @@ $(() => {
   // $('#update-step-form').hide()
   // $('#delete-step-form').on('submit', stepsEvents.onDeleteStep)
   // $('#delete-step-form').hide()
-  // hide the GOAL crud forms
-  $('#create-goal-form').hide()
-  $('#show-goal-form').hide()
-  $('#update-goal-form').hide()
-  $('#delete-goal-form').hide()
   // show GOAL crud forms
-  $('#create-goal-button').on('click', goalsEvents.onShowCreateGoalForm)
-  $('#delete-goal-button').on('click', goalsEvents.onShowDeleteGoalForm)
-  $('#delete-goal-button').hide()
-  $('#show-goal-button').on('click', goalsEvents.onShowShowGoalForm)
-  $('#update-goal-button').on('click', goalsEvents.onShowUpdateGoalForm)
-  $('#update-goal-button').hide()
     // hide the STEP crud forms
   // $('#create-step-form').hide()
   // $('#show-step-form').hide()

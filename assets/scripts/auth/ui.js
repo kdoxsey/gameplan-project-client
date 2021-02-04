@@ -3,7 +3,7 @@ const goalsEvents = require('./../goals/events')
 
 const signUpSuccess = function (response) {
   $('#message').text('thanks for signing up ' + response.user.email)
-  $('form').trigger('reset')
+  goalsEvents.onIndexGoals()
 
 }
 
@@ -18,22 +18,15 @@ const signInSuccess = function (response) {
   const nameReplace = str.replace(/@.*$/,"")
   const name = nameReplace !== str ? nameReplace : null
   $('#message').text('hello, ' + name.toLowerCase() + '!').fadeIn().delay(2000).fadeOut()
-  $('.nav-item dropdown').show()
+  // $('.nav-item dropdown').show()
   $('#signed-in-as').fadeIn().html(store.user.email)
-  // $('#message').text('thanks for signing in ' + response.user.email + '. what do you want to accomplish?')
-  $('form').trigger('reset')
+  // $('form').trigger('reset')
   $('#toggle-signup-signin').hide()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
-  // $('#buttons').show()
   $('#create-goal-form').fadeIn()
-  // $('#index-goals-button').show()
-  // $('#sign-out-button').show()
-  // $('#show-change-password-form-button').show()
   $('.nav-link').fadeIn()
   $('#goal-stuff').fadeIn()
-  console.log('token is ' + store.user.token)
-  console.log(response.user._id)
   goalsEvents.onIndexGoals()
 }
 

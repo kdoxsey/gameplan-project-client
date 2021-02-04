@@ -4,11 +4,15 @@ import dateFormat from 'dateformat'
 const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
-  $('#goals').html('')
   $('#change-password-form').hide()
-  // $('#goals').html(response.goal.name)
-  console.log(response.goal)
-  console.log(response)
+  const display = $('#goals')
+  const list = document.createElement('a')
+
+  $(list).addClass('list-group-item list-group-item-action')
+  $(list).attr('data-toggle', 'list')
+  $(list).attr('id', 'list-' + response.goal._id)
+  $(list).html('<a>' + response.goal.name + '</a>')
+  $(display).prepend(list)
 }
 
 const createGoalFailure = function (response) {
@@ -16,66 +20,52 @@ const createGoalFailure = function (response) {
   $('form').trigger('reset')
 }
 
+const indexGoalsSuccess = function (response) {
+  const display = $('#goals')
+  // const emptyGoals = (`
+  // <section class="container" id="empty-goals">
+  // no goals to display
+  // </section>
+  // `)
+  // display empty goals message if there are no goals
+  // console.log(response.goals.length)
+  // if (response.goals.length === 0) {
+  //   $('#goals').html(emptyGoals)
+  //   $('form').trigger('reset')
+  // }
+  $(display).empty()
 
-// const showGoalSuccess = function (response) {
-//   $('#goals').html('')
-//   $('form').trigger('reset')
-//   console.log(response)
-//   console.log(response.goal._id)
-  
-//     const goalShow = (`
-//     <section class="border">
-//     <h1> ${response.goal.name} </h1>
-//     <p> ${response.goal._id} </p>
-//     <p> created on ${dateFormat(response.goal.createdAt, 'dddd, mmmm dS, yyyy')} </p>
-//     <input type="checkbox" id="checkbox" name="checkbox" value="isChecked"> <br/>
-//     <button onClick="{console.log('help')}">delete</button>
-//     </section>
-//     `)
     
-//     $('#goals').append(goalShow)
-//   }
-
-  const emptyGoals = (`
-      <section class="container" id="empty-goals">
-      no goals to display
-      </section>
-      `)
-
-      //   const emptySteps = (`
-      // <section class="container" id="empty-steps">
-      // no steps listed
-      // </section>
-      // `)
-  
-  const indexGoalsSuccess = function (response) {
-    $('#goals').fadeIn()
-
-    // display empty goals message if there are no goals
-    if (response.goals.length === 0) {
-      $('#goals').html(emptyGoals)
-      $('#hide-goals-button').show()
-      $('#index-goals-button').hide()
-      $('form').trigger('reset')
-    }
 
     // iterate through the goals
     for (let i = 0; i < response.goals.length; i++) {
-      console.log(goals[i])
+      // $(display).empty()
+      // console.log(response.goals[i])
+
+      const goalArr = response.goals[i]
+
+      const list = document.createElement('a')
+      $(list).addClass('list-group-item list-group-item-action')
+      $(list).attr('data-toggle', 'list')
+      $(list).attr('href', '#list-' + goalArr._id)
+      $(list).attr('role', 'tab')
+      $(list).html('<a>' + response.goals[i].name + '</a>')
+
+      $(display).prepend(list)
 
     // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
-      const goalList= (`
-      <section class="container" id="goal-border">
-      <a href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
-       ${response.goals[i].name}
-      </a>
-      </section>
-     <div class="collapse out" id="show-steps">
-     <p>
-      ${response.goals[i].description}
-     </p>
-      </div>
-    `)
+    //   const goalList= (`
+    //   <section class="container" id="goal-border">
+    //   <a href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
+    //    ${response.goals[i].name}
+    //   </a>
+    //   </section>
+    //  <div class="collapse out" id="show-steps">
+    //  <p>
+    //   ${response.goals[i].description}
+    //  </p>
+    //   </div>
+    // `)
 
       // const seeMore = (`
       // <section class="container">
@@ -85,8 +75,8 @@ const createGoalFailure = function (response) {
       // </section>
       // `)
       
-      $('#goals').prepend(goalList)
-      $('form').trigger('reset')
+      // $('#goals').prepend(goalList)
+      // $('form').trigger('reset')
       // $('#see-more').html(seeMore).hide()
     }
   
