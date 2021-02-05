@@ -25,7 +25,7 @@ const createGoalSuccess = function (response) {
   $(list).addClass('list-group-item list-group-item-action')
   $(list).attr('data-toggle', 'list')
   $(list).attr('href', 'list-' + response.goal._id)
-  $(list).attr('id', 'list-' + response.goal._id)
+  // $(list).attr('id', response.goal._id)
   $(list).html(goalList)
   //add the new goal to the beginning of the list
   $('#goals').prepend(list)
@@ -67,20 +67,18 @@ const indexGoalsSuccess = function (response) {
         </p>
         </section>
        <div class="collapse out" id="show-steps">
-       <p>
-        ${response.goals[i].description}
-       </p>
         </div>
       `)
       $(list).addClass('list-group-item list-group-item-action')
       $(list).attr('data-toggle', 'list')
       $(list).attr('href', '#list-' + response.goals[i]._id)
-      $(list).attr('id', '#list-' + response.goals[i]._id)
+      // $(list).attr('id', response.goals[i]._id)
       $(list).attr('role', 'tab')
       // $(list).html('<a>' + response.goals[i].name + '</a>')
       $(list).html(goalList)
       // add the new goal to the top of the list
       $('#goals').prepend(list)
+
 
 
       // const seeMore = (`
@@ -95,11 +93,10 @@ const indexGoalsSuccess = function (response) {
       // $('form').trigger('reset')
       // $('#see-more').html(seeMore).hide()
 
-
-      // do another for loop for STEPS inside of the goals for loop
+      
+      // end of for loop
     }
-  
-    
+  // end of index function
   }
   
   
