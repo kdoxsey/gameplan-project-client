@@ -50,10 +50,10 @@ const indexGoalsSuccess = function (response) {
 
 
 
-      const seeMore = (`
-      <section class="container"> ${response.goals[i].description}
-      </section>
-      `)
+      // const seeMore = (`
+      // <section class="container"> ${response.goals[i].description}
+      // </section>
+      // `)
       
       // $('#goals').prepend(goalList)
       // $('form').trigger('reset')
@@ -61,7 +61,7 @@ const indexGoalsSuccess = function (response) {
 
       document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
       function handleClick () {
-        $('#see-more').html(seeMore).show()
+        $('#see-more').html(dateFormat(response.goals[i].createdAt, 'dddd, mmmm dS, yyyy') +'<h4>' + response.goals[i].name + '</h4><p>' + response.goals[i].description + '</p>' +  '<form class="create-comments"><textarea type="text" name="text" class="form-control" placeholder="Add a step" aria-label="Add a comment"></textarea><input type="hidden" value="' + response.goals[i]._id + '" class="form-control" placeholder="Issue ID" required><input type="submit" class="btn btn-primary" value="Add"></form><p>steps:</p>').show()
       }
 
       
