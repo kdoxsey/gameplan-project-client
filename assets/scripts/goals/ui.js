@@ -5,36 +5,44 @@ const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
   $('#change-password-form').hide()
-  const list = document.createElement('a')
-  const list2 = document.createElement('div')
+//   const list = document.createElement('a')
 
-          const goalList= (`
-        <section class="container" id="goal-border">
-        <p href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
-         ${response.goal.name}
-        </p>
-        </section>
-       <div class="collapse out" id="show-steps">
-       <p>
-        ${response.goal.description}
-       </p>
-        </div>
-      `)
+//           const goalList= (`
+//         <section class="container" id="goal-border">
+//         <p href="#" id="show-goal">
+//          ${response.goal.name}
+//         </p>
+//       `)
 
-  // goals list
-  $(list).addClass('list-group-item list-group-item-action')
-  $(list).attr('data-toggle', 'list')
-  $(list).attr('href', 'list-' + response.goal._id)
-  // $(list).attr('id', response.goal._id)
-  $(list).html(goalList)
-  //add the new goal to the beginning of the list
-  $('#goals').prepend(list)
+//       //       const seeMore = (`
+//       // <section class="container"> ${response.goal.description}
+//       // </section>
+//       // `)
+      
+//       // $('#goals').prepend(goalList)
+//       // $('form').trigger('reset')
+      
 
-  // see more
-  $(list2).addClass('tab-pane fade')
-  $(list2).attr('id', 'list-' + response.goal._id)
-  //add the 'see more' to the goal
-  $(list2).html(response.goal.description)
+//       // document.getElementById(response.goal._id).addEventListener("click", handleClick)
+//       // function handleClick () {
+//       //   $('#see-more').html(seeMore).show()
+//       // }
+//     // }
+
+//   // goals list
+//   $(list).addClass('list-group-item list-group-item-action')
+//   $(list).attr('data-toggle', 'list')
+//   $(list).attr('href', 'list-' + response.goal._id)
+//   // $(list).attr('id', response.goal._id)
+//   $(list).html(goalList)
+//   //add the new goal to the beginning of the list
+//   $('#goals').prepend(list)
+
+//   // see more
+// //   $('#see-more').addClass('tab-pane fade')
+// //   $('#see-more').attr('id', 'list-' + response.goal._id)
+// //   //add the 'see more' to the goal
+// //   $('#see-more').html(response.goal.description)
 }
 
 const createGoalFailure = function (response) {
@@ -54,6 +62,7 @@ const indexGoalsSuccess = function (response) {
   //   $('#goals').html(emptyGoals)
   //   $('form').trigger('reset')
   // }
+
   $('#goals').empty()
     // iterate through the goals
     for (let i = 0; i < response.goals.length; i++) {
@@ -62,17 +71,14 @@ const indexGoalsSuccess = function (response) {
       // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
         const goalList= (`
         <section class="container" id="goal-border">
-        <p href="#" data-target="#show-steps" id="show-goal" data-toggle="collapse">
+        <p href="#" id="show-goal">
          ${response.goals[i].name}
         </p>
-        </section>
-       <div class="collapse out" id="show-steps">
-        </div>
       `)
       $(list).addClass('list-group-item list-group-item-action')
       $(list).attr('data-toggle', 'list')
       $(list).attr('href', '#list-' + response.goals[i]._id)
-      // $(list).attr('id', response.goals[i]._id)
+      $(list).attr('id', response.goals[i]._id)
       $(list).attr('role', 'tab')
       // $(list).html('<a>' + response.goals[i].name + '</a>')
       $(list).html(goalList)
@@ -81,17 +87,19 @@ const indexGoalsSuccess = function (response) {
 
 
 
-      // const seeMore = (`
-      // <section class="container">
-      // <h1 id="goal-name">${goals.name}</h1>
-      // <h2 id="goal-description">${goals.description}</h2>
-      // <p id="date-created"> Created on ${dateFormat(goals.createdAt, 'dddd, mmmm dS, yyyy')} </p>
-      // </section>
-      // `)
+      const seeMore = (`
+      <section class="container"> ${response.goals[i].description}
+      </section>
+      `)
       
       // $('#goals').prepend(goalList)
       // $('form').trigger('reset')
-      // $('#see-more').html(seeMore).hide()
+      
+
+      document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
+      function handleClick () {
+        $('#see-more').html(seeMore).show()
+      }
 
       
       // end of for loop

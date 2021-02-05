@@ -22,6 +22,7 @@ $(() => {
   $('#delete-goal-button').hide()
   $('#update-goal-button').hide()
   $('#show-signin-form-button').hide()
+  $('#see-more').hide()
 
   // auth events
   $('#navbarDropdown').on('click', authEvents.onClearChangePasswordForm)

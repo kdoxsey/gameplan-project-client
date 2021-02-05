@@ -34,8 +34,8 @@ const onCreateGoal = function (event) {
   const data = getFormFields(form)
   api.createNewGoal(data)
     .then(ui.createGoalSuccess)
-    // .then(api.indexGoals)
-    // .then(ui.indexGoalsSuccess)
+    .then(api.indexGoals)
+    .then(ui.indexGoalsSuccess)
     .catch(ui.createGoalFailure)
 }
 
