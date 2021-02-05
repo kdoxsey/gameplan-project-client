@@ -27,6 +27,7 @@ const signInSuccess = function (response) {
   $('#create-goal-form').fadeIn()
   $('.nav-link').fadeIn()
   $('#goal-stuff').fadeIn()
+  $('#goals').fadeIn()
   goalsEvents.onIndexGoals()
 }
 
