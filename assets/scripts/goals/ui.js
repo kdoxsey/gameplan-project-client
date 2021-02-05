@@ -5,44 +5,6 @@ const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
   $('#change-password-form').hide()
-//   const list = document.createElement('a')
-
-//           const goalList= (`
-//         <section class="container" id="goal-border">
-//         <p href="#" id="show-goal">
-//          ${response.goal.name}
-//         </p>
-//       `)
-
-//       //       const seeMore = (`
-//       // <section class="container"> ${response.goal.description}
-//       // </section>
-//       // `)
-      
-//       // $('#goals').prepend(goalList)
-//       // $('form').trigger('reset')
-      
-
-//       // document.getElementById(response.goal._id).addEventListener("click", handleClick)
-//       // function handleClick () {
-//       //   $('#see-more').html(seeMore).show()
-//       // }
-//     // }
-
-//   // goals list
-//   $(list).addClass('list-group-item list-group-item-action')
-//   $(list).attr('data-toggle', 'list')
-//   $(list).attr('href', 'list-' + response.goal._id)
-//   // $(list).attr('id', response.goal._id)
-//   $(list).html(goalList)
-//   //add the new goal to the beginning of the list
-//   $('#goals').prepend(list)
-
-//   // see more
-// //   $('#see-more').addClass('tab-pane fade')
-// //   $('#see-more').attr('id', 'list-' + response.goal._id)
-// //   //add the 'see more' to the goal
-// //   $('#see-more').html(response.goal.description)
 }
 
 const createGoalFailure = function (response) {
@@ -51,19 +13,20 @@ const createGoalFailure = function (response) {
 }
 
 const indexGoalsSuccess = function (response) {
-  // const emptyGoals = (`
-  // <section class="container" id="empty-goals">
-  // no goals to display
-  // </section>
-  // `)
-  // display empty goals message if there are no goals
-  // console.log(response.goals.length)
-  // if (response.goals.length === 0) {
-  //   $('#goals').html(emptyGoals)
-  //   $('form').trigger('reset')
-  // }
 
+  // display empty goals message if there are no goals
+  const emptyGoals = (`
+  <section class="container" id="empty-goals">
+  no goals to display
+  </section>
+  `)
   $('#goals').empty()
+  console.log(response.goals.length)
+  if (response.goals.length === 0) {
+    $('#goals').html(emptyGoals)
+    // $('form').trigger('reset')
+  }
+
     // iterate through the goals
     for (let i = 0; i < response.goals.length; i++) {
 
