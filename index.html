@@ -16,12 +16,14 @@
       <nav class="navbar navbar-expand-lg">
         <div id="brand-and-slogan">
         <a class="navbar-brand" href="#">gameplan</a>
-        <p id="slogan">sort out your life</p>
+        <p id="slogan">sort with a plan</p>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <h2 id="see-more-goal-name"></h2>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -40,7 +42,7 @@
           </ul>
 
           <ul>
-          <li class="form-inline my-2 my-lg-0">
+          <li class="form-inline my-2 my-lg-0" id="navbar-right-side">
             <p id="signed-in-as"></p>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -101,19 +103,19 @@
               </form>
               
               <!-- show signin form -->
+              <div id="toggle-signup-signin">
+              <div id="show-signin-form-button">
+                <p class="mb-0" id="account-message">already have an account?</p>
+                <button type="submit" class= "btn btn-primary" class="btn btn-primary">sign in</button>
+              </div>
+        
+              <!-- show signup form -->
+              <div id="show-signup-form-button">
+                <p class="mb-0" id="account-message">don't have an account yet?</p>
+                <button type="submit" class="btn btn-primary">sign up</button>
+              </div>
+            </div>
             </section>
-            <div id="toggle-signup-signin">
-            <div id="show-signin-form-button">
-              <p class="mb-0" id="account-message">already have an account?</p>
-              <button type="submit" class= "btn btn-primary" class="btn btn-primary">sign in</button>
-            </div>
-      
-            <!-- show signup form -->
-            <div id="show-signup-form-button">
-              <p class="mb-0" id="account-message">don't have an account yet?</p>
-              <button type="submit" class="btn btn-primary">sign up</button>
-            </div>
-          </div>
       <!-- container start -->
       <div class="container">
       

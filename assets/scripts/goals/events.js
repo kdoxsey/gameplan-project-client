@@ -28,6 +28,16 @@ const getFormFields = require('./../../../lib/get-form-fields')
 //   $('#create-goal-form').hide()
 // }
 
+const onCreateStep = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.createNewStep(data)
+    .then(ui.createStepSuccess)
+    .catch(ui.createStepFailure)
+}
+
+
 const onCreateGoal = function (event) {
   event.preventDefault()
   const form = event.target
@@ -80,6 +90,7 @@ const onDeleteGoal = function (event) {
     .catch(ui.destroyGoalFailure)
 }
 module.exports = {
+  onCreateStep,
   onCreateGoal,
   onIndexGoals,
   onShowGoal,

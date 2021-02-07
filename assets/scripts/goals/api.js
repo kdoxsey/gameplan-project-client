@@ -1,6 +1,18 @@
 // testing
+const { format } = require('path')
 const config = require('./../config')
 const store = require('./../store')
+
+const createNewStep = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/steps',
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
 
 const createNewGoal = function (data) {
   return $.ajax({
@@ -9,7 +21,7 @@ const createNewGoal = function (data) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data
+    data: data
   })
 }
 
@@ -66,6 +78,7 @@ const destroyGoal = function (data) {
 }
 
 module.exports = {
+  createNewStep,
   createNewGoal,
   showGoal,
   indexGoals,

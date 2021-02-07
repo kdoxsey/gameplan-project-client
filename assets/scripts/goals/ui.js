@@ -1,5 +1,10 @@
 'use strict'
 import dateFormat from 'dateformat'
+import goalsEvents from './../goals/events'
+
+const createStepSuccess = function (response) {
+  alert('hello')
+}
 
 const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
@@ -29,6 +34,7 @@ const indexGoalsSuccess = function (response) {
 
     // iterate through the goals
     for (let i = 0; i < response.goals.length; i++) {
+      console.log(response)
 
       const list = document.createElement('a')
       // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
@@ -61,7 +67,9 @@ const indexGoalsSuccess = function (response) {
 
       document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
       function handleClick () {
-        $('#see-more').html(dateFormat(response.goals[i].createdAt, 'dddd, mmmm dS, yyyy') +'<h4>' + response.goals[i].name + '</h4><p>' + response.goals[i].description + '</p>' +  '<form class="create-comments"><textarea type="text" name="text" class="form-control" placeholder="Add a step" aria-label="Add a comment"></textarea><input type="hidden" value="' + response.goals[i]._id + '" class="form-control" placeholder="Issue ID" required><input type="submit" class="btn btn-primary" value="Add"></form><p>steps:</p>').show()
+        $('#see-more').fadeIn().html('<h3>' + response.goals[i].description + '</h3>' +  '<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"></textarea><input type="hidden" value="' + response.goals[i]._id + '" name="goal[id]" class="form-control" placeholder="Step ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
+        $('#see-more-goal-name').fadeIn().html(response.goals[i].name).show()
+        $('#create-step').on('submit', goalsEvents.onCreateStep )
       }
 
       
@@ -117,6 +125,7 @@ const destroyGoalFailure = function (response) {
 }
 
 module.exports = {
+  createStepSuccess,
   createGoalSuccess,
   createGoalFailure,
   indexGoalsSuccess,
