@@ -62,6 +62,7 @@ const onShowSignIn = function (event) {
 const onShowChangePasswordForm = function (event) {
   event.preventDefault()
   $('#change-password-form').show()
+  // $('#message').fadeIn().html('<form id="change-password-form"><input type="password" name="passwords[old]" placeholder="old password"><input type="password" name="passwords[new]" placeholder="new password"><input type="submit" class="btn btn-primary mb-1" value="change password"><input id="cancel" class="btn btn-dark" type="button" value="cancel"></form>')
   // $('#show-change-password-form-button').hide()
 }
 
