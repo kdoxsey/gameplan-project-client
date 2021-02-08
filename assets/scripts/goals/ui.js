@@ -3,8 +3,9 @@ import dateFormat from 'dateformat'
 import goalsEvents from './../goals/events'
 
 const createStepSuccess = function (response) {
-  alert('hello')
-}
+  $('form').trigger('reset')
+  console.log(response.goal.step.length)
+  }
 
 const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
@@ -53,6 +54,7 @@ const indexGoalsSuccess = function (response) {
       $(list).html(goalList)
       // add the new goal to the top of the list
       $('#goals').prepend(list)
+      // $('#see-more').append(stepList)
 
 
 
