@@ -77,6 +77,7 @@ const signOutSuccess = function () {
   $('#show-change-password-form-button').hide()
   $('.nav-link').hide()
   $('#see-more').hide()
+  $('#see-more-goal-name').hide()
   $('#goals').hide()
   $('#signed-in-as').hide()
 }

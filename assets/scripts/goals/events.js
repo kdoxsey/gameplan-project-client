@@ -30,6 +30,7 @@ const getFormFields = require('./../../../lib/get-form-fields')
 
 const onCreateStep = function (event) {
   event.preventDefault()
+  console.log('hello')
   const form = event.target
   const data = getFormFields(form)
   api.createNewStep(data)

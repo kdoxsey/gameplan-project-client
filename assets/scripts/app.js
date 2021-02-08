@@ -51,7 +51,7 @@ $(() => {
   // $('#delete-goal-form').on('submit', goalsEvents.onDeleteGoal)
 
   //steps
-  // $('#create-step-form').hide()
+  $('#see-more').on('submit', goalsEvents.onCreateStep)
   // $('#create-step-form').on('submit', stepsEvents.onCreateStep)
   // $('#hide-steps-button').hide()
   // $('#index-steps-button').on('click', stepsEvents.onIndexSteps)
