@@ -27,9 +27,10 @@ $theme-colors: (
 
 body {
   // background: url("public/1390893.jpg");
-  background: url("public/1390893.jpg");
+  // background: url("public/1390893.jpg");
   // background-repeat: no-repeat;
-  background-size: cover;
+  // background-size: cover;
+  background: rgba(0, 0, 0, 0.8);
   margin-left: auto;
   margin-right: auto;
   font-family: Tahoma;
@@ -37,8 +38,12 @@ body {
   // max-height: 100vh;
   // overflow: scroll;
   color: white;
-  height: 150vh;
+  // height: 150vh;
 }
+
+// .form-control {
+//   border: 0px;
+// }
 
 // .list-group-item {
 // background-color: red;

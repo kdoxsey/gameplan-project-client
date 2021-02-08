@@ -4,10 +4,10 @@ import goalsEvents from './../goals/events'
 
 const createStepSuccess = function (response) {
   $('form').trigger('reset')
-  alert('added a step')
-  // for (let i = 0; i < response.goals.step[i].length; i++) {
-  // console.log(response.goals.step[i].length)
-  $('#see-more').append(response.goal.step)
+  const lastArray = (response.goal.step.length - 1)
+  console.log(response.goal.step[lastArray].text)
+  $('#see-more').append(response.goal.step[lastArray].text)
+  $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.step[lastArray].text +'" to ' + response.goal.name)
   }
 
 // const indexStepsSuccess = function (response) {
@@ -29,7 +29,6 @@ const createGoalFailure = function (response) {
 }
 
 const indexGoalsSuccess = function (response) {
-
   // display empty goals message if there are no goals
   const emptyGoals = (`
   <section class="container" id="empty-goals">
@@ -66,19 +65,7 @@ const indexGoalsSuccess = function (response) {
       $('#goals').prepend(list)
       // $('#see-more').append(stepList)
 
-
-
-      // const seeMore = (`
-      // <section class="container"> ${response.goals[i].description}
-      // </section>
-      // `)
-      
-      // $('#goals').prepend(goalList)
-      // $('form').trigger('reset')
-      
-
       document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
-
 
       function handleClick () {
         $('#see-more').hide().fadeIn().html('<h3>' + response.goals[i].description + '</h3>' +  '<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control" placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
