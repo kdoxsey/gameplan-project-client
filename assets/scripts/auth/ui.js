@@ -7,7 +7,7 @@ const signUpSuccess = function (response) {
   const str = response.user.email
   const nameReplace = str.replace(/@.*$/,"")
   const name = nameReplace !== str ? nameReplace : null
-  $('#sign-in').fadeIn().text('thanks for signing up,  ' + name.toLowerCase() + '! Sign in to get started.').fadeIn()
+  $('#sign-in').hide().fadeIn().text('thanks for signing up,  ' + name.toLowerCase() + '! Sign in to get started.').fadeIn()
   // $('#message').text('thanks for signing up ' + response.user.email)
   // goalsEvents.onIndexGoals()
 

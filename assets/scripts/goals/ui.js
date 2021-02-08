@@ -4,8 +4,19 @@ import goalsEvents from './../goals/events'
 
 const createStepSuccess = function (response) {
   $('form').trigger('reset')
-  console.log(response.goal.step.length)
-  }
+  alert('added a step')
+  // for (let i = 0; i < response.goals.step[i].length; i++) {
+  // console.log(response.goals.step[i].length)
+  // // $('#see-more').append(response.goal.step)
+  // }
+}
+
+// const indexStepsSuccess = function (response) {
+//   $('form').trigger('reset')
+//   for (let i = 0; i < response.goals.step[i].length; i++) {
+//     console.log(response.goals.step[i].length)
+//   }
+// }
 
 const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
@@ -35,7 +46,7 @@ const indexGoalsSuccess = function (response) {
 
     // iterate through the goals
     for (let i = 0; i < response.goals.length; i++) {
-      console.log(response)
+      // console.log(response)
 
       const list = document.createElement('a')
       // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
@@ -68,12 +79,25 @@ const indexGoalsSuccess = function (response) {
       
 
       document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
+
+
       function handleClick () {
-        $('#see-more').fadeIn().html('<h3>' + response.goals[i].description + '</h3>' +  '<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control" placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
-        $('#see-more-goal-name').fadeIn().html(response.goals[i].name).show()
+        $('#see-more').hide().fadeIn().html('<h3>' + response.goals[i].description + '</h3>' +  '<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control" placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
+        $('#see-more-goal-name').hide().fadeIn().html(response.goals[i].name).show()
+        // console.log(response.goals[i].step.text)
+
+        for (let j = 0; j < response.goals[i].step.length; j++) {
+          // if (response.goals[i].step.length === 0) {
+          //   console.log('no steps to display')
+          // }
+
+          $('#see-more').append('<p>' + response.goals[i].step[j].text + '</p>')
+
+          console.log(response.goals[i].step[j].text + ' is a step')
+        // }
       }
 
-      
+    }
       // end of for loop
     }
   // end of index function
