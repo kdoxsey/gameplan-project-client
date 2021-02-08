@@ -34,7 +34,12 @@ const onCreateStep = function (event) {
   const form = event.target
   const data = getFormFields(form)
   api.createNewStep(data)
+    .then(console.log('after create api'))
+    // .then(console.log('after create ui'))
     .then(ui.createStepSuccess)
+    .then(api.indexGoals)
+    .then(ui.indexGoalsSuccess)
+    // .then(console.log('after index ui'))
     .catch(ui.createStepFailure)
 }
 

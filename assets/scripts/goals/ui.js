@@ -7,9 +7,8 @@ const createStepSuccess = function (response) {
   alert('added a step')
   // for (let i = 0; i < response.goals.step[i].length; i++) {
   // console.log(response.goals.step[i].length)
-  // // $('#see-more').append(response.goal.step)
-  // }
-}
+  $('#see-more').append(response.goal.step)
+  }
 
 // const indexStepsSuccess = function (response) {
 //   $('form').trigger('reset')
