@@ -7,7 +7,7 @@ const createStepSuccess = function (response) {
   const lastArray = (response.goal.step.length - 1)
   const countArray = (response.goal.step.length)
   console.log(response.goal.step[lastArray].text)
-  $('#see-more').append('<p>' + countArray + ': ' + response.goal.step[lastArray].text)
+  $('#see-more').append('<p>' + countArray + ': ' + response.goal.step[lastArray].text + '<a href="#"><img src="public/icons8-trash-24.png" id="trash-icon"></a></p>')
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.step[lastArray].text +'" to ' + response.goal.name)
   }
 
@@ -84,7 +84,7 @@ const indexGoalsSuccess = function (response) {
           //   $('#see-more').hide().fadeIn().html('<p>no steps to display</p>').show()
           // }
 
-          $('#see-more').append(count + ': ' + response.goals[i].step[j].text + '</p>')
+          $('#see-more').append('<p>' + count + ': ' + response.goals[i].step[j].text + '<a href="#"><img src="public/icons8-trash-24.png" id="trash-icon"></a></p>')
 
           console.log(response.goals[i].step[j].text + ' is a step')
         // }
