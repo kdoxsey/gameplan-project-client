@@ -68,8 +68,9 @@ const indexGoalsSuccess = function (response) {
       document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
 
       function handleClick () {
-        $('#see-more').hide().fadeIn().html('<h3>' + response.goals[i].description + '</h3>' +  '<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control" placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
+        $('#see-more').hide().fadeIn().html('<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control" placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
         $('#see-more-goal-name').hide().fadeIn().html(response.goals[i].name).show()
+        $('#see-more-goal-description').hide().fadeIn().html(response.goals[i].description).show()
         // console.log(response.goals[i].step.text)
 
         for (let j = 0; j < response.goals[i].step.length; j++) {

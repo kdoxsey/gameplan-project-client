@@ -30,7 +30,7 @@ body {
   // background: url("public/1390893.jpg");
   // background-repeat: no-repeat;
   // background-size: cover;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(34, 33, 33);
   margin-left: auto;
   margin-right: auto;
   font-family: Tahoma;
@@ -109,7 +109,7 @@ body {
 
 .navbar {
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.2);
   width: 100vw;
   display: flex;
   // justify-content: center;
@@ -199,7 +199,7 @@ body {
 
 .list-group-item {
   color: white;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -216,6 +216,7 @@ body {
   // max-width: 250px;
   // margin-top: 115px;
   padding-left: 2px;
+  margin-left: 3px;
   padding-top: 0px;
   position: fixed;
   // display: flex;
@@ -270,13 +271,29 @@ form {
   margin-top: 150px;
 }
 
-#see-more-goal-name {
+#see-more-navbar {
   display: flex;
+  flex-direction: row;
   padding-left: 80px;
   font-family: helvetica;
-  font-size: 30px;
   letter-spacing: 5px;
+  max-width: 70vw;
+  overflow: hidden;
+}
+
+#see-more-goal-name {
+  display: flex;
+  font-size: 40px;
+  padding-top: 5px;
   // justify-content: center;
+}
+
+#see-more-goal-description {
+  padding-top: 28px;
+  margin-left: 35px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
 }
 
 // #my-goals {
