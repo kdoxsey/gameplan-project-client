@@ -284,19 +284,20 @@ form {
 }
 
 #see-more-goal-name {
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   display: flex;
-  font-size: 20px;
+  font-size: 26px;
   // padding-top: 5px;
   // justify-content: center;
 }
 
 #see-more-goal-description {
-  // letter-spacing: 5px;
+  letter-spacing: 1px;
   // padding-top: 28px;
-  margin-left: 35px;
+  margin-bottom: 0px;
+  margin-left: 16px;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   font-style: italic;
 }
 
