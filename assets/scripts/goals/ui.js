@@ -66,29 +66,34 @@ const indexGoalsSuccess = function (response) {
       // $('#see-more').append(stepList)
 
       document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
-
+      
+      
+      let count = 1
       function handleClick () {
+        
         $('#see-more').hide().fadeIn().html('<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control" placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
         $('#see-more-goal-name').hide().fadeIn().html(response.goals[i].name).show()
         $('#see-more-goal-description').hide().fadeIn().html(response.goals[i].description).show()
         // console.log(response.goals[i].step.text)
 
+        let count = 1
         for (let j = 0; j < response.goals[i].step.length; j++) {
           // if (response.goals[i].step.length === 0) {
-          //   console.log('no steps to display')
+          //   $('#see-more').hide().fadeIn().html('<p>no steps to display</p>').show()
           // }
 
-          $('#see-more').append('<p>' + response.goals[i].step[j].text + '</p>')
+          $('#see-more').append(count + ': ' + response.goals[i].step[j].text + '</p>')
 
           console.log(response.goals[i].step[j].text + ' is a step')
         // }
+        count += 1
       }
-
+      
     }
-      // end of for loop
-    }
-  // end of index function
+    // end of for loop
   }
+  // end of index function
+}
   
   
 const indexGoalsFailure = function (response) {
