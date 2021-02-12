@@ -84,18 +84,24 @@ const indexGoalsSuccess = function (response) {
           //   $('#see-more').hide().fadeIn().html('<p>no steps to display</p>').show()
           // }
 
-          $('#see-more').append(count + ': ' + response.goals[i].step[j].text + '</p>')
+          const stepId = response.goals[i].step[j]._id
+
+          $('#see-more').append('<p id=' + response.goals[i].step[j]._id +'">' + count + ': ' + response.goals[i].step[j].text + '</p>')
+          $(stepId).append('<button value="delete"></button>')
 
           console.log(response.goals[i].step[j].text + ' is a step')
         // }
         count += 1
+        // end of step for loop [j]
       }
-      $('#create-steps').on('submit', goalsEvents.onCreateStep)
       
     }
-    // end of for loop
+    $('#create-steps').on('submit', goalsEvents.onCreateStep)
+    // end of goal for loop [i]
+    // $('#delete-step').on('submit', alert('clicked'))
+    // end of index function
   }
-  // end of index function
+  // $('#delete-step').on('submit', alert('clicked'))
 }
   
   
