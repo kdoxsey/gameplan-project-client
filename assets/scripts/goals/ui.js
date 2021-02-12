@@ -90,6 +90,7 @@ const indexGoalsSuccess = function (response) {
         // }
         count += 1
       }
+      $('#create-steps').on('submit', goalsEvents.onCreateStep)
       
     }
     // end of for loop
