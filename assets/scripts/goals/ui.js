@@ -3,11 +3,14 @@ import dateFormat from 'dateformat'
 import goalsEvents from './../goals/events'
 
 const createStepSuccess = function (response) {
+  const deleteStepForm= (`<form class="delete-step"><input type="hidden" value="' + response.goals[i].steps[j]._id + '" name="step[id]" class="form-control"placeholder="step ID" required><input type="submit" class="btn btn-danger" value="delete"></form>
+      `)
+      
   $('form').trigger('reset')
   const lastArray = (response.goal.step.length - 1)
   const countArray = (response.goal.step.length)
   console.log(response.goal.step[lastArray].text)
-  $('#see-more').append('<p>' + countArray + ': ' + response.goal.step[lastArray].text)
+  $('#see-more').append('<p>' + countArray + ': ' + response.goal.step[lastArray].text + ' ' + deleteStepForm + '</p>')
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.step[lastArray].text +'" to ' + response.goal.name)
   }
 
@@ -64,7 +67,7 @@ const indexGoalsSuccess = function (response) {
     // when you click on a goal
     function handleClick () { 
     // create the "add a step" form in '#see-more'
-      $('#see-more').hide().fadeIn().html('<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add astep" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control"placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
+      $('#see-more').hide().fadeIn().html('<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control"placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
       $('#see-more-navbar').fadeIn()
       $('#see-more-goal-name').hide().fadeIn().html(response.goals[i].name).show()
       $('#see-more-goal-description').hide().fadeIn().html(response.goals[i].description).show()
@@ -75,24 +78,33 @@ const indexGoalsSuccess = function (response) {
           // if (response.goals[i].step.length === 0) {
           //   $('#see-more').hide().fadeIn().html('<p>no steps to display</p>').show()
           // }
-
-          const deleteStepForm= (`<form class="delete-step"><input type="hidden" value="' + response.goals[i].steps[j]._id + '" name="step[id]" class="form-control"placeholder="step ID" required><input type="submit" class="btn btn-primary" value="delete"></form>
-      `)
-
+          
+          const deleteStepForm= (`<form class="delete-step" id=` + response.goals[i].step[j]._id + `><input type="hidden" value="` + response.goals[i]._id + `'"name="step[id]" class="form-control"placeholder="step ID" required><input type="submit" class="btn btn-danger" value="delete"></form>
+          `)
+          
           $('#see-more').append('<p id=' + response.goals[i].step[j]._id +'">' + count + ': ' + response.goals[i].step[j].text + ' ' + deleteStepForm + '</p>')
-
+          
           console.log(response.goals[i].step[j].text + ' is a step')
+          // }
+          count += 1
+          // end of step for loop [j]
+          // $('.delete-step').on('submit', alert('clicked'))
+        }
+        // $(response.goals[i].step[j]._id).on('submit', alert('delete button clicked'))
+
+        
+        // document.getElementById(response.goals[i].step[j]._id).addEventListener(handleDelete)
+  
+        // function handleDelete () {
+        //   alert('clicked')
         // }
-        count += 1
-        // end of step for loop [j]
       }
       
+      $('.create-steps').on('submit', goalsEvents.onCreateStep)
+      // end of goal for loop [i]
+      // $('#delete-step').on('submit', alert('clicked'))
+      // end of index function
     }
-    $('#create-steps').on('submit', goalsEvents.onCreateStep)
-    // end of goal for loop [i]
-    // $('#delete-step').on('submit', alert('clicked'))
-    // end of index function
-  }
   // $('#delete-step').on('submit', alert('clicked'))
 }
   

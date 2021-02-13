@@ -334,6 +334,10 @@ form {
   justify-content: center;
   margin-top: 25px;
 }
+#response.goals[i].step[j]._id {
+  display: flex;
+  flex-direction: row;
+}
 
 // button {
 //   max-width: 230px;
