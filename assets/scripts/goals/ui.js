@@ -11,13 +11,6 @@ const createStepSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.step[lastArray].text +'" to ' + response.goal.name)
   }
 
-// const indexStepsSuccess = function (response) {
-//   $('form').trigger('reset')
-//   for (let i = 0; i < response.goals.step[i].length; i++) {
-//     console.log(response.goals.step[i].length)
-//   }
-// }
-
 const createGoalSuccess = function (response) {
   $("#message").show().delay(2000).fadeOut().html('added "' + response.goal.name +'" to list!')
   $('form').trigger('reset')
@@ -43,51 +36,50 @@ const indexGoalsSuccess = function (response) {
     // $('form').trigger('reset')
   }
 
-    // iterate through the goals
-    for (let i = 0; i < response.goals.length; i++) {
-      // console.log(response)
-
-      const list = document.createElement('a')
-      // define the goal list item as a collapsable <a> tag and the collapse out class that contains the hidden info
-        const goalList= (`
-        <section class="container" id="goal-border">
-        <p href="#" id="show-goal">
-         ${response.goals[i].name}
-        </p>
+  // iterate through the goals
+  for (let i = 0; i < response.goals.length; i++) {
+  // for each goal create an 'a' tag named list
+  const list = document.createElement('a')
+  // the html code for a single goal that will be added to the list element
+  const goalList= (`
+    <section class="container" id="goal-border">
+    <p href="#" id="show-goal">
+      ${response.goals[i].name}
+    </p>
       `)
-      $(list).addClass('list-group-item list-group-item-action')
-      $(list).attr('data-toggle', 'list')
-      $(list).attr('href', '#list-' + response.goals[i]._id)
-      $(list).attr('id', response.goals[i]._id)
-      $(list).attr('role', 'tab')
-      // $(list).html('<a>' + response.goals[i].name + '</a>')
-      $(list).html(goalList)
-      // add the new goal to the top of the list
-      $('#goals').prepend(list)
-      // $('#see-more').append(stepList)
+  // add attributes to the list here because it's easier to read than as a string
+  $(list).addClass('list-group-item list-group-item-action')
+  $(list).attr('data-toggle', 'list')
+  $(list).attr('href', '#list-' + response.goals[i]._id)
+  $(list).attr('id', response.goals[i]._id)
+  $(list).attr('role', 'tab')
+  $(list).html(goalList)
+  // add the 'a' tag to the DOM
+  $('#goals').prepend(list)
 
-      document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
+  // add an event listener to each goal
+  document.getElementById(response.goals[i]._id).addEventListener("click", handleClick)
       
-      
-      let count = 1
-      function handleClick () {
-        
-        $('#see-more').hide().fadeIn().html('<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add a step" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control" placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
-        $('#see-more-navbar').fadeIn()
-        $('#see-more-goal-name').hide().fadeIn().html(response.goals[i].name).show()
-        $('#see-more-goal-description').hide().fadeIn().html(response.goals[i].description).show()
-        // console.log(response.goals[i].step.text)
+    let count = 1
+    // when you click on a goal
+    function handleClick () { 
+    // create the "add a step" form in '#see-more'
+      $('#see-more').hide().fadeIn().html('<form class="create-steps"><input type="text" name="step[text]" class="form-control" placeholder="Add astep" aria-label="Add a step"><input type="hidden" value="' + response.goals[i]._id + '" name="step[goalId]" class="form-control"placeholder="goal ID" required><input type="submit" class="btn btn-primary" value="Add"></form>').show()
+      $('#see-more-navbar').fadeIn()
+      $('#see-more-goal-name').hide().fadeIn().html(response.goals[i].name).show()
+      $('#see-more-goal-description').hide().fadeIn().html(response.goals[i].description).show()
 
+      // loop through each step inside the goal's for loop
         let count = 1
         for (let j = 0; j < response.goals[i].step.length; j++) {
           // if (response.goals[i].step.length === 0) {
           //   $('#see-more').hide().fadeIn().html('<p>no steps to display</p>').show()
           // }
 
-          const stepId = response.goals[i].step[j]._id
+          const deleteStepForm= (`<form class="delete-step"><input type="hidden" value="' + response.goals[i].steps[j]._id + '" name="step[id]" class="form-control"placeholder="step ID" required><input type="submit" class="btn btn-primary" value="delete"></form>
+      `)
 
-          $('#see-more').append('<p id=' + response.goals[i].step[j]._id +'">' + count + ': ' + response.goals[i].step[j].text + '</p>')
-          $(stepId).append('<button value="delete"></button>')
+          $('#see-more').append('<p id=' + response.goals[i].step[j]._id +'">' + count + ': ' + response.goals[i].step[j].text + ' ' + deleteStepForm + '</p>')
 
           console.log(response.goals[i].step[j].text + ' is a step')
         // }
